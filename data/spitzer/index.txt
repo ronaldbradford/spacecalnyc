@@ -1,0 +1,32 @@
+Spitzer Space Telescope
+Nominal Science Operations - 2003 Schedule of Executed Science Observations (ObsLog)
+
+Columns:
+--------
+TargetName                   Observer-specified target name
+RA(J2000)                    Right ascension of the target position (J2000.0)
+Dec(J2000)                   Declination of the target position (J2000.0)
+PI                           Principal Investigator
+ProgName                     Short Program Nickname
+pid                          Program IDentification number
+AOT                          Observing Mode:
+                               iracmap = IRAC Mapping/Photometry AOR; 
+                               irac = IRAC IER;
+                               mipsphot = MIPS Photometry AOR;
+                               mipsscan = MIPS Scan Mapping AOR;
+                               mipssed = MIPS Spectral Energy Distribution AOR;
+                               mipstp = MIPS Total Power AOR;
+                               mips = MIPS IER;
+                               irspeakup = IRS Peak-Up Imaging AOR;
+                               irsmap = IRS Spectral Mapping AOR;
+                               irsstare = IRS Starting-Mode Spectroscopy AOR;
+                               irs = IRS IER;
+min_dur                      Duration of the observation in minutes
+Start Of Execution (UTC)     UTC Time at the start of the execution of the observation
+AOR_key                      Unique observation identification number
+AOR_LABEL                    Observer-specified observation title 
+
+
+
+TargetName                RA(J2000)    Dec(J2000)    PI                ProgName     pid   AOT         min_dur Start Of Execution (UTC)   AOR_key    AOR_LABEL
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
