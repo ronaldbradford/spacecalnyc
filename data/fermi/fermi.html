@@ -1,0 +1,3911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->	
+	<meta charset="utf-8">
+	<meta name="description" content="Fermi Science Support Center">
+	<meta name="keywords" content="fermi, glast, glast homepage, glast website, glast web site, science support center, ssc, glast ssc, gssc, gamma-ray, gamma, cgro, gro, egret, compton, space, telescope, nasa, NASA, bursts, high-energy, high, energy, acd, balloon">
+	<meta name="robots" content="noodp">
+	<!-- NASA Required Meta -->
+	<meta name="orgcode" content="661">
+	<meta name="rno" content="Phillip.A.Newman.1">
+	<meta name="content-owner" content="John.D.Myers.1">
+	<meta name="webmaster" content="Stephan.F.Fantasia.1">
+<!-- Favicon -->
+	<link rel="shortcut icon" href="/ssc/inc/img/favicon.png">
+<!-- CSS -->
+	<link rel="stylesheet" href="/ssc/inc/css/fssc.css">
+<!-- Javascript -->
+	<!-- <script src="/inc/js/"></script> -->
+<!-- Feed --> 
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/ssc/library/news/ferminews.rss">
+<!-- Page Title --><!-- Javascript -->
+	<script type="text/javascript" src="/ssc/observations/timeline/posting/inc/js/tablesort.js"></script>
+	<script type="text/javascript" src="/ssc/observations/timeline/posting/js/customsort.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+// A quick demo of how to have "static" data columns within your table
+// Just call staticData.parse(tableId, [column index array]) to parse the initial data
+// and add a "sortcompletecallback-staticData-redraw" class to the table
+
+var staticData = (function() {
+        var columnData = {};
+        
+        function parseStaticColumn(tableID, colNums) {
+                // Grab the TR nodes (I'm assuming the table has a TBODY)
+                var trs     = document.getElementById(tableID).getElementsByTagName('tbody')[0].getElementsByTagName('tr'),
+                    dataObj = [],
+                    colData;
+                
+                // Make sure that the colNums is an Array 
+                // N.B: This enables you to pass an integer if you only require one static column for the table
+                // - as is done within this demo
+                if(!colNums.length) { colNums = [colNums]; }
+                    
+                // Loop through the TR node collection and cache the required colData
+                for(var i = 0, tr; tr = trs[i]; i++) { 
+                        colData = [];
+                        for(var z = 0; z < colNums.length; z++) {                                                                 
+                                // Grab the current "colNum" TD within this TR and store it's (text) data 
+                                // I'm reusing a method "getInnerText" made available by the tableSort script
+                                colData[z] = fdTableSort.getInnerText(tr.getElementsByTagName("td")[colNums[z]]);
+                        };
+                        dataObj[i] = colData;                        
+                };
+                
+                // Cache the results for this table
+                columnData[tableID] = {
+                        data:dataObj,
+                        cols:colNums
+                        };
+        };
+        
+        function sortCompleteCallback(tableID) {
+                // Grab the TR's and the stored data object
+                var trs     = document.getElementById(tableID).getElementsByTagName('tbody')[0].getElementsByTagName('tr'),
+                    dataObj = columnData[tableID].data,
+                    colNums = columnData[tableID].cols,                    
+                    cell;
+                    
+                // Loop through the TR node collection
+                for(var i = 0, tr; tr = trs[i]; i++) {                         
+                        for(var z = 0; z < colNums.length; z++) {                                                               
+                                // Grab the "colNum" TD within this TR
+                                cell = tr.getElementsByTagName("td")[colNums[z]];
+                                // Delete it's contents
+                                while(cell.firstChild) cell.removeChild(cell.firstChild);
+                                // Append a text node containing the stored data
+                                cell.appendChild(document.createTextNode(dataObj[i][z]));
+                        };
+                };
+        };
+        
+        return {
+                parse : parseStaticColumn,
+                redraw: sortCompleteCallback
+        };
+})();
+//]]>
+</script>
+<!-- CSS -->
+	<link rel="stylesheet" href="/ssc/observations/timeline/posting/inc/css/timeline.css">
+<title>FSSC &raquo; Observations &raquo; Timeline</title>
+</head>
+
+<body>
+
+<!-- Start Skip To Content -->
+<div id="skip"><a href="#content-wrapper-full">Skip navigation and go straight to page content.</a></div>
+<!-- End Skip To Content -->
+
+<!-- Start Page Container -->
+<div id="page-container">
+
+<!-- Start NASA Banner -->
+<div id="nasa-banner-full">
+<!-- Left - Logo -->
+	<div class="nasa-logo">
+	<a href="http://www.nasa.gov/"><img src="/ssc/inc/img/nasa_logo.gif" width="140" height="98" border="0" alt="NASA Logo"></a>
+	</div>
+<!-- Middle - Affiliations -->
+	<div id="nasa-affiliation">
+	<h1><a href="http://www.nasa.gov/">National Aeronautics and Space Administration</a></h1>
+	<h2><a href="http://www.nasa.gov/goddard">Goddard Space Flight Center</a></h2>
+	</div>
+<!-- Right - Search and Links -->
+	<div id="nasa-search-links">
+	    <div id="header-links">
+	    <a href="/ssc/">FSSC</a> &bull; <a href="http://heasarc.gsfc.nasa.gov/">HEASARC</a> &bull; <a href="http://science.gsfc.nasa.gov/">Sciences and Exploration</a>
+	    </div>
+    </div>
+</div>
+<!-- End NASA Banner -->
+
+<!-- Start Mission Banner Graphic -->
+<div id="mission-banner-full">
+<a href="/ssc/"><img src="/ssc/inc/img/fssc_banner.jpg" width="952" height="100" alt="Fermi Science Support Center" /></a>
+</div>
+<!-- End Mission Banner Graphic -->
+<!-- Start Page Content Wrapper -->
+<div id="content-wrapper-full">
+<h1>Fermi Timeline Posting</h1>
+
+<p><a href="/ssc/">FSSC</a> &raquo; <a href="/ssc/observations/">Observations</a> &raquo; <a href="/ssc/observations/timeline/">Timeline</a></p>
+<p>This utility allows you to view Fermi's observing timelines. It defaults to the current AO cycle, but you can also view past AO cycles, along with timelines showing a summary of the Targets of Opportunity (TOO), Automatic Re-pointing Requests (ARR), Guest Investigator (GI) Pointed Observations, and Calibration Requests. Explanations of the columns can be found in the <a href="/ssc/observations/timeline/posting/glossary.html">glossary</a>.</p>
+<p><strong>Note:</strong> If you have JavaScript enabled on your browser, you may click on column names to sort by that column.</p>
+<!-- Start Top Level Navigation -->
+<div id="topnav">
+<ul>
+	<li id="ao5"><a class="active" href="/ssc/observations/timeline/posting/ao5/">AO5</a></li>
+	<li id="ao4"><a href="/ssc/observations/timeline/posting/ao4/">AO4</a></li>
+	<li id="ao3"><a href="/ssc/observations/timeline/posting/ao3/">AO3</a></li>
+	<li id="ao2"><a href="/ssc/observations/timeline/posting/ao2/">AO2</a></li>
+	<li id="ao1"><a href="/ssc/observations/timeline/posting/ao1/">AO1</a></li>
+	<li id="too"><a href="/ssc/observations/timeline/posting/too/">ToO Summary</a></li>
+	<li id="arr"><a href="/ssc/observations/timeline/posting/arr/">ARR Summary</a></li>
+	<li id="pointed"><a href="/ssc/observations/timeline/posting/pointed/">GI Pointed Obs Summary</a></li>
+	<li id="cal"><a href="/ssc/observations/timeline/posting/cal/">Calibration Summary</a></li>
+</ul>
+</div>
+<div class="clear"></div> <!-- Clears floated <li> -->
+<!-- End Top Level Navigation -->
+<!-- Start Table Container -->
+<div id="table-container">
+<table id="timelineTable" class="sortable-onload-2r-3r onload-zebra rowstyle-alt no-arrow sortcompletecallback-staticData-redraw" width="100%">
+	<thead>
+	<tr>
+		<th>#</th>
+		<th class="sortable-sortObsID">Obs ID</th>
+		<th class="sortable-numeric">Mission<br>Week</th>
+		<th class="sortable-text">Start Time<br>(UTC)</th>
+		<th class="sortable-text">Stop Time<br>(UTC)</th>
+		<th class="sortable-numeric">Duration<br>(sec)</th>
+		<th class="sortable-numeric">RA<br>(J2000)</th>
+		<th class="sortable-numeric">Dec<br>(J2000)</th>
+		<th class="sortable-text">Mode</th>
+		<th class="sortable-text">Type</th>
+		<th class="sortable-text">Target</th>
+		<th class="sortable-text">PI</th>
+		<th class="sortable-text">Notes</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>1</td>
+		<td class="nowrap">050005-1-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-278-15:07:00</td>
+		<td class="nowrap">2012-278-18:18:01</td>
+		<td>11186</td>
+		<td class="nowrap">46.417</td>
+		<td class="nowrap">64.36501</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North</td>
+		<td>Julie McEnery</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td class="nowrap">050005-10-1</td>
+		<td>236</td>
+		<td class="nowrap">2012-341-05:55:01</td>
+		<td class="nowrap">2012-341-09:12:01</td>
+		<td>11559</td>
+		<td class="nowrap">340.75</td>
+		<td class="nowrap">64.333</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 234</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td class="nowrap">050005-11-1</td>
+		<td>237</td>
+		<td class="nowrap">2012-348-01:04:01</td>
+		<td class="nowrap">2012-348-04:24:01</td>
+		<td>11445</td>
+		<td class="nowrap">114.6</td>
+		<td class="nowrap">-64.39</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 237</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td class="nowrap">050005-13-1</td>
+		<td>238</td>
+		<td class="nowrap">2012-355-23:16:01</td>
+		<td class="nowrap">2012-356-02:33:01</td>
+		<td>11566</td>
+		<td class="nowrap">240.6</td>
+		<td class="nowrap">64.44</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 238</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td class="nowrap">050005-14-1</td>
+		<td>239</td>
+		<td class="nowrap">2012-362-17:35:01</td>
+		<td class="nowrap">2012-362-20:52:01</td>
+		<td>11559</td>
+		<td class="nowrap">193.4</td>
+		<td class="nowrap">64.5</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 239</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td class="nowrap">050005-15-1</td>
+		<td>240</td>
+		<td class="nowrap">2013-003-13:33:01</td>
+		<td class="nowrap">2013-003-16:50:01</td>
+		<td>11543</td>
+		<td class="nowrap">332.9</td>
+		<td class="nowrap">-64.5</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 240</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td class="nowrap">050005-16-1</td>
+		<td>241</td>
+		<td class="nowrap">2013-010-11:10:01</td>
+		<td class="nowrap">2013-010-14:27:01</td>
+		<td>11534</td>
+		<td class="nowrap">285.67</td>
+		<td class="nowrap">-64.437</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 241</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td class="nowrap">050005-17-1</td>
+		<td>242</td>
+		<td class="nowrap">2013-017-07:09:01</td>
+		<td class="nowrap">2013-017-10:26:01</td>
+		<td>11547</td>
+		<td class="nowrap">56.6023</td>
+		<td class="nowrap">64.3916</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 242</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td class="nowrap">050005-18-1</td>
+		<td>243</td>
+		<td class="nowrap">2013-024-06:13:01</td>
+		<td class="nowrap">2013-024-09:30:01</td>
+		<td>11562</td>
+		<td class="nowrap">191.218</td>
+		<td class="nowrap">-64.357</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 243</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td class="nowrap">050005-19-1</td>
+		<td>244</td>
+		<td class="nowrap">2013-031-00:35:01</td>
+		<td class="nowrap">2013-031-03:52:01</td>
+		<td>11561</td>
+		<td class="nowrap">143.99</td>
+		<td class="nowrap">-64.36</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 244</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td class="nowrap">050005-2-1</td>
+		<td>228</td>
+		<td class="nowrap">2012-285-09:31:01</td>
+		<td class="nowrap">2012-285-12:42:01</td>
+		<td>11187</td>
+		<td class="nowrap">355.9</td>
+		<td class="nowrap">64.36501</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 228</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td class="nowrap">050005-20-1</td>
+		<td>245</td>
+		<td class="nowrap">2013-038-01:18:01</td>
+		<td class="nowrap">2013-038-04:35:01</td>
+		<td>11563</td>
+		<td class="nowrap">96.76</td>
+		<td class="nowrap">-64.4</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 245</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>13</td>
+		<td class="nowrap">050005-21-1</td>
+		<td>246</td>
+		<td class="nowrap">2013-045-17:53:00</td>
+		<td class="nowrap">2013-045-21:10:01</td>
+		<td>11558</td>
+		<td class="nowrap">42.792</td>
+		<td class="nowrap">-64.457</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 246</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>14</td>
+		<td class="nowrap">050005-22-1</td>
+		<td>247</td>
+		<td class="nowrap">2013-052-13:52:01</td>
+		<td class="nowrap">2013-052-17:09:01</td>
+		<td>11538</td>
+		<td class="nowrap">180.0741</td>
+		<td class="nowrap">64.50284</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 247</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>15</td>
+		<td class="nowrap">050005-23-1</td>
+		<td>248</td>
+		<td class="nowrap">2013-059-11:26:01</td>
+		<td class="nowrap">2013-059-14:43:01</td>
+		<td>11545</td>
+		<td class="nowrap">132.558</td>
+		<td class="nowrap">64.4666</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 248</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>16</td>
+		<td class="nowrap">050005-25-1</td>
+		<td>250</td>
+		<td class="nowrap">2013-073-06:27:01</td>
+		<td class="nowrap">2013-073-09:44:01</td>
+		<td>11561</td>
+		<td class="nowrap">37.9095</td>
+		<td class="nowrap">64.36881</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 250</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>17</td>
+		<td class="nowrap">050005-26-1</td>
+		<td>251</td>
+		<td class="nowrap">2013-080-00:48:01</td>
+		<td class="nowrap">2013-080-04:05:01</td>
+		<td>11556</td>
+		<td class="nowrap">353.407</td>
+		<td class="nowrap">64.355</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 251</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>18</td>
+		<td class="nowrap">050005-27-1</td>
+		<td>252</td>
+		<td class="nowrap">2013-087-01:31:01</td>
+		<td class="nowrap">2013-087-04:51:01</td>
+		<td>10685</td>
+		<td class="nowrap">306.18</td>
+		<td class="nowrap">64.38</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 252</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>19</td>
+		<td class="nowrap">050005-28-1</td>
+		<td>253</td>
+		<td class="nowrap">2013-094-16:30:01</td>
+		<td class="nowrap">2013-094-19:47:01</td>
+		<td>11563</td>
+		<td class="nowrap">72.207</td>
+		<td class="nowrap">-64.43</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 253</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>20</td>
+		<td class="nowrap">050005-29-1</td>
+		<td>254</td>
+		<td class="nowrap">2013-101-12:28:01</td>
+		<td class="nowrap">2013-101-15:45:01</td>
+		<td>11555</td>
+		<td class="nowrap">208.7768</td>
+		<td class="nowrap">64.48087</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 254</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>21</td>
+		<td class="nowrap">050005-3-1</td>
+		<td>229</td>
+		<td class="nowrap">2012-292-06:54:01</td>
+		<td class="nowrap">2012-292-10:10:01</td>
+		<td>11503</td>
+		<td class="nowrap">312.3871</td>
+		<td class="nowrap">64.371</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 229</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>22</td>
+		<td class="nowrap">050005-31-1</td>
+		<td>255</td>
+		<td class="nowrap">2013-108-08:22:01</td>
+		<td class="nowrap">2013-108-11:39:01</td>
+		<td>11564</td>
+		<td class="nowrap">338.952</td>
+		<td class="nowrap">-64.476</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 255</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>23</td>
+		<td class="nowrap">050005-32-1</td>
+		<td>256</td>
+		<td class="nowrap">2013-115-04:18:01</td>
+		<td class="nowrap">2013-115-07:35:01</td>
+		<td>11561</td>
+		<td class="nowrap">113.8432</td>
+		<td class="nowrap">64.43472</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 256</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>24</td>
+		<td class="nowrap">050005-33-1</td>
+		<td>257</td>
+		<td class="nowrap">2013-122-01:48:00</td>
+		<td class="nowrap">2013-122-05:05:01</td>
+		<td>11544</td>
+		<td class="nowrap">70.05</td>
+		<td class="nowrap">64.4</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 257</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>25</td>
+		<td class="nowrap">050005-34-1</td>
+		<td>258</td>
+		<td class="nowrap">2013-129-00:58:01</td>
+		<td class="nowrap">2013-129-04:15:01</td>
+		<td>11535</td>
+		<td class="nowrap">199.19388</td>
+		<td class="nowrap">-64.3397</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 258</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>26</td>
+		<td class="nowrap">050005-36-1</td>
+		<td>261</td>
+		<td class="nowrap">2013-150-13:19:01</td>
+		<td class="nowrap">2013-150-16:36:01</td>
+		<td>11570</td>
+		<td class="nowrap">237.8</td>
+		<td class="nowrap">64.44</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 261</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>27</td>
+		<td class="nowrap">050005-37-1</td>
+		<td>262</td>
+		<td class="nowrap">2013-157-09:11:01</td>
+		<td class="nowrap">2013-157-11:56:15</td>
+		<td>9653</td>
+		<td class="nowrap">9.85</td>
+		<td class="nowrap">-64.5</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 262</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>28</td>
+		<td class="nowrap">050005-38-1</td>
+		<td>260</td>
+		<td class="nowrap">2013-143-14:16:01</td>
+		<td class="nowrap">2013-143-17:33:01</td>
+		<td>11567</td>
+		<td class="nowrap">98.8</td>
+		<td class="nowrap">-64.4</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 260</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>29</td>
+		<td class="nowrap">050005-39-1</td>
+		<td>263</td>
+		<td class="nowrap">2013-164-05:07:01</td>
+		<td class="nowrap">2013-164-08:24:01</td>
+		<td>11543</td>
+		<td class="nowrap">142.4249</td>
+		<td class="nowrap">64.46602</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 263</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>30</td>
+		<td class="nowrap">050005-4-1</td>
+		<td>230</td>
+		<td class="nowrap">2012-299-04:38:01</td>
+		<td class="nowrap">2012-299-07:55:01</td>
+		<td>11566</td>
+		<td class="nowrap">264.754</td>
+		<td class="nowrap">64.40801</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 230</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="nowrap">050005-40-1</td>
+		<td>264</td>
+		<td class="nowrap">2013-171-02:40:01</td>
+		<td class="nowrap">2013-171-05:58:01</td>
+		<td>11570</td>
+		<td class="nowrap">99.46</td>
+		<td class="nowrap">64.43</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 264</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>32</td>
+		<td class="nowrap">050005-42-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-181-18:55:01</td>
+		<td class="nowrap">2013-181-21:18:01</td>
+		<td>8311</td>
+		<td class="nowrap">205.25</td>
+		<td class="nowrap">-64.36</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - NEW South week 265</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>33</td>
+		<td class="nowrap">050005-43-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-185-19:11:01</td>
+		<td class="nowrap">2013-185-22:28:01</td>
+		<td>11558</td>
+		<td class="nowrap">0.4043</td>
+		<td class="nowrap">64.35493</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 266</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>34</td>
+		<td class="nowrap">050005-44-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-192-13:29:01</td>
+		<td class="nowrap">2013-192-16:48:01</td>
+		<td>11680</td>
+		<td class="nowrap">313.1429</td>
+		<td class="nowrap">64.34827</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 267</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>35</td>
+		<td class="nowrap">050005-46-1</td>
+		<td>269</td>
+		<td class="nowrap">2013-206-06:50:01</td>
+		<td class="nowrap">2013-206-10:07:01</td>
+		<td>11560</td>
+		<td class="nowrap">218.3935</td>
+		<td class="nowrap">64.44761</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 269</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>36</td>
+		<td class="nowrap">050005-47-1</td>
+		<td>270</td>
+		<td class="nowrap">2013-213-02:42:01</td>
+		<td class="nowrap">2013-213-05:59:01</td>
+		<td>11539</td>
+		<td class="nowrap">356.105</td>
+		<td class="nowrap">-64.477</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 270</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>37</td>
+		<td class="nowrap">050005-48-1</td>
+		<td>268</td>
+		<td class="nowrap">2013-199-09:22:01</td>
+		<td class="nowrap">2013-199-12:39:01</td>
+		<td>11565</td>
+		<td class="nowrap">83.237</td>
+		<td class="nowrap">-64.41</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 268</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>38</td>
+		<td class="nowrap">050005-49-1</td>
+		<td>271</td>
+		<td class="nowrap">2013-220-01:50:00</td>
+		<td class="nowrap">2013-220-05:07:00</td>
+		<td>11460</td>
+		<td class="nowrap">123.42</td>
+		<td class="nowrap">64.466</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 271</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>39</td>
+		<td class="nowrap">050005-5-1</td>
+		<td>231</td>
+		<td class="nowrap">2012-306-02:11:01</td>
+		<td class="nowrap">2012-306-05:28:01</td>
+		<td>11564</td>
+		<td class="nowrap">218</td>
+		<td class="nowrap">64.46</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 231</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>40</td>
+		<td class="nowrap">050005-50-1</td>
+		<td>272</td>
+		<td class="nowrap">2013-227-18:25:00</td>
+		<td class="nowrap">2013-227-21:42:00</td>
+		<td>11460</td>
+		<td class="nowrap">70.932</td>
+		<td class="nowrap">64.4</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 272</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>41</td>
+		<td class="nowrap">050005-51-1</td>
+		<td>273</td>
+		<td class="nowrap">2013-234-15:54:00</td>
+		<td class="nowrap">2013-234-19:13:00</td>
+		<td>11579</td>
+		<td class="nowrap">28.74262</td>
+		<td class="nowrap">64.35878</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 273</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>42</td>
+		<td class="nowrap">050005-6-1</td>
+		<td>232</td>
+		<td class="nowrap">2012-313-18:48:01</td>
+		<td class="nowrap">2012-313-22:05:01</td>
+		<td>11564</td>
+		<td class="nowrap">163.961</td>
+		<td class="nowrap">64.476</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 232</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>43</td>
+		<td class="nowrap">050005-7-1</td>
+		<td>233</td>
+		<td class="nowrap">2012-320-16:21:01</td>
+		<td class="nowrap">2012-320-19:38:01</td>
+		<td>11552</td>
+		<td class="nowrap">122.5328</td>
+		<td class="nowrap">64.44286</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 233</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>44</td>
+		<td class="nowrap">050005-8-1</td>
+		<td>234</td>
+		<td class="nowrap">2012-327-13:55:01</td>
+		<td class="nowrap">2012-327-17:12:01</td>
+		<td>11523</td>
+		<td class="nowrap">76.26</td>
+		<td class="nowrap">64.406</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 234</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>45</td>
+		<td class="nowrap">050005-9-1</td>
+		<td>235</td>
+		<td class="nowrap">2012-334-13:09:01</td>
+		<td class="nowrap">2012-334-16:29:01</td>
+		<td>11205</td>
+		<td class="nowrap">209</td>
+		<td class="nowrap">-64.37</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - South week 235</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>46</td>
+		<td class="nowrap">050403-1-1</td>
+		<td>220</td>
+		<td class="nowrap">2012-230-21:03:01</td>
+		<td class="nowrap">2012-231-01:40:01</td>
+		<td>14013</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>47</td>
+		<td class="nowrap">050403-10-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-141-21:53:01</td>
+		<td class="nowrap">2013-142-02:30:01</td>
+		<td>14018</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>48</td>
+		<td class="nowrap">050403-13-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-182-00:39:01</td>
+		<td class="nowrap">2013-182-05:16:01</td>
+		<td>14170</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>49</td>
+		<td class="nowrap">050403-14-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-183-00:33:01</td>
+		<td class="nowrap">2013-183-05:10:01</td>
+		<td>13985</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>50</td>
+		<td class="nowrap">050403-15-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-188-22:07:01</td>
+		<td class="nowrap">2013-189-02:44:01</td>
+		<td>13776</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>51</td>
+		<td class="nowrap">050403-16-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-191-20:08:01</td>
+		<td class="nowrap">2013-192-00:00:00</td>
+		<td>11345</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>52</td>
+		<td class="nowrap">050403-17-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-193-19:53:01</td>
+		<td class="nowrap">2013-194-00:30:01</td>
+		<td>13785</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>53</td>
+		<td class="nowrap">050403-18-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-196-17:54:01</td>
+		<td class="nowrap">2013-196-22:31:01</td>
+		<td>13798</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>54</td>
+		<td class="nowrap">050403-19-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-192-00:00:00</td>
+		<td class="nowrap">2013-192-00:45:01</td>
+		<td>2701</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>55</td>
+		<td class="nowrap">050403-2-1</td>
+		<td>220</td>
+		<td class="nowrap">2012-235-18:51:01</td>
+		<td class="nowrap">2012-235-23:28:01</td>
+		<td>13855</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>56</td>
+		<td class="nowrap">050403-20-1</td>
+		<td>272</td>
+		<td class="nowrap">2013-229-00:42:00</td>
+		<td class="nowrap">2013-229-05:29:00</td>
+		<td>14220</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>57</td>
+		<td class="nowrap">050403-21-1</td>
+		<td>272</td>
+		<td class="nowrap">2013-233-22:26:00</td>
+		<td class="nowrap">2013-234-00:00:00</td>
+		<td>5520</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>58</td>
+		<td class="nowrap">050403-22-1</td>
+		<td>273</td>
+		<td class="nowrap">2013-234-00:00:00</td>
+		<td class="nowrap">2013-234-03:09:00</td>
+		<td>8400</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start (cont)</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>59</td>
+		<td class="nowrap">050403-23-1</td>
+		<td>273</td>
+		<td class="nowrap">2013-238-20:10:00</td>
+		<td class="nowrap">2013-239-00:57:00</td>
+		<td>14160</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>60</td>
+		<td class="nowrap">050403-24-1</td>
+		<td>274</td>
+		<td class="nowrap">2013-242-18:03:00</td>
+		<td class="nowrap">2013-242-22:50:00</td>
+		<td>14160</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>61</td>
+		<td class="nowrap">050403-3-1</td>
+		<td>221</td>
+		<td class="nowrap">2012-240-16:36:01</td>
+		<td class="nowrap">2012-240-21:13:01</td>
+		<td>13462</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>62</td>
+		<td class="nowrap">050403-5-1</td>
+		<td>226</td>
+		<td class="nowrap">2012-275-22:02:01</td>
+		<td class="nowrap">2012-276-02:39:01</td>
+		<td>13884</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>63</td>
+		<td class="nowrap">050403-6-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-279-19:58:01</td>
+		<td class="nowrap">2012-280-00:35:01</td>
+		<td>13946</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>64</td>
+		<td class="nowrap">050403-7-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-283-17:52:01</td>
+		<td class="nowrap">2012-283-22:29:01</td>
+		<td>13949</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, -50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>-50 to -180 deg, then return to -50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>65</td>
+		<td class="nowrap">050403-9-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-140-22:01:01</td>
+		<td class="nowrap">2013-141-02:38:01</td>
+		<td>14219</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>NADIR - 2-orbit, +50 start</td>
+		<td>JON ERIC GROVE </td>
+		<td>+50 to +180 deg, then return to +50 rock angle over 3 orbits, 2 at nadir</td>
+	</tr>
+	<tr>
+		<td>66</td>
+		<td class="nowrap">050404-1-1</td>
+		<td>220</td>
+		<td class="nowrap">2012-229-00:10:00</td>
+		<td class="nowrap">2012-236-00:00:00</td>
+		<td>136632</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 220</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>67</td>
+		<td class="nowrap">050404-10-1</td>
+		<td>225</td>
+		<td class="nowrap">2012-264-00:53:01</td>
+		<td class="nowrap">2012-268-00:18:34</td>
+		<td>293260</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 225</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>68</td>
+		<td class="nowrap">050404-100-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-192-00:55:01</td>
+		<td class="nowrap">2013-199-00:00:00</td>
+		<td>270203</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 267</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>69</td>
+		<td class="nowrap">050404-101-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-194-00:40:01</td>
+		<td class="nowrap">2013-196-17:44:00</td>
+		<td>200029</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 267 - phase reverse</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>70</td>
+		<td class="nowrap">050404-102-1</td>
+		<td>268</td>
+		<td class="nowrap">2013-199-00:00:00</td>
+		<td class="nowrap">2013-199-09:22:01</td>
+		<td>26987</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 268 - part 1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>71</td>
+		<td class="nowrap">050404-103-1</td>
+		<td>268</td>
+		<td class="nowrap">2013-199-12:39:01</td>
+		<td class="nowrap">2013-206-00:00:00</td>
+		<td>465910</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 268 - part 2</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>72</td>
+		<td class="nowrap">050404-104-1</td>
+		<td>269</td>
+		<td class="nowrap">2013-206-00:00:00</td>
+		<td class="nowrap">2013-206-06:50:01</td>
+		<td>21295</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 269 - part 1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>73</td>
+		<td class="nowrap">050404-105-1</td>
+		<td>269</td>
+		<td class="nowrap">2013-206-10:07:01</td>
+		<td class="nowrap">2013-213-00:00:00</td>
+		<td>448349</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 269 - part 2</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>74</td>
+		<td class="nowrap">050404-106-1</td>
+		<td>270</td>
+		<td class="nowrap">2013-213-00:00:00</td>
+		<td class="nowrap">2013-213-02:42:01</td>
+		<td>9357</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 270 - part 1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>75</td>
+		<td class="nowrap">050404-107-1</td>
+		<td>270</td>
+		<td class="nowrap">2013-213-05:59:01</td>
+		<td class="nowrap">2013-220-00:00:00</td>
+		<td>489770</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 270 - part 2</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>76</td>
+		<td class="nowrap">050404-108-1</td>
+		<td>271</td>
+		<td class="nowrap">2013-220-00:00:00</td>
+		<td class="nowrap">2013-220-01:50:00</td>
+		<td>6480</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 271 - part 1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>77</td>
+		<td class="nowrap">050404-109-1</td>
+		<td>271</td>
+		<td class="nowrap">2013-220-05:07:00</td>
+		<td class="nowrap">2013-227-00:00:00</td>
+		<td>494100</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 271 - part 2</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>78</td>
+		<td class="nowrap">050404-11-1</td>
+		<td>225</td>
+		<td class="nowrap">2012-264-00:00:00</td>
+		<td class="nowrap">2012-264-00:43:01</td>
+		<td>2581</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 225 (start)</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>79</td>
+		<td class="nowrap">050404-110-1</td>
+		<td>272</td>
+		<td class="nowrap">2013-227-00:00:00</td>
+		<td class="nowrap">2013-227-18:25:00</td>
+		<td>52860</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 272 - part 1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>80</td>
+		<td class="nowrap">050404-111-1</td>
+		<td>272</td>
+		<td class="nowrap">2013-227-21:42:00</td>
+		<td class="nowrap">2013-229-00:42:00</td>
+		<td>83940</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 272 - part 2</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>81</td>
+		<td class="nowrap">050404-112-1</td>
+		<td>272</td>
+		<td class="nowrap">2013-229-05:29:00</td>
+		<td class="nowrap">2013-233-22:26:00</td>
+		<td>343920</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 272 - part 2 phase reversed</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>82</td>
+		<td class="nowrap">050404-113-1</td>
+		<td>273</td>
+		<td class="nowrap">2013-234-03:09:00</td>
+		<td class="nowrap">2013-238-20:10:00</td>
+		<td>331920</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 273 - part 1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>83</td>
+		<td class="nowrap">050404-114-1</td>
+		<td>273</td>
+		<td class="nowrap">2013-239-00:57:00</td>
+		<td class="nowrap">2013-241-00:00:00</td>
+		<td>141960</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 273 - part 2 (phase rev)</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>84</td>
+		<td class="nowrap">050404-12-1</td>
+		<td>226</td>
+		<td class="nowrap">2012-276-02:49:01</td>
+		<td class="nowrap">2012-278-00:00:00</td>
+		<td>138216</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 226</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>85</td>
+		<td class="nowrap">050404-13-1</td>
+		<td>226</td>
+		<td class="nowrap">2012-275-00:17:24</td>
+		<td class="nowrap">2012-275-21:52:01</td>
+		<td>66325</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 226 - phase reversed</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>86</td>
+		<td class="nowrap">050404-14-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-278-00:00:00</td>
+		<td class="nowrap">2012-278-00:46:01</td>
+		<td>2761</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 227 - start</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>87</td>
+		<td class="nowrap">050404-15-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-278-00:56:01</td>
+		<td class="nowrap">2012-285-00:00:00</td>
+		<td>197280</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 227 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>88</td>
+		<td class="nowrap">050404-16-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-280-00:45:01</td>
+		<td class="nowrap">2012-283-17:42:01</td>
+		<td>259370</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 227 - phase reversed</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>89</td>
+		<td class="nowrap">050404-17-1</td>
+		<td>228</td>
+		<td class="nowrap">2012-285-00:00:00</td>
+		<td class="nowrap">2012-285-09:31:01</td>
+		<td>26488</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 228 part 1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>90</td>
+		<td class="nowrap">050404-18-1</td>
+		<td>228</td>
+		<td class="nowrap">2012-285-12:42:01</td>
+		<td class="nowrap">2012-292-00:00:00</td>
+		<td>474553</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 228 part 2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>91</td>
+		<td class="nowrap">050404-19-1</td>
+		<td>229</td>
+		<td class="nowrap">2012-292-00:00:00</td>
+		<td class="nowrap">2012-292-06:54:01</td>
+		<td>21187</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 229 part 1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>92</td>
+		<td class="nowrap">050404-2-1</td>
+		<td>220</td>
+		<td class="nowrap">2012-231-01:50:01</td>
+		<td class="nowrap">2012-235-18:41:01</td>
+		<td>346143</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 220 phase shift</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>93</td>
+		<td class="nowrap">050404-20-1</td>
+		<td>229</td>
+		<td class="nowrap">2012-292-10:10:01</td>
+		<td class="nowrap">2012-299-00:00:00</td>
+		<td>430233</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 229 part 2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>94</td>
+		<td class="nowrap">050404-21-1</td>
+		<td>230</td>
+		<td class="nowrap">2012-299-00:00:00</td>
+		<td class="nowrap">2012-299-04:38:01</td>
+		<td>15629</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 230 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>95</td>
+		<td class="nowrap">050404-22-1</td>
+		<td>230</td>
+		<td class="nowrap">2012-299-07:55:01</td>
+		<td class="nowrap">2012-306-00:00:00</td>
+		<td>444273</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 230 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>96</td>
+		<td class="nowrap">050404-23-1</td>
+		<td>231</td>
+		<td class="nowrap">2012-306-00:00:00</td>
+		<td class="nowrap">2012-306-02:11:01</td>
+		<td>7861</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 231 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>97</td>
+		<td class="nowrap">050404-24-1</td>
+		<td>231</td>
+		<td class="nowrap">2012-306-05:28:01</td>
+		<td class="nowrap">2012-313-00:00:00</td>
+		<td>406015</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 231 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>98</td>
+		<td class="nowrap">050404-25-1</td>
+		<td>232</td>
+		<td class="nowrap">2012-313-00:00:00</td>
+		<td class="nowrap">2012-313-18:48:01</td>
+		<td>54958</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 232 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>99</td>
+		<td class="nowrap">050404-26-1</td>
+		<td>232</td>
+		<td class="nowrap">2012-313-22:05:01</td>
+		<td class="nowrap">2012-320-00:00:00</td>
+		<td>432860</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 232 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td class="nowrap">050404-27-1</td>
+		<td>233</td>
+		<td class="nowrap">2012-320-00:00:00</td>
+		<td class="nowrap">2012-320-16:21:01</td>
+		<td>46428</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 233 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>101</td>
+		<td class="nowrap">050404-28-1</td>
+		<td>233</td>
+		<td class="nowrap">2012-320-19:38:01</td>
+		<td class="nowrap">2012-327-00:00:00</td>
+		<td>444919</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 233 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>102</td>
+		<td class="nowrap">050404-29-1</td>
+		<td>234</td>
+		<td class="nowrap">2012-327-00:00:00</td>
+		<td class="nowrap">2012-327-13:55:01</td>
+		<td>40620</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 234 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>103</td>
+		<td class="nowrap">050404-3-1</td>
+		<td>221</td>
+		<td class="nowrap">2012-236-00:00:00</td>
+		<td class="nowrap">2012-236-00:53:01</td>
+		<td>3181</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 220 - holdover</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>104</td>
+		<td class="nowrap">050404-30-1</td>
+		<td>234</td>
+		<td class="nowrap">2012-327-17:12:01</td>
+		<td class="nowrap">2012-334-00:00:00</td>
+		<td>461419</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 234 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>105</td>
+		<td class="nowrap">050404-31-1</td>
+		<td>235</td>
+		<td class="nowrap">2012-334-00:10:01</td>
+		<td class="nowrap">2012-334-13:09:01</td>
+		<td>40602</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 235 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>106</td>
+		<td class="nowrap">050404-32-1</td>
+		<td>235</td>
+		<td class="nowrap">2012-334-16:29:01</td>
+		<td class="nowrap">2012-341-00:00:00</td>
+		<td>460309</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 235 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>107</td>
+		<td class="nowrap">050404-33-1</td>
+		<td>236</td>
+		<td class="nowrap">2012-341-00:00:00</td>
+		<td class="nowrap">2012-341-05:55:01</td>
+		<td>19024</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 236 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>108</td>
+		<td class="nowrap">050404-34-1</td>
+		<td>236</td>
+		<td class="nowrap">2012-341-09:12:01</td>
+		<td class="nowrap">2012-347-19:08:52</td>
+		<td>469988</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 236 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>109</td>
+		<td class="nowrap">050404-35-1</td>
+		<td>237</td>
+		<td class="nowrap">2012-348-00:00:00</td>
+		<td class="nowrap">2012-348-01:04:01</td>
+		<td>3308</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 237 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>110</td>
+		<td class="nowrap">050404-36-1</td>
+		<td>237</td>
+		<td class="nowrap">2012-348-04:24:01</td>
+		<td class="nowrap">2012-355-00:00:00</td>
+		<td>429896</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 237 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>111</td>
+		<td class="nowrap">050404-37-1</td>
+		<td>238</td>
+		<td class="nowrap">2012-355-00:00:00</td>
+		<td class="nowrap">2012-355-23:16:01</td>
+		<td>71251</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 238 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>112</td>
+		<td class="nowrap">050404-38-1</td>
+		<td>238</td>
+		<td class="nowrap">2012-356-02:33:01</td>
+		<td class="nowrap">2012-362-00:00:00</td>
+		<td>422688</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 238 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>113</td>
+		<td class="nowrap">050404-39-1</td>
+		<td>239</td>
+		<td class="nowrap">2012-362-00:00:00</td>
+		<td class="nowrap">2012-362-17:35:01</td>
+		<td>50558</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 239 part1 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>114</td>
+		<td class="nowrap">050404-4-1</td>
+		<td>221</td>
+		<td class="nowrap">2012-236-01:03:01</td>
+		<td class="nowrap">2012-240-16:26:01</td>
+		<td>342677</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 221</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>115</td>
+		<td class="nowrap">050404-40-1</td>
+		<td>239</td>
+		<td class="nowrap">2012-362-20:52:01</td>
+		<td class="nowrap">2013-003-00:00:00</td>
+		<td>453208</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 239 part2 - nominal</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>116</td>
+		<td class="nowrap">050404-41-1</td>
+		<td>240</td>
+		<td class="nowrap">2013-003-00:00:00</td>
+		<td class="nowrap">2013-003-13:33:01</td>
+		<td>37552</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 240 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>117</td>
+		<td class="nowrap">050404-42-1</td>
+		<td>240</td>
+		<td class="nowrap">2013-003-16:50:01</td>
+		<td class="nowrap">2013-010-00:00:00</td>
+		<td>465382</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 240 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>118</td>
+		<td class="nowrap">050404-43-1</td>
+		<td>241</td>
+		<td class="nowrap">2013-010-00:00:00</td>
+		<td class="nowrap">2013-010-11:10:01</td>
+		<td>31295</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 241 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>119</td>
+		<td class="nowrap">050404-44-1</td>
+		<td>241</td>
+		<td class="nowrap">2013-010-14:27:01</td>
+		<td class="nowrap">2013-017-00:00:00</td>
+		<td>469694</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 241 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>120</td>
+		<td class="nowrap">050404-45-1</td>
+		<td>242</td>
+		<td class="nowrap">2013-017-00:00:00</td>
+		<td class="nowrap">2013-017-07:09:01</td>
+		<td>21213</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 242 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>121</td>
+		<td class="nowrap">050404-46-1</td>
+		<td>242</td>
+		<td class="nowrap">2013-017-10:26:01</td>
+		<td class="nowrap">2013-024-00:00:00</td>
+		<td>465494</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 242 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>122</td>
+		<td class="nowrap">050404-47-1</td>
+		<td>243</td>
+		<td class="nowrap">2013-024-00:00:00</td>
+		<td class="nowrap">2013-024-06:13:01</td>
+		<td>20651</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 243 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>123</td>
+		<td class="nowrap">050404-48-1</td>
+		<td>243</td>
+		<td class="nowrap">2013-024-09:30:01</td>
+		<td class="nowrap">2013-031-00:00:00</td>
+		<td>482973</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 243 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>124</td>
+		<td class="nowrap">050404-49-1</td>
+		<td>244</td>
+		<td class="nowrap">2013-031-00:00:00</td>
+		<td class="nowrap">2013-031-00:35:01</td>
+		<td>2101</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 244 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>125</td>
+		<td class="nowrap">050404-5-1</td>
+		<td>221</td>
+		<td class="nowrap">2012-240-21:23:01</td>
+		<td class="nowrap">2012-243-00:00:00</td>
+		<td>153646</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 221 - phase shift</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>126</td>
+		<td class="nowrap">050404-50-1</td>
+		<td>244</td>
+		<td class="nowrap">2013-031-03:52:01</td>
+		<td class="nowrap">2013-038-00:00:00</td>
+		<td>471027</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 244 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>127</td>
+		<td class="nowrap">050404-51-1</td>
+		<td>245</td>
+		<td class="nowrap">2013-038-00:00:00</td>
+		<td class="nowrap">2013-038-01:18:01</td>
+		<td>4681</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 245 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>128</td>
+		<td class="nowrap">050404-52-1</td>
+		<td>245</td>
+		<td class="nowrap">2013-038-04:35:01</td>
+		<td class="nowrap">2013-045-00:00:00</td>
+		<td>500872</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 245 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>129</td>
+		<td class="nowrap">050404-53-1</td>
+		<td>246</td>
+		<td class="nowrap">2013-045-00:00:00</td>
+		<td class="nowrap">2013-045-17:53:00</td>
+		<td>51670</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 246 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>130</td>
+		<td class="nowrap">050404-54-1</td>
+		<td>246</td>
+		<td class="nowrap">2013-045-21:10:01</td>
+		<td class="nowrap">2013-052-00:00:00</td>
+		<td>450706</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 246 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>131</td>
+		<td class="nowrap">050404-55-1</td>
+		<td>247</td>
+		<td class="nowrap">2013-052-00:00:00</td>
+		<td class="nowrap">2013-052-13:52:01</td>
+		<td>39804</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 247 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>132</td>
+		<td class="nowrap">050404-56-1</td>
+		<td>247</td>
+		<td class="nowrap">2013-052-17:09:01</td>
+		<td class="nowrap">2013-059-00:00:00</td>
+		<td>453199</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 247 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>133</td>
+		<td class="nowrap">050404-57-1</td>
+		<td>248</td>
+		<td class="nowrap">2013-059-00:00:00</td>
+		<td class="nowrap">2013-059-11:26:01</td>
+		<td>33792</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 248 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>134</td>
+		<td class="nowrap">050404-58-1</td>
+		<td>248</td>
+		<td class="nowrap">2013-059-14:43:01</td>
+		<td class="nowrap">2013-063-15:34:31</td>
+		<td>297785</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 248 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>135</td>
+		<td class="nowrap">050404-6-1</td>
+		<td>222</td>
+		<td class="nowrap">2012-243-00:10:01</td>
+		<td class="nowrap">2012-250-00:00:00</td>
+		<td>513233</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 222</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>136</td>
+		<td class="nowrap">050404-60-1</td>
+		<td>249</td>
+		<td class="nowrap">2013-067-18:34:21</td>
+		<td class="nowrap">2013-073-00:00:00</td>
+		<td>371611</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 249 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>137</td>
+		<td class="nowrap">050404-61-1</td>
+		<td>250</td>
+		<td class="nowrap">2013-073-00:00:00</td>
+		<td class="nowrap">2013-073-06:27:01</td>
+		<td>16269</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 250 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>138</td>
+		<td class="nowrap">050404-62-1</td>
+		<td>250</td>
+		<td class="nowrap">2013-073-09:44:01</td>
+		<td class="nowrap">2013-080-00:00:00</td>
+		<td>464809</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 250 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>139</td>
+		<td class="nowrap">050404-63-1</td>
+		<td>251</td>
+		<td class="nowrap">2013-080-00:00:00</td>
+		<td class="nowrap">2013-080-00:48:01</td>
+		<td>2881</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 251 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>140</td>
+		<td class="nowrap">050404-64-1</td>
+		<td>251</td>
+		<td class="nowrap">2013-080-04:05:01</td>
+		<td class="nowrap">2013-087-00:00:00</td>
+		<td>440027</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 251 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>141</td>
+		<td class="nowrap">050404-65-1</td>
+		<td>252</td>
+		<td class="nowrap">2013-087-00:00:00</td>
+		<td class="nowrap">2013-087-01:31:01</td>
+		<td>5461</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 252 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>142</td>
+		<td class="nowrap">050404-66-1</td>
+		<td>252</td>
+		<td class="nowrap">2013-087-04:51:01</td>
+		<td class="nowrap">2013-094-00:00:00</td>
+		<td>438003</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 252 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>143</td>
+		<td class="nowrap">050404-67-1</td>
+		<td>253</td>
+		<td class="nowrap">2013-094-00:00:00</td>
+		<td class="nowrap">2013-094-16:30:01</td>
+		<td>47234</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 253 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>144</td>
+		<td class="nowrap">050404-68-1</td>
+		<td>253</td>
+		<td class="nowrap">2013-094-19:47:01</td>
+		<td class="nowrap">2013-101-00:00:00</td>
+		<td>455005</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 253 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>145</td>
+		<td class="nowrap">050404-69-1</td>
+		<td>254</td>
+		<td class="nowrap">2013-101-00:00:00</td>
+		<td class="nowrap">2013-101-12:28:01</td>
+		<td>35577</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 254 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>146</td>
+		<td class="nowrap">050404-7-1</td>
+		<td>223</td>
+		<td class="nowrap">2012-250-00:40:01</td>
+		<td class="nowrap">2012-257-00:00:00</td>
+		<td>512751</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 223</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>147</td>
+		<td class="nowrap">050404-70-1</td>
+		<td>254</td>
+		<td class="nowrap">2013-101-15:45:01</td>
+		<td class="nowrap">2013-108-00:00:00</td>
+		<td>377585</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 254 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>148</td>
+		<td class="nowrap">050404-71-1</td>
+		<td>255</td>
+		<td class="nowrap">2013-108-00:00:00</td>
+		<td class="nowrap">2013-108-08:22:01</td>
+		<td>24361</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 255 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>149</td>
+		<td class="nowrap">050404-72-1</td>
+		<td>255</td>
+		<td class="nowrap">2013-108-11:39:01</td>
+		<td class="nowrap">2013-115-00:00:00</td>
+		<td>476826</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 255 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>150</td>
+		<td class="nowrap">050404-73-1</td>
+		<td>256</td>
+		<td class="nowrap">2013-115-00:00:00</td>
+		<td class="nowrap">2013-115-04:18:01</td>
+		<td>13477</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 256 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>151</td>
+		<td class="nowrap">050404-74-1</td>
+		<td>256</td>
+		<td class="nowrap">2013-115-07:35:01</td>
+		<td class="nowrap">2013-122-00:00:00</td>
+		<td>443196</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 256 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>152</td>
+		<td class="nowrap">050404-75-1</td>
+		<td>257</td>
+		<td class="nowrap">2013-122-00:00:00</td>
+		<td class="nowrap">2013-122-01:48:00</td>
+		<td>6101</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 257 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>153</td>
+		<td class="nowrap">050404-76-1</td>
+		<td>257</td>
+		<td class="nowrap">2013-122-05:05:01</td>
+		<td class="nowrap">2013-129-00:00:00</td>
+		<td>444674</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 257 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>154</td>
+		<td class="nowrap">050404-77-1</td>
+		<td>254</td>
+		<td class="nowrap">2013-104-14:10:01</td>
+		<td class="nowrap">2013-105-18:00:01</td>
+		<td>87584</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 254 - north only rock</td>
+		<td>Fermi</td>
+		<td>Negative rock angle only for TOO observations Mrk 421</td>
+	</tr>
+	<tr>
+		<td>155</td>
+		<td class="nowrap">050404-78-1</td>
+		<td>258</td>
+		<td class="nowrap">2013-129-00:00:00</td>
+		<td class="nowrap">2013-129-00:58:01</td>
+		<td>3481</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 258 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>156</td>
+		<td class="nowrap">050404-79-1</td>
+		<td>258</td>
+		<td class="nowrap">2013-129-04:15:01</td>
+		<td class="nowrap">2013-134-00:26:01</td>
+		<td>355603</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 258 part2 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>157</td>
+		<td class="nowrap">050404-8-1</td>
+		<td>223</td>
+		<td class="nowrap">2012-250-00:00:00</td>
+		<td class="nowrap">2012-250-00:30:01</td>
+		<td>1801</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 223 - start</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>158</td>
+		<td class="nowrap">050404-80-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-136-00:10:01</td>
+		<td class="nowrap">2013-136-22:35:01</td>
+		<td>67997</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 259 part1 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>159</td>
+		<td class="nowrap">050404-81-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-140-10:46:01</td>
+		<td class="nowrap">2013-140-21:51:01</td>
+		<td>37320</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 259 part2 - phase inv.</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>160</td>
+		<td class="nowrap">050404-82-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-141-02:48:01</td>
+		<td class="nowrap">2013-141-21:43:01</td>
+		<td>57850</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 259 part3 - nominal</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>161</td>
+		<td class="nowrap">050404-83-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-142-02:40:01</td>
+		<td class="nowrap">2013-143-00:00:00</td>
+		<td>65642</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 259 part4 - phase inv.</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>162</td>
+		<td class="nowrap">050404-84-1</td>
+		<td>260</td>
+		<td class="nowrap">2013-143-00:00:00</td>
+		<td class="nowrap">2013-143-14:16:01</td>
+		<td>40227</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 260 part1</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>163</td>
+		<td class="nowrap">050404-85-1</td>
+		<td>260</td>
+		<td class="nowrap">2013-143-17:33:01</td>
+		<td class="nowrap">2013-150-00:00:00</td>
+		<td>445529</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 260 part2</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>164</td>
+		<td class="nowrap">050404-86-1</td>
+		<td>261</td>
+		<td class="nowrap">2013-150-00:00:00</td>
+		<td class="nowrap">2013-150-13:19:01</td>
+		<td>39700</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 261 part1</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>165</td>
+		<td class="nowrap">050404-87-1</td>
+		<td>261</td>
+		<td class="nowrap">2013-150-16:36:01</td>
+		<td class="nowrap">2013-157-00:00:00</td>
+		<td>461952</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 261 part2</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>166</td>
+		<td class="nowrap">050404-88-1</td>
+		<td>262</td>
+		<td class="nowrap">2013-157-00:00:00</td>
+		<td class="nowrap">2013-157-09:11:01</td>
+		<td>28604</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 262 part1</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>167</td>
+		<td class="nowrap">050404-89-1</td>
+		<td>262</td>
+		<td class="nowrap">2013-157-14:26:15</td>
+		<td class="nowrap">2013-164-00:00:00</td>
+		<td>466032</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 262 part2</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>168</td>
+		<td class="nowrap">050404-9-1</td>
+		<td>224</td>
+		<td class="nowrap">2012-257-00:10:00</td>
+		<td class="nowrap">2012-264-00:00:00</td>
+		<td>470851</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 224</td>
+		<td>GLAST</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>169</td>
+		<td class="nowrap">050404-90-1</td>
+		<td>263</td>
+		<td class="nowrap">2013-164-00:00:00</td>
+		<td class="nowrap">2013-164-05:07:01</td>
+		<td>17368</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 263 part1</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>170</td>
+		<td class="nowrap">050404-91-1</td>
+		<td>263</td>
+		<td class="nowrap">2013-164-08:24:01</td>
+		<td class="nowrap">2013-171-00:00:00</td>
+		<td>478698</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 263 part2</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>171</td>
+		<td class="nowrap">050404-92-1</td>
+		<td>264</td>
+		<td class="nowrap">2013-171-00:00:00</td>
+		<td class="nowrap">2013-171-02:40:01</td>
+		<td>9601</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 264 part1</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>172</td>
+		<td class="nowrap">050404-93-1</td>
+		<td>264</td>
+		<td class="nowrap">2013-171-05:58:01</td>
+		<td class="nowrap">2013-178-00:00:00</td>
+		<td>495132</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 264 part2</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>173</td>
+		<td class="nowrap">050404-94-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-178-00:00:00</td>
+		<td class="nowrap">2013-181-18:55:01</td>
+		<td>240997</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 265 part1</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>174</td>
+		<td class="nowrap">050404-95-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-181-21:18:01</td>
+		<td class="nowrap">2013-185-00:00:00</td>
+		<td>142884</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 265 part2</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>175</td>
+		<td class="nowrap">050404-96-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-182-05:26:01</td>
+		<td class="nowrap">2013-183-00:23:01</td>
+		<td>58077</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 265 phase flip</td>
+		<td>Fermi</td>
+		<td>50deg 6pm rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>176</td>
+		<td class="nowrap">050404-97-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-185-00:00:00</td>
+		<td class="nowrap">2013-185-19:11:01</td>
+		<td>56365</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 266 part1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>177</td>
+		<td class="nowrap">050404-98-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-185-22:28:01</td>
+		<td class="nowrap">2013-188-21:57:01</td>
+		<td>219653</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 266 part2</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>178</td>
+		<td class="nowrap">050404-99-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-189-02:54:00</td>
+		<td class="nowrap">2013-191-19:58:01</td>
+		<td>180813</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 266 phase revere</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>179</td>
+		<td class="nowrap">050600-1-1</td>
+		<td>226</td>
+		<td class="nowrap">2012-271-00:00:00</td>
+		<td class="nowrap">2012-275-00:17:24</td>
+		<td>295451</td>
+		<td class="nowrap">35.2728</td>
+		<td class="nowrap">45.9372</td>
+		<td>Pointed</td>
+		<td>ToO</td>
+		<td>S3 0218+35</td>
+		<td>DR. CHI (TEDDY) C CHEUNG</td>
+		<td>Approver: glastssc: Pointing position offset 10 degrees north from target position. </td>
+	</tr>
+	<tr>
+		<td>180</td>
+		<td class="nowrap">050600-1-1</td>
+		<td>225</td>
+		<td class="nowrap">2012-268-00:18:34</td>
+		<td class="nowrap">2012-271-00:00:00</td>
+		<td>219822</td>
+		<td class="nowrap">35.2728</td>
+		<td class="nowrap">45.9372</td>
+		<td>Pointed</td>
+		<td>ToO</td>
+		<td>S3 0218+35</td>
+		<td>DR. CHI (TEDDY) C CHEUNG</td>
+		<td>Approver: glastssc: Pointing position offset 10 degrees north from target position. </td>
+	</tr>
+	<tr>
+		<td>181</td>
+		<td class="nowrap">050603-1-1</td>
+		<td>249</td>
+		<td class="nowrap">2013-066-00:00:00</td>
+		<td class="nowrap">2013-067-18:34:21</td>
+		<td>132534</td>
+		<td class="nowrap">83.63</td>
+		<td class="nowrap">12.01</td>
+		<td>Pointed</td>
+		<td>ToO</td>
+		<td>CRAB NEBULA</td>
+		<td>DR. ELIZABETH  HAYS</td>
+		<td>Approver: gsscops: dec changed as requested by Project Scientist.</td>
+	</tr>
+	<tr>
+		<td>182</td>
+		<td class="nowrap">050603-1-1</td>
+		<td>248</td>
+		<td class="nowrap">2013-063-15:34:31</td>
+		<td class="nowrap">2013-066-00:00:00</td>
+		<td>169019</td>
+		<td class="nowrap">83.63</td>
+		<td class="nowrap">12.01</td>
+		<td>Pointed</td>
+		<td>ToO</td>
+		<td>CRAB NEBULA</td>
+		<td>DR. ELIZABETH  HAYS</td>
+		<td>Approver: gsscops: dec changed as requested by Project Scientist.</td>
+	</tr>
+	<tr>
+		<td>183</td>
+		<td class="nowrap">050607-1-1</td>
+		<td>258</td>
+		<td class="nowrap">2013-134-00:36:01</td>
+		<td class="nowrap">2013-136-00:00:00</td>
+		<td>136665</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>Solar flare ToO</td>
+		<td>Grove</td>
+		<td>fixed 50deg north rock for solar flare ToO</td>
+	</tr>
+	<tr>
+		<td>184</td>
+		<td class="nowrap">050607-2-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-136-22:45:01</td>
+		<td class="nowrap">2013-140-10:36:01</td>
+		<td>254352</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>Solar flare ToO</td>
+		<td>Grove</td>
+		<td>fixed 50deg north rock for solar flare ToO</td>
+	</tr>
+	<tr>
+		<td>185</td>
+		<td class="nowrap">050800-1-1</td>
+		<td>224</td>
+		<td class="nowrap">2012-263-07:25:19</td>
+		<td class="nowrap">2012-263-09:55:19</td>
+		<td>6176</td>
+		<td class="nowrap">223.8</td>
+		<td class="nowrap">-56.0667</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>186</td>
+		<td class="nowrap">050800-10-1</td>
+		<td>258</td>
+		<td class="nowrap">2013-134-01:26:11</td>
+		<td class="nowrap">2013-134-03:56:11</td>
+		<td>8398</td>
+		<td class="nowrap">63.3</td>
+		<td class="nowrap">17.2667</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>187</td>
+		<td class="nowrap">050800-12-1</td>
+		<td>262</td>
+		<td class="nowrap">2013-157-11:56:15</td>
+		<td class="nowrap">2013-157-14:26:15</td>
+		<td>8329</td>
+		<td class="nowrap">203.2333</td>
+		<td class="nowrap">45.9</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>188</td>
+		<td class="nowrap">050800-13-1</td>
+		<td>263</td>
+		<td class="nowrap">2013-165-23:56:46</td>
+		<td class="nowrap">2013-166-02:26:46</td>
+		<td>8187</td>
+		<td class="nowrap">319.2167</td>
+		<td class="nowrap">-35.9167</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>189</td>
+		<td class="nowrap">050800-14-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-179-12:44:40</td>
+		<td class="nowrap">2013-179-15:14:39</td>
+		<td>5928</td>
+		<td class="nowrap">357.4167</td>
+		<td class="nowrap">-14.9333</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>190</td>
+		<td class="nowrap">050800-15-1</td>
+		<td>269</td>
+		<td class="nowrap">2013-207-12:13:53</td>
+		<td class="nowrap">2013-207-13:51:00</td>
+		<td>5309</td>
+		<td class="nowrap">358.9833</td>
+		<td class="nowrap">74.1667</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>191</td>
+		<td class="nowrap">050800-2-1</td>
+		<td>230</td>
+		<td class="nowrap">2012-303-08:25:07</td>
+		<td class="nowrap">2012-303-10:55:07</td>
+		<td>7384</td>
+		<td class="nowrap">237.5333</td>
+		<td class="nowrap">-42.3833</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>192</td>
+		<td class="nowrap">050800-3-1</td>
+		<td>249</td>
+		<td class="nowrap">2013-069-20:10:18</td>
+		<td class="nowrap">2013-069-22:40:18</td>
+		<td>7132</td>
+		<td class="nowrap">127.3167</td>
+		<td class="nowrap">1.4167</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>193</td>
+		<td class="nowrap">050800-4-1</td>
+		<td>251</td>
+		<td class="nowrap">2013-084-04:52:32</td>
+		<td class="nowrap">2013-084-07:22:32</td>
+		<td>7111</td>
+		<td class="nowrap">127.6833</td>
+		<td class="nowrap">-19.5167</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>194</td>
+		<td class="nowrap">050800-5-1</td>
+		<td>251</td>
+		<td class="nowrap">2013-086-08:24:41</td>
+		<td class="nowrap">2013-086-10:54:41</td>
+		<td>5158</td>
+		<td class="nowrap">219.4333</td>
+		<td class="nowrap">-67.0667</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>195</td>
+		<td class="nowrap">050800-6-1</td>
+		<td>252</td>
+		<td class="nowrap">2013-089-03:35:36</td>
+		<td class="nowrap">2013-089-06:05:36</td>
+		<td>7421</td>
+		<td class="nowrap">238.9833</td>
+		<td class="nowrap">-71.35</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>196</td>
+		<td class="nowrap">050800-7-1</td>
+		<td>256</td>
+		<td class="nowrap">2013-117-07:47:40</td>
+		<td class="nowrap">2013-117-10:17:40</td>
+		<td>8769</td>
+		<td class="nowrap">170.55</td>
+		<td class="nowrap">47.7167</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>197</td>
+		<td class="nowrap">050800-8-1</td>
+		<td>257</td>
+		<td class="nowrap">2013-124-07:32:37</td>
+		<td class="nowrap">2013-124-10:02:37</td>
+		<td>7388</td>
+		<td class="nowrap">11.75</td>
+		<td class="nowrap">17.7833</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>198</td>
+		<td class="nowrap">050800-9-1</td>
+		<td>257</td>
+		<td class="nowrap">2013-124-23:29:44</td>
+		<td class="nowrap">2013-125-01:59:44</td>
+		<td>8618</td>
+		<td class="nowrap">91.9333</td>
+		<td class="nowrap">7.4333</td>
+		<td>Pointed</td>
+		<td>ARR</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>ARR observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>199</td>
+		<td class="nowrap">050801-10-1</td>
+		<td>224</td>
+		<td class="nowrap">2012-257-00:00:01</td>
+		<td class="nowrap">2012-257-00:10:00</td>
+		<td>315</td>
+		<td class="nowrap">251.215802</td>
+		<td class="nowrap">43.5891</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-9-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-257-00:00:00</td>
+	</tr>
+	<tr>
+		<td>200</td>
+		<td class="nowrap">050801-2-1</td>
+		<td>221</td>
+		<td class="nowrap">2012-236-00:53:01</td>
+		<td class="nowrap">2012-236-01:03:01</td>
+		<td>387</td>
+		<td class="nowrap">224.798647</td>
+		<td class="nowrap">-50.087254</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-4-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-236-00:53:00</td>
+	</tr>
+	<tr>
+		<td>201</td>
+		<td class="nowrap">050801-21-1</td>
+		<td>225</td>
+		<td class="nowrap">2012-264-00:43:01</td>
+		<td class="nowrap">2012-264-00:53:01</td>
+		<td>387</td>
+		<td class="nowrap">240.334765</td>
+		<td class="nowrap">62.222162</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-10-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-264-00:43:00</td>
+	</tr>
+	<tr>
+		<td>202</td>
+		<td class="nowrap">050801-25-1</td>
+		<td>226</td>
+		<td class="nowrap">2012-275-21:52:01</td>
+		<td class="nowrap">2012-275-22:02:01</td>
+		<td>387</td>
+		<td class="nowrap">354.33166</td>
+		<td class="nowrap">45.653234</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-5-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-275-21:52:00</td>
+	</tr>
+	<tr>
+		<td>203</td>
+		<td class="nowrap">050801-26-1</td>
+		<td>226</td>
+		<td class="nowrap">2012-276-02:39:01</td>
+		<td class="nowrap">2012-276-02:49:01</td>
+		<td>386</td>
+		<td class="nowrap">355.2709</td>
+		<td class="nowrap">44.410595</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-12-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-276-02:39:00</td>
+	</tr>
+	<tr>
+		<td>204</td>
+		<td class="nowrap">050801-27-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-278-00:46:01</td>
+		<td class="nowrap">2012-278-00:56:01</td>
+		<td>387</td>
+		<td class="nowrap">290.209471</td>
+		<td class="nowrap">-44.280613</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-15-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-278-00:46:00</td>
+	</tr>
+	<tr>
+		<td>205</td>
+		<td class="nowrap">050801-28-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-279-19:48:01</td>
+		<td class="nowrap">2012-279-19:58:01</td>
+		<td>387</td>
+		<td class="nowrap">349.946696</td>
+		<td class="nowrap">34.539864</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-6-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-279-19:48:00</td>
+	</tr>
+	<tr>
+		<td>206</td>
+		<td class="nowrap">050801-29-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-280-00:35:01</td>
+		<td class="nowrap">2012-280-00:45:01</td>
+		<td>104</td>
+		<td class="nowrap">350.795935</td>
+		<td class="nowrap">33.596576</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-16-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-280-00:35:00</td>
+	</tr>
+	<tr>
+		<td>207</td>
+		<td class="nowrap">050801-3-1</td>
+		<td>221</td>
+		<td class="nowrap">2012-240-16:26:01</td>
+		<td class="nowrap">2012-240-16:36:01</td>
+		<td>387</td>
+		<td class="nowrap">261.776717</td>
+		<td class="nowrap">-73.412003</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-3-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-240-16:26:00</td>
+	</tr>
+	<tr>
+		<td>208</td>
+		<td class="nowrap">050801-30-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-283-17:42:01</td>
+		<td class="nowrap">2012-283-17:52:01</td>
+		<td>387</td>
+		<td class="nowrap">339.855936</td>
+		<td class="nowrap">28.523272</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-7-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-283-17:42:00</td>
+	</tr>
+	<tr>
+		<td>209</td>
+		<td class="nowrap">050801-31-1</td>
+		<td>227</td>
+		<td class="nowrap">2012-283-22:29:01</td>
+		<td class="nowrap">2012-283-22:39:01</td>
+		<td>388</td>
+		<td class="nowrap">340.725659</td>
+		<td class="nowrap">27.898878</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-15-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-283-22:29:00</td>
+	</tr>
+	<tr>
+		<td>210</td>
+		<td class="nowrap">050801-32-1</td>
+		<td>235</td>
+		<td class="nowrap">2012-334-00:00:01</td>
+		<td class="nowrap">2012-334-00:10:01</td>
+		<td>245</td>
+		<td class="nowrap">264.502862</td>
+		<td class="nowrap">-40.348371</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-31-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-334-00:00:00</td>
+	</tr>
+	<tr>
+		<td>211</td>
+		<td class="nowrap">050801-34-1</td>
+		<td>254</td>
+		<td class="nowrap">2013-105-18:00:01</td>
+		<td class="nowrap">2013-105-18:10:01</td>
+		<td>342</td>
+		<td class="nowrap">110.303944</td>
+		<td class="nowrap">45.643833</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-70-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-105-18:00:00</td>
+	</tr>
+	<tr>
+		<td>212</td>
+		<td class="nowrap">050801-37-1</td>
+		<td>254</td>
+		<td class="nowrap">2013-104-14:00:01</td>
+		<td class="nowrap">2013-104-14:10:01</td>
+		<td>335</td>
+		<td class="nowrap">214.292604</td>
+		<td class="nowrap">29.142077</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-77-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-104-14:00:00</td>
+	</tr>
+	<tr>
+		<td>213</td>
+		<td class="nowrap">050801-4-1</td>
+		<td>221</td>
+		<td class="nowrap">2012-240-21:13:01</td>
+		<td class="nowrap">2012-240-21:23:01</td>
+		<td>387</td>
+		<td class="nowrap">267.066298</td>
+		<td class="nowrap">-74.159842</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-5-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-240-21:13:00</td>
+	</tr>
+	<tr>
+		<td>214</td>
+		<td class="nowrap">050801-50-1</td>
+		<td>258</td>
+		<td class="nowrap">2013-134-00:26:01</td>
+		<td class="nowrap">2013-134-00:36:01</td>
+		<td>387</td>
+		<td class="nowrap">249.266726</td>
+		<td class="nowrap">61.03545</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050607-1-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-134-00:26:00</td>
+	</tr>
+	<tr>
+		<td>215</td>
+		<td class="nowrap">050801-51-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-136-00:00:01</td>
+		<td class="nowrap">2013-136-00:10:01</td>
+		<td>394</td>
+		<td class="nowrap">198.48194</td>
+		<td class="nowrap">72.089331</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-80-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-136-00:00:00</td>
+	</tr>
+	<tr>
+		<td>216</td>
+		<td class="nowrap">050801-54-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-140-21:51:01</td>
+		<td class="nowrap">2013-140-22:01:01</td>
+		<td>387</td>
+		<td class="nowrap">175.397466</td>
+		<td class="nowrap">-40.356142</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-9-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-140-21:51:00</td>
+	</tr>
+	<tr>
+		<td>217</td>
+		<td class="nowrap">050801-55-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-141-02:38:01</td>
+		<td class="nowrap">2013-141-02:48:01</td>
+		<td>386</td>
+		<td class="nowrap">176.572484</td>
+		<td class="nowrap">-41.668778</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-82-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-141-02:38:00</td>
+	</tr>
+	<tr>
+		<td>218</td>
+		<td class="nowrap">050801-56-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-141-21:43:01</td>
+		<td class="nowrap">2013-141-21:53:01</td>
+		<td>387</td>
+		<td class="nowrap">173.362823</td>
+		<td class="nowrap">-42.817268</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-10-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-141-21:43:00</td>
+	</tr>
+	<tr>
+		<td>219</td>
+		<td class="nowrap">050801-57-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-142-02:30:01</td>
+		<td class="nowrap">2013-142-02:40:01</td>
+		<td>386</td>
+		<td class="nowrap">174.69126</td>
+		<td class="nowrap">-44.088308</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-83-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-142-02:30:00</td>
+	</tr>
+	<tr>
+		<td>220</td>
+		<td class="nowrap">050801-58-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-136-22:35:01</td>
+		<td class="nowrap">2013-136-22:45:01</td>
+		<td>390</td>
+		<td class="nowrap">267.301059</td>
+		<td class="nowrap">41.41361</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050607-2-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-136-22:35:00</td>
+	</tr>
+	<tr>
+		<td>221</td>
+		<td class="nowrap">050801-59-1</td>
+		<td>259</td>
+		<td class="nowrap">2013-140-10:36:01</td>
+		<td class="nowrap">2013-140-10:46:01</td>
+		<td>387</td>
+		<td class="nowrap">209.799347</td>
+		<td class="nowrap">59.260279</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-81-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-140-10:36:00</td>
+	</tr>
+	<tr>
+		<td>222</td>
+		<td class="nowrap">050801-6-1</td>
+		<td>222</td>
+		<td class="nowrap">2012-243-00:00:01</td>
+		<td class="nowrap">2012-243-00:10:01</td>
+		<td>387</td>
+		<td class="nowrap">216.599373</td>
+		<td class="nowrap">-67.261723</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-6-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-243-00:00:00</td>
+	</tr>
+	<tr>
+		<td>223</td>
+		<td class="nowrap">050801-79-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-182-00:29:01</td>
+		<td class="nowrap">2013-182-00:39:01</td>
+		<td>387</td>
+		<td class="nowrap">227.047914</td>
+		<td class="nowrap">-28.056836</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-13-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-182-00:29:00</td>
+	</tr>
+	<tr>
+		<td>224</td>
+		<td class="nowrap">050801-8-1</td>
+		<td>223</td>
+		<td class="nowrap">2012-250-00:30:01</td>
+		<td class="nowrap">2012-250-00:40:01</td>
+		<td>380</td>
+		<td class="nowrap">162.218571</td>
+		<td class="nowrap">-64.92343</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-7-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2012-250-00:30:00</td>
+	</tr>
+	<tr>
+		<td>225</td>
+		<td class="nowrap">050801-80-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-182-05:16:01</td>
+		<td class="nowrap">2013-182-05:26:01</td>
+		<td>387</td>
+		<td class="nowrap">228.247933</td>
+		<td class="nowrap">-28.792081</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-96-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-182-05:16:00</td>
+	</tr>
+	<tr>
+		<td>226</td>
+		<td class="nowrap">050801-81-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-183-00:23:01</td>
+		<td class="nowrap">2013-183-00:33:01</td>
+		<td>387</td>
+		<td class="nowrap">230.376783</td>
+		<td class="nowrap">-31.326599</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-14-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-183-00:23:00</td>
+	</tr>
+	<tr>
+		<td>227</td>
+		<td class="nowrap">050801-82-1</td>
+		<td>265</td>
+		<td class="nowrap">2013-183-05:10:01</td>
+		<td class="nowrap">2013-183-05:20:01</td>
+		<td>387</td>
+		<td class="nowrap">231.559727</td>
+		<td class="nowrap">-32.296234</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-95-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-183-05:10:00</td>
+	</tr>
+	<tr>
+		<td>228</td>
+		<td class="nowrap">050801-83-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-188-21:57:01</td>
+		<td class="nowrap">2013-188-22:07:01</td>
+		<td>387</td>
+		<td class="nowrap">212.742928</td>
+		<td class="nowrap">-41.489581</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-15-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-188-21:57:00</td>
+	</tr>
+	<tr>
+		<td>229</td>
+		<td class="nowrap">050801-84-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-189-02:44:01</td>
+		<td class="nowrap">2013-189-02:54:00</td>
+		<td>386</td>
+		<td class="nowrap">213.990528</td>
+		<td class="nowrap">-42.865197</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-99-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-189-02:44:00</td>
+	</tr>
+	<tr>
+		<td>230</td>
+		<td class="nowrap">050801-85-1</td>
+		<td>266</td>
+		<td class="nowrap">2013-191-19:58:01</td>
+		<td class="nowrap">2013-191-20:08:01</td>
+		<td>387</td>
+		<td class="nowrap">263.296018</td>
+		<td class="nowrap">37.69608</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-16-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-191-19:58:00</td>
+	</tr>
+	<tr>
+		<td>231</td>
+		<td class="nowrap">050801-86-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-192-00:45:01</td>
+		<td class="nowrap">2013-192-00:55:01</td>
+		<td>233</td>
+		<td class="nowrap">264.611466</td>
+		<td class="nowrap">36.424881</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-100-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-192-00:45:00</td>
+	</tr>
+	<tr>
+		<td>232</td>
+		<td class="nowrap">050801-87-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-193-19:43:01</td>
+		<td class="nowrap">2013-193-19:53:01</td>
+		<td>267</td>
+		<td class="nowrap">210.694134</td>
+		<td class="nowrap">-58.013005</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-17-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-193-19:43:00</td>
+	</tr>
+	<tr>
+		<td>233</td>
+		<td class="nowrap">050801-88-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-194-00:30:01</td>
+		<td class="nowrap">2013-194-00:40:01</td>
+		<td>16</td>
+		<td class="nowrap">212.733866</td>
+		<td class="nowrap">-59.602176</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-101-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-194-00:30:00</td>
+	</tr>
+	<tr>
+		<td>234</td>
+		<td class="nowrap">050801-89-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-196-17:44:00</td>
+		<td class="nowrap">2013-196-17:54:01</td>
+		<td>388</td>
+		<td class="nowrap">258.057918</td>
+		<td class="nowrap">27.271789</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050403-18-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-196-17:44:00</td>
+	</tr>
+	<tr>
+		<td>235</td>
+		<td class="nowrap">050801-90-1</td>
+		<td>267</td>
+		<td class="nowrap">2013-196-22:31:01</td>
+		<td class="nowrap">2013-196-22:41:01</td>
+		<td>387</td>
+		<td class="nowrap">259.277476</td>
+		<td class="nowrap">26.680379</td>
+		<td>Pointed</td>
+		<td>Freeze</td>
+		<td>Freeze for loading 050404-100-1</td>
+		<td>TAKO</td>
+		<td>Inserted by TAKO at 2013-196-22:31:00</td>
+	</tr>
+	<tr>
+		<td>236</td>
+		<td class="nowrap">050802-1-1</td>
+		<td>244</td>
+		<td class="nowrap">2013-036-13:55:01</td>
+		<td class="nowrap">2013-036-16:24:07</td>
+		<td>7214</td>
+		<td class="nowrap">104</td>
+		<td class="nowrap">-64.36</td>
+		<td>Pointed</td>
+		<td>Pointed Obs</td>
+		<td>Unknown</td>
+		<td>N/A</td>
+		<td>Unscheduled Pointed Obs observation detected in the as-flown timeline</td>
+	</tr>
+	<tr>
+		<td>237</td>
+		<td class="nowrap">050901-1-1</td>
+		<td>229</td>
+		<td class="nowrap">2012-297-06:46:00</td>
+		<td class="nowrap">2012-297-11:32:00</td>
+		<td>17160</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Downtime</td>
+		<td>Calibration Downtime</td>
+		<td>ISOC</td>
+		<td>[229] Calibration request (trunc64 B3-1-0 checkout) (MPLAN-406) Mark the time period Tue Oct 23 06:46:00 - 11.32:00 as calibration. (There is no repoint associated with this observation.) The data taken in these 3 orbits will be acquired in the trunc64 configuration as part of the LAT FSW B3-1-0 checkout.</td>
+	</tr>
+	<tr>
+		<td>238</td>
+		<td class="nowrap">050901-2-1</td>
+		<td>231</td>
+		<td class="nowrap">2012-307-02:02:00</td>
+		<td class="nowrap">2012-307-06:48:00</td>
+		<td>17160</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Downtime</td>
+		<td>Calibration Downtime</td>
+		<td>ISOC</td>
+		<td>[231] Calibration Request for the Nov 2 trunc64 run  (MPLAN-418) Calibration request to mark the time period Friday Nov 2 02:02:00 - 06:48:00 as calibration. (There is no repoint associated with this observation.) The data taken in these 3 orbits will be acquired in the trunc64 configuration as part of the LAT FSW B3-1-1 checkout.</td>
+	</tr>
+	<tr>
+		<td>239</td>
+		<td class="nowrap">050901-3-1</td>
+		<td>232</td>
+		<td class="nowrap">2012-318-19:24:00</td>
+		<td class="nowrap">2012-319-00:10:00</td>
+		<td>17160</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Downtime</td>
+		<td>Calibration Downtime</td>
+		<td>ISOC</td>
+		<td>[232] Calib request for TRUNC64 engineering run  (MPLAN-402)</td>
+	</tr>
+	<tr>
+		<td>240</td>
+		<td class="nowrap">050901-4-1</td>
+		<td>237</td>
+		<td class="nowrap">2012-354-10:16:00</td>
+		<td class="nowrap">2012-354-14:50:00</td>
+		<td>12888</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Downtime</td>
+		<td>Calibration Downtime</td>
+		<td>ISOC</td>
+		<td>[237] Calib req for Trig Timing Eng run  (MPLAN-421) The time to block out is: DOY: 354 (Dec 19, 2012), 10:16 to 14:50 UTC.  The data collected will not be suitable for science</td>
+	</tr>
+	<tr>
+		<td>241</td>
+		<td class="nowrap">050901-5-1</td>
+		<td>237</td>
+		<td class="nowrap">2012-353-04:22:00</td>
+		<td class="nowrap">2012-353-05:57:00</td>
+		<td>5700</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Downtime</td>
+		<td>Calibration Downtime</td>
+		<td>ISOC</td>
+		<td>[237] Calib request for Trunc64 run  (MPLAN-422) Calibration request for the orbit:  DOY 353.1819 = 2012/12/18 04:22 UTC DOY 353.2482 = 2012/12/18 05:57 UTC</td>
+	</tr>
+	<tr>
+		<td>242</td>
+		<td class="nowrap">050901-6-1</td>
+		<td>250</td>
+		<td class="nowrap">2013-073-03:28:00</td>
+		<td class="nowrap">2013-073-05:03:00</td>
+		<td>5700</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Downtime</td>
+		<td>Calibration Downtime</td>
+		<td>ISOC</td>
+		<td>[250] Reserve one orbit for a routine calibration (MPLAN-449) Orbit is ASC to ASC</td>
+	</tr>
+	<tr>
+		<td>243</td>
+		<td class="nowrap">060005-1-1</td>
+		<td>274</td>
+		<td class="nowrap">2013-241-11:49:00</td>
+		<td class="nowrap">2013-241-15:06:00</td>
+		<td>11460</td>
+		<td class="nowrap">343.85</td>
+		<td class="nowrap">64.36</td>
+		<td>Pointed</td>
+		<td>POINTED</td>
+		<td>Orbit Pole stare - North week 274</td>
+		<td>Fermi</td>
+		<td>Inertial point observation at the orbit pole - two-orbit duration </td>
+	</tr>
+	<tr>
+		<td>244</td>
+		<td class="nowrap">060404-1-1</td>
+		<td>274</td>
+		<td class="nowrap">2013-241-00:00:00</td>
+		<td class="nowrap">2013-241-11:49:00</td>
+		<td>33180</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 274 - part 1</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>245</td>
+		<td class="nowrap">060404-2-1</td>
+		<td>274</td>
+		<td class="nowrap">2013-241-15:06:00</td>
+		<td class="nowrap">2013-242-18:03:00</td>
+		<td>83700</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 274 - part 2</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	<tr>
+		<td>246</td>
+		<td class="nowrap">060404-3-1</td>
+		<td>274</td>
+		<td class="nowrap">2013-242-22:50:00</td>
+		<td class="nowrap">2013-248-00:00:00</td>
+		<td>365940</td>
+		<td class="nowrap">&nbsp;</td>
+		<td class="nowrap">&nbsp;</td>
+		<td>Profiled</td>
+		<td>Survey</td>
+		<td>profile week 274 - part 3 (phase reversal)</td>
+		<td>Fermi</td>
+		<td>50deg 6am rock; orbit period 5733 sec; -/+ 50deg rock angle over 2 orbits</td>
+	</tr>
+	</tbody>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+// Call the method that parses the column data, telling it what column to make static
+staticData.parse("timelineTable", 0);
+//]]>
+</script>
+</div>
+<!-- End Table Container -->
+</div>
+<!-- End Page Content Wrapper -->
+
+<!-- Start Footer -->
+<div id="footer-full">
+<!-- Left - NASA Logo -->
+	<div class="nasa-logo">
+	<a href="http://www.nasa.gov/"><img src="/ssc/inc/img/nasa_logo.gif" width="140" height="98" border="0" alt="NASA Logo"></a>
+	</div>
+<!-- Left/Middle - GSFC Signature -->
+	<div id="goddard-signature">
+	<a href="http://www.nasa.gov/goddard"><img src="/ssc/inc/img/goddardsignature.png" width="172" height="68" border="0" alt="Goddard Signature"></a>
+	</div>
+<!-- Right/Middle - Contacts -->
+	<div id="contacts">
+	<ul>
+		<li>Curator: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#46;&#100;&#46;&#109;&#121;&#101;&#114;&#115;&#64;&#110;&#97;&#115;&#97;&#46;&#103;&#111;&#118;">J.D. Myers</a></li>
+		<li>NASA Official: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#097;&#110;&#101;&#119;&#109;&#097;&#110;&#064;&#108;&#104;&#101;&#097;&#112;&#111;&#112;&#046;&#103;&#115;&#102;&#099;&#046;&#110;&#097;&#115;&#097;&#046;&#103;&#111;&#118;">Phil Newman</a></li>
+		<li>Science Official: Neil Gehrels</li>
+	</ul>
+	</div>
+<!-- Right - Notices -->
+	<div id="notices">
+	<ul>
+		<li>&rsaquo; <a href="http://www.nasa.gov/about/highlights/HP_Privacy.html">Privacy Policy and Important Notices</a></li>
+		<li>&rsaquo; <a href="http://www.nasa.gov/about/contact/index.html">Contact NASA</a></li>
+		<li>&rsaquo; <a href="/ssc/help/">Fermi FAQ, Comments, Feedback</a></li>
+		<li>&rsaquo; Page Last Updated: <!--#config timefmt="%a, %b %d, %Y"--><!--#echo var="LAST_MODIFIED" --></li>
+	</ul>
+	</div>
+</div>
+<!-- End Footer -->
+
+</div>
+<!-- End Page Container -->
+
+</body>
+</html>
