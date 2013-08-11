@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>Suzaku Shortterm Schedule (almost final)</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; harset=iso-8859-1">
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+</HEAD>
+<BODY>
+<H3>Suzaku Shortterm Schedule (almost final)</H3>
+<FONT SIZE=2>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD ALIGN="left">Target</TD>
+<TD ALIGN="left">PI</TD>
+<TD ALIGN="right">RA(deg)</TD>
+<TD ALIGN="right">DEC(deg)</TD>
+<TD ALIGN="right">RA(HMS)</TD>
+<TD ALIGN="right">DEC(DMS)</TD>
+<TD ALIGN="left">MNV start time</TD>
+</TR>
+<TR>
+<TD ALIGN="left"><A HREF="http://darts.jaxa.jp/astro/suzaku/suzakumaster/suzakuMasterSearchCondition.do?lookupDispatchKey=SEARCH&max=100&sort=OBSID&sortSeq=%2B&line=full&searchMenu=HTML&patternChecked=on&name=&obsid=708003010&adstract=&pi=&co_pi=&title=&proc_ver=&prnb=">NGC_4785</A></TD>
+<TD ALIGN="left">GANDHI</TD>
+<TD ALIGN="right">193.3638</TD>
+<TD ALIGN="right">-48.7492</TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="left">2013 07 22 11 15 00</TD>
+</TR>
+<TR>
+<TD ALIGN="left"><A HREF="http://darts.jaxa.jp/astro/suzaku/suzakumaster/suzakuMasterSearchCondition.do?lookupDispatchKey=SEARCH&max=100&sort=OBSID&sortSeq=%2B&line=full&searchMenu=HTML&patternChecked=on&name=&obsid=808064010&adstract=&pi=&co_pi=&title=&proc_ver=&prnb=">RXJ1416.4+2315</A></TD>
+<TD ALIGN="left">BUOTE</TD>
+<TD ALIGN="right">214.0648</TD>
+<TD ALIGN="right">23.3553</TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="left">2013 07 23 15 13 00</TD>
+</TR>
+<TR>
+<TD ALIGN="left"><A HREF="http://darts.jaxa.jp/astro/suzaku/suzakumaster/suzakuMasterSearchCondition.do?lookupDispatchKey=SEARCH&max=100&sort=OBSID&sortSeq=%2B&line=full&searchMenu=HTML&patternChecked=on&name=&obsid=508007010&adstract=&pi=&co_pi=&title=&proc_ver=&prnb=">NW_SRC</A></TD>
+<TD ALIGN="left">TAHARA</TD>
+<TD ALIGN="right">221.7500</TD>
+<TD ALIGN="right">-1.3115</TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="left">2013 07 26 08 02 00</TD>
+</TR>
+<TR>
+<TD ALIGN="left"><A HREF="http://darts.jaxa.jp/astro/suzaku/suzakumaster/suzakuMasterSearchCondition.do?lookupDispatchKey=SEARCH&max=100&sort=OBSID&sortSeq=%2B&line=full&searchMenu=HTML&patternChecked=on&name=&obsid=508008010&adstract=&pi=&co_pi=&title=&proc_ver=&prnb=">NW_BGD</A></TD>
+<TD ALIGN="left">TAHARA</TD>
+<TD ALIGN="right">233.6855</TD>
+<TD ALIGN="right">-9.8931</TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="left">2013 07 26 20 11 00</TD>
+</TR>
+<TR>
+<TD ALIGN="left"><A HREF="http://darts.jaxa.jp/astro/suzaku/suzakumaster/suzakuMasterSearchCondition.do?lookupDispatchKey=SEARCH&max=100&sort=OBSID&sortSeq=%2B&line=full&searchMenu=HTML&patternChecked=on&name=&obsid=808104010&adstract=&pi=&co_pi=&title=&proc_ver=&prnb=">A3528-S_OFFSET_1</A></TD>
+<TD ALIGN="left">LOVISARI</TD>
+<TD ALIGN="right">193.8760</TD>
+<TD ALIGN="right">-29.4464</TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="left">2013 07 27 10 14 00</TD>
+</TR>
+<TR>
+<TD ALIGN="left"><A HREF="http://darts.jaxa.jp/astro/suzaku/suzakumaster/suzakuMasterSearchCondition.do?lookupDispatchKey=SEARCH&max=100&sort=OBSID&sortSeq=%2B&line=full&searchMenu=HTML&patternChecked=on&name=&obsid=808105010&adstract=&pi=&co_pi=&title=&proc_ver=&prnb=">A3528-S_OFFSET_2</A></TD>
+<TD ALIGN="left">LOVISARI</TD>
+<TD ALIGN="right">193.9748</TD>
+<TD ALIGN="right">-29.6536</TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="right"></TD>
+<TD ALIGN="left">2013 07 28 12 41 00</TD>
+</TR>
+</TABLE>
+</FONT>
+<HR>
+<DIV>
+If you are interested in coordinated observations of Suzaku targets, please contact the PI or the satellite operation team (<img src="/suzaku/.include/image/suzakuope.png" align=center alt="" width=200>).
+<UL>
+ <LI>The position in J2000.0, the observation start (MNV=manuever) time in UT, and the principal investigator (PI) of the observation are given for each target.</LI>
+ <LI>Suzaku is pointed toward the target from its MNV time to the MNV time of the next target.</LI>
+ <LI>It takes about 5-20 minutes until the satellite is stabilizaed and ready to observe at each manuver.</LI>
+ <LI>Suzaku rotates around the Earth in about 95 minutes.</LI>
+ <LI>In each orbit, the target is visible in about 40% of the time on average. The loss of time stems from several reasons such as eclipsing by the earth, satellite passages through high radiation zones, etc.</LI>
+</UL>
+</DIV>
+</BODY>
+</HTML>

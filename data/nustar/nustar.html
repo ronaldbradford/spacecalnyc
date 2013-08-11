@@ -1,0 +1,1000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" ><head>
+	<link rel="stylesheet" type="text/css" href="./stylesheet/stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="./stylesheet/stylesheet1.css" />
+	<link rel="stylesheet" type="text/css" href="./stylesheet/stylesheet2.css" />
+
+	<title>NuSTAR SOC - AFT</title>
+	
+    <meta name="NuSTAR Operation Site" content="California Institute of Technology - Copyright (C) 20012-7 Kexin Rong. All rights reserved." />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+
+</head>
+
+<body>
+
+<p style="position:fixed;
+top:20px;
+right:0px;
+background-color:black;
+z-index:1000;
+color:white;">
+<!-- Adjust the placement of the clock in the line below -->
+<span id="pendule"></span>
+<script language="javascript" type="text/javascript">
+/* Visit http://www.yaldex.com/ for full source code
+and get more free JavaScript, CSS and DHTML scripts! */
+<!-- Begin
+function clock() {
+var METdate = new Date();
+METdate.setUTCFullYear( 2012 );
+METdate.setUTCMonth( 5 );
+METdate.setUTCDate( 13 );
+METdate.setUTCHours( 16 );
+METdate.setUTCMinutes( 0 );
+METdate.setUTCSeconds( 42 );
+METdate.setUTCMilliseconds( 0 );
+
+var nowtime = new Date();
+var METtimeDiff = ( nowtime - METdate ) / 1000;
+
+var METdays=Math.floor( METtimeDiff / 86400);
+// After deducting the days calculate the number of hours left
+var METhours = Math.floor(( METtimeDiff - (METdays * 86400 ))/3600)
+// After days and hours , how many minutes are left
+var METminutes = Math.floor(( METtimeDiff - (METdays * 86400 ) - (METhours *3600 ))/60)
+// Finally how many seconds left after removing days, hours and minutes.
+var METseconds = Math.floor(( METtimeDiff - (METdays * 86400 ) - (METhours *3600 ) - (METminutes*60)))
+if ( METhours <= 9 ) METhours= "0" + METhours;
+if ( METminutes <= 9 ) METminutes= "0" + METminutes;
+if ( METseconds <= 9 ) METseconds= "0" + METseconds;
+
+var DoYdate = new Date();
+/* DoYdate.setUTCFullYear( 2012 ); */
+DoYdate.setUTCMonth( 0 );
+DoYdate.setUTCDate( 1 );
+DoYdate.setUTCHours( 0 );
+DoYdate.setUTCMinutes( 0 );
+DoYdate.setUTCSeconds( 0 );
+DoYdate.setUTCMilliseconds( 0 );
+
+var theDoY = Math.floor( ( nowtime - DoYdate ) / ( 24 * 60 * 60 * 1000 ) ) + 1;
+
+var year = nowtime.getUTCFullYear();
+var month = nowtime.getUTCMonth() + 1;
+if ( month <= 9 ) month= "0" + month;
+var day = nowtime.getUTCDate();
+if ( day <= 9 ) day= "0" + day;
+var hours = nowtime.getUTCHours();
+var minutes = nowtime.getUTCMinutes();
+var seconds = nowtime.getUTCSeconds();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+/*
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+*/
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+dispTime = year + '-' + month + '-' + day + ' ' + hours + ":" + minutes + ":" + seconds + "<br>DoY " + theDoY + "<br>MET " + METdays + "-" + METhours + ":" + METminutes + ":" + METseconds
+;
+document.getElementById('pendule').innerHTML = dispTime;
+setTimeout("clock()", 1000);
+}
+window.onload=clock;
+//  End -->
+</script>
+</p>
+
+
+<div id="pageWrapper"><!-- #pageWrapper -->	
+ 
+<div id="header"><!-- #header -->
+
+<div id="logoBar"><!-- #logoBar -->
+
+	<div id="nustarLogo">
+		<a href="http://www.nustar.caltech.edu/" target="_blank"><img src="./img/nustar-logo.png" alt="NUSTAR" /></a>
+	</div>
+    <div id="nustarTagline">
+    	<img src="./img/tagline.png" alt="Operations"/>
+    </div>
+
+</div><!-- /#logoBar -->
+
+<div id="vehicleOverlay"><!-- vehicle placeholder --></div>
+
+<div id="masthead"><!-- #masthead --></div>
+
+<div id="universalNav"><!-- #universalNav --> 
+	<ul>
+		<li ><a href="Home.php"><dfn>1: </dfn>SOC HOME</a></li>
+		<li ><a href="./Operations/QA.php"><dfn>3: </dfn>OPERATIONS TEAM LOGIN</a></li>
+		<li ><a href="./Science/Science.php"><dfn>4: </dfn>SCIENCE TEAM LOGIN</a></li>
+        <li ><a href="TOO.php"><dfn>4: </dfn>TOO TEAM LOGIN</a></li>
+        <li ><a href="Links.php"><dfn>4: </dfn>LINKS</a></li>
+	</ul>
+</div><!-- /#universalNav -->
+
+</div><!-- #header -->
+
+<div id="contentWrapper"><!-- #contentWrapper -->
+  
+<div id="content"><!-- #content -->
+
+	<h3 style="font-size:17px; margin-bottom:5px; color:#000066;">
+   NuSTAR - As Flown Timeline  (AFT)
+	</h3>
+<p style="color:black;margin-top:0px;margin-bottom:5px;">
+This is the timeline of completed NuSTAR observations and is automatically updated when each observation is completed. An observation is defined by a unique 11 digit sequenceID and targets may have multiple observations. Periods when the observatory is slewing between targets are not included in this table.
+</p>
+<p style="color:black;margin-top:0px;margin-bottom:10px;">
+This AFT includes science and calibration targets.
+</p>
+<p id="tooltip1" style="color:black;font-size:14px;margin-top:0px;margin-bottom:5px;">
+<a href="AFT_Public.php">Table Header Explanations
+<span><b>Start UTC</b> - Start of observation (UTC)<br/><b>End UTC</b> - End of observation (UTC)<br/><b>sequenceID</b> - Observation ID number<br/><b>Name</b> - Target name<br/>
+<b>J2000_RA</b> - J2000 epoch Right Ascension (degrees)<br/><b>J2000_Dec</b> - J2000 epoch Declination (degrees)  
+</span></a></p> 
+
+<div style="width:100%;height:565px;overflow-y:scroll;overflow-x:scroll;">
+<table id="priority-table">
+        <tr>
+			<th>Start UTC</th>
+			<th>End UTC</th>
+            <th>sequenceID</th>
+			<th>Name</th>
+			<th>J2000_RA</th>
+			<th>J2000_Dec</th>
+        </tr>
+<tr><td>2013:221:15:03:58</td><td>2013:221:15:10:00</td><td>50002043003</td><td>M83</td><td>204.253958</td><td>-29.865417
+</td></tr><tr><td>2013:221:09:00:06</td><td>2013:221:14:45:00</td><td>80002013022</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:221:08:50:40</td><td>2013:221:09:00:00</td><td>80002013021</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:220:22:00:15</td><td>2013:221:08:20:00</td><td>60002022008</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><td>2013:220:21:45:49</td><td>2013:220:22:00:00</td><td>60002022007</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><td>2013:220:15:00:09</td><td>2013:220:21:15:00</td><td>80002013020</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:220:14:53:57</td><td>2013:220:15:00:00</td><td>80002013019</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:219:16:20:15</td><td>2013:220:14:35:00</td><td>50002043002</td><td>M83</td><td>204.253958</td><td>-29.865417
+</td></tr><tr><td>2013:219:16:12:50</td><td>2013:219:16:20:00</td><td>50002043001</td><td>M83</td><td>204.253958</td><td>-29.865417
+</td></tr><tr><td>2013:218:13:00:09</td><td>2013:219:16:05:00</td><td>60001081002</td><td>Cen_A</td><td>201.36506333</td><td>-43.01911250
+</td></tr><tr><td>2013:218:12:50:07</td><td>2013:218:13:00:00</td><td>60001081001</td><td>Cen_A</td><td>201.36506333</td><td>-43.01911250
+</td></tr><tr><td>2013:218:03:35:07</td><td>2013:218:12:35:00</td><td>60061263002</td><td>2MASXJ15144217m8123377</td><td>228.675003</td><td>-81.393997
+</td></tr><tr><td>2013:218:03:25:14</td><td>2013:218:03:35:00</td><td>60061263001</td><td>2MASXJ15144217m8123377</td><td>228.675003</td><td>-81.393997
+</td></tr><tr><td>2013:217:04:40:47</td><td>2013:218:03:05:00</td><td>40031005001</td><td>GalSurvey_A_MOS005</td><td>266.33621</td><td>-28.747042
+</td></tr><tr><td>2013:216:06:00:37</td><td>2013:217:04:40:00</td><td>40031004001</td><td>GalSurvey_A_MOS004</td><td>266.17938</td><td>-28.780123
+</td></tr><tr><td>2013:215:07:30:27</td><td>2013:216:06:00:00</td><td>40031003002</td><td>GalSurvey_A_MOS003</td><td>266.27670</td><td>-28.832354
+</td></tr><tr><td>2013:215:07:24:10</td><td>2013:215:07:30:00</td><td>40031003001</td><td>GalSurvey_A_MOS003</td><td>266.27670</td><td>-28.832354
+</td></tr><tr><td>2013:214:21:50:12</td><td>2013:215:06:50:00</td><td>60002022006</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><td>2013:214:21:43:12</td><td>2013:214:21:50:00</td><td>60002022005</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><td>2013:214:11:50:08</td><td>2013:214:21:10:00</td><td>60061260002</td><td>IC4518A</td><td>224.418701</td><td>-43.131699
+</td></tr><tr><td>2013:214:11:44:30</td><td>2013:214:11:50:00</td><td>60061260001</td><td>IC4518A</td><td>224.418701</td><td>-43.131699
+</td></tr><tr><td>2013:213:13:20:37</td><td>2013:214:11:30:00</td><td>40031002001</td><td>GalSurvey_A_MOS002</td><td>266.11969</td><td>-28.865362
+</td></tr><tr><td>2013:212:14:50:36</td><td>2013:213:13:20:00</td><td>40031001002</td><td>GalSurvey_A_MOS001</td><td>266.21707</td><td>-28.917637
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:212:14:41:01</td><td>2013:212:14:50:00</td><td>40031001001</td><td>GalSurvey_A_MOS001</td><td>266.21707</td><td>-28.917637
+</td></tr><tr><td>2013:212:01:55:03</td><td>2013:212:14:40:00</td><td>80002013018</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:212:01:47:41</td><td>2013:212:01:55:00</td><td>80002013017</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:208:20:26:05</td><td>2013:212:01:45:00</td><td>40001015007</td><td>G1d9p0d3</td><td>267.1954170</td><td>-27.1711110
+</td></tr><tr><td>2013:208:20:16:24</td><td>2013:208:20:25:00</td><td>40001015006</td><td>G1d9p0d3</td><td>267.1954170</td><td>-27.1711110
+</td></tr><tr><td>2013:208:11:50:10</td><td>2013:208:19:55:00</td><td>60061290002</td><td>2E1849d2m7832</td><td>284.281708</td><td>-78.470001
+</td></tr><tr><td>2013:208:11:43:26</td><td>2013:208:11:50:05</td><td>60061290001</td><td>2E1849d2m7832</td><td>284.281708</td><td>-78.470001
+</td></tr><tr><td>2013:206:04:51:05</td><td>2013:208:11:30:00</td><td>30001024007</td><td>1E1048d1m5937</td><td>162.52975000</td><td>-59.88927778
+</td></tr><tr><td>2013:206:04:43:32</td><td>2013:206:04:50:00</td><td>30001024006</td><td>1E1048d1m5937</td><td>162.52975000</td><td>-59.88927778
+</td></tr><tr><td>2013:205:18:05:08</td><td>2013:206:04:25:00</td><td>60061284002</td><td>IGRJ18244m5622</td><td>276.0808</td><td>-56.3692
+</td></tr><tr><td>2013:205:17:57:46</td><td>2013:205:18:05:00</td><td>60061284001</td><td>IGRJ18244m5622</td><td>276.0808</td><td>-56.3692
+</td></tr><tr><td>2013:204:14:25:11</td><td>2013:205:17:25:00</td><td>60002044005</td><td>NGC5548</td><td>214.49795833</td><td>25.13680556
+</td></tr><tr><td>2013:204:14:15:18</td><td>2013:204:14:25:00</td><td>60002044004</td><td>NGC5548</td><td>214.49795833</td><td>25.13680556
+</td></tr><tr><td>2013:200:19:30:18</td><td>2013:204:13:45:00</td><td>30001024005</td><td>1E1048d1m5937</td><td>162.52975000</td><td>-59.88927778
+</td></tr><tr><td>2013:200:19:22:31</td><td>2013:200:19:30:00</td><td>30001024004</td><td>1E1048d1m5937</td><td>162.52975000</td><td>-59.88927778
+</td></tr><tr><td>2013:200:06:05:09</td><td>2013:200:19:00:00</td><td>60001063002</td><td>NGC1386</td><td>54.19250000</td><td>-35.99916667
+</td></tr><tr><td>2013:200:05:59:55</td><td>2013:200:06:05:00</td><td>60001063001</td><td>NGC1386</td><td>54.19250000</td><td>-35.99916667
+</td></tr><tr><td>2013:199:13:55:04</td><td>2013:200:05:40:00</td><td>60001119002</td><td>PG0043p039</td><td>11.446961</td><td>4.173441
+</td></tr><tr><td>2013:199:13:47:39</td><td>2013:199:13:55:00</td><td>60001119001</td><td>PG0043p039</td><td>11.446961</td><td>4.173441
+</td></tr><tr><td>2013:198:23:15:16</td><td>2013:199:13:10:00</td><td>30001024003</td><td>1E1048d1m5937</td><td>162.52975000</td><td>-59.88927778
+</td></tr><tr><td>2013:198:07:45:53</td><td>2013:198:23:15:00</td><td>30001024002</td><td>1E1048d1m5937</td><td>162.52975000</td><td>-59.88927778
+</td></tr><tr><td>2013:198:07:37:11</td><td>2013:198:07:45:00</td><td>30001024001</td><td>1E1048d1m5937</td><td>162.52975000</td><td>-59.88927778
+</td></tr><tr><td>2013:197:22:50:07</td><td>2013:198:07:05:00</td><td>60002022004</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:197:22:44:56</td><td>2013:197:22:50:00</td><td>60002022003</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><td>2013:195:02:45:13</td><td>2013:197:22:05:00</td><td>40001015005</td><td>G1d9p0d3</td><td>267.1954170</td><td>-27.1711110
+</td></tr><tr><td>2013:195:02:37:55</td><td>2013:195:02:45:00</td><td>40001015004</td><td>G1d9p0d3</td><td>267.1954170</td><td>-27.1711110
+</td></tr><tr><td>2013:194:20:15:08</td><td>2013:195:02:10:00</td><td>60002024008</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:194:20:10:41</td><td>2013:194:20:15:00</td><td>60002024007</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:194:04:05:06</td><td>2013:194:19:55:00</td><td>30001013004</td><td>Ser_X1</td><td>279.9898333</td><td>5.03600
+</td></tr><tr><td>2013:194:04:00:41</td><td>2013:194:04:05:00</td><td>30001013003</td><td>Ser_X1</td><td>279.9898333</td><td>5.03600
+</td></tr><tr><td>2013:193:21:30:16</td><td>2013:194:03:45:00</td><td>60002024006</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:193:21:25:41</td><td>2013:193:21:30:00</td><td>60002024005</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:193:15:10:23</td><td>2013:193:21:10:00</td><td>30001013002</td><td>Ser_X1</td><td>279.9898333</td><td>5.03600
+</td></tr><tr><td>2013:193:15:03:10</td><td>2013:193:15:10:00</td><td>30001013001</td><td>Ser_X1</td><td>279.9898333</td><td>5.03600
+</td></tr><tr><td>2013:193:00:10:13</td><td>2013:193:14:40:00</td><td>60002044003</td><td>NGC5548</td><td>214.49795833</td><td>25.13680556
+</td></tr><tr><td>2013:192:09:50:11</td><td>2013:193:00:10:00</td><td>60002044002</td><td>NGC5548</td><td>214.49795833</td><td>25.13680556
+</td></tr><tr><td>2013:192:09:40:11</td><td>2013:192:09:50:00</td><td>60002044001</td><td>NGC5548</td><td>214.49795833</td><td>25.13680556
+</td></tr><tr><td>2013:189:23:30:16</td><td>2013:192:09:15:00</td><td>40001015003</td><td>G1d9p0d3</td><td>267.1954170</td><td>-27.1711110
+</td></tr><tr><td>2013:189:17:25:35</td><td>2013:189:23:30:00</td><td>40001015002</td><td>G1d9p0d3</td><td>267.1954170</td><td>-27.1711110
+</td></tr><tr><td>2013:189:17:18:04</td><td>2013:189:17:25:00</td><td>40001015001</td><td>G1d9p0d3</td><td>267.1954170</td><td>-27.1711110
+</td></tr><tr><td>2013:189:07:50:09</td><td>2013:189:16:50:00</td><td>60061302002</td><td>IC5063</td><td>313.008423</td><td>-57.069195
+</td></tr><tr><td>2013:189:07:43:07</td><td>2013:189:07:50:00</td><td>60061302001</td><td>IC5063</td><td>313.008423</td><td>-57.069195
+</td></tr><tr><td>2013:189:06:05:05</td><td>2013:189:07:20:00</td><td>80001011002</td><td>4U1820m30</td><td>275.9190400</td><td>-30.36128000
+</td></tr><tr><td>2013:189:05:56:34</td><td>2013:189:06:05:00</td><td>80001011001</td><td>4U1820m30</td><td>275.9190400</td><td>-30.36128000
+</td></tr><tr><td>2013:188:13:00:05</td><td>2013:189:05:50:00</td><td>80002013016</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:188:12:52:25</td><td>2013:188:13:00:00</td><td>80002013015</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:188:12:10:02</td><td>2013:188:12:22:00</td><td>02013188002</td><td>Conj_2013188_SAA90</td><td>93.804981</td><td>-66.924235
+</td></tr><tr><td>2013:188:11:49:49</td><td>2013:188:11:51:50</td><td>02013189001</td><td>Conj_2013188_attmin</td><td>296.993</td><td>-59.593
+</td></tr><tr><td>2013:188:11:30:33</td><td>2013:188:11:31:37</td><td>02013188001</td><td>Conj_2013188_SAA90</td><td>93.804981</td><td>-66.924235
+</td></tr><tr><td>2013:188:04:15:12</td><td>2013:188:11:00:07</td><td>80002013014</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:188:04:05:18</td><td>2013:188:04:15:00</td><td>80002013013</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:186:22:50:11</td><td>2013:188:03:45:00</td><td>60002051006</td><td>NGC4945</td><td>196.36458333</td><td>-49.46833333
+</td></tr><tr><td>2013:186:22:41:44</td><td>2013:186:22:50:00</td><td>60002051005</td><td>NGC4945</td><td>196.36458333</td><td>-49.46833333
+</td></tr><tr><td>2013:186:09:15:08</td><td>2013:186:22:10:00</td><td>60061325002</td><td>NGC1229</td><td>47.044938</td><td>-22.960799
+</td></tr><tr><td>2013:186:09:07:38</td><td>2013:186:09:15:00</td><td>60061325001</td><td>NGC1229</td><td>47.044938</td><td>-22.960799
+</td></tr><tr><td>2013:180:01:15:15</td><td>2013:186:08:50:00</td><td>40001014013</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2013:179:18:50:54</td><td>2013:180:01:15:00</td><td>40001014012</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2013:179:18:44:19</td><td>2013:179:18:50:00</td><td>40001014011</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2013:179:08:00:02</td><td>2013:179:18:15:00</td><td>60001122002</td><td>PG_1001p054</td><td>151.083899</td><td>5.216795
+</td></tr><tr><td>2013:179:07:51:11</td><td>2013:179:08:00:00</td><td>60001122001</td><td>PG_1001p054</td><td>151.083899</td><td>5.216795
+</td></tr><tr><td>2013:178:14:15:03</td><td>2013:179:07:35:00</td><td>60001123002</td><td>PG_1254p047</td><td>194.249689</td><td>4.459554
+</td></tr><tr><td>2013:178:14:06:11</td><td>2013:178:14:15:00</td><td>60001123001</td><td>PG_1254p047</td><td>194.249689</td><td>4.459554
+</td></tr><tr><td>2013:176:08:05:10</td><td>2013:178:13:20:00</td><td>60001041005</td><td>Mkn335</td><td>1.5813389</td><td>20.2029144
+</td></tr><tr><td>2013:176:07:58:48</td><td>2013:176:08:05:00</td><td>60001041004</td><td>Mkn335</td><td>1.5813389</td><td>20.2029144
+</td></tr><tr><td>2013:175:15:20:51</td><td>2013:176:07:15:00</td><td>40014019001</td><td>Norma_MOS019</td><td>250.17318</td><td>-46.382574
+</td></tr><tr><td>2013:175:00:51:02</td><td>2013:175:15:20:00</td><td>40014018001</td><td>Norma_MOS018</td><td>249.94439</td><td>-46.342731
+</td></tr><tr><td>2013:174:11:50:32</td><td>2013:175:00:50:00</td><td>40014017001</td><td>Norma_MOS017</td><td>250.19289</td><td>-46.521084
+</td></tr><tr><td>2013:173:21:20:53</td><td>2013:174:11:50:00</td><td>40014016001</td><td>Norma_MOS016</td><td>250.27904</td><td>-46.539274
+</td></tr><tr><td>2013:173:08:20:42</td><td>2013:173:21:20:00</td><td>40014015001</td><td>Norma_MOS015</td><td>250.0950</td><td>-46.36840
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:172:17:46:26</td><td>2013:173:08:20:00</td><td>40014014001</td><td>Norma_MOS014</td><td>250.24755</td><td>-46.395246
+</td></tr><tr><td>2013:172:03:15:36</td><td>2013:172:17:45:00</td><td>40014013001</td><td>Norma_MOS013</td><td>249.93834</td><td>-46.39818
+</td></tr><tr><td>2013:171:14:20:29</td><td>2013:172:03:15:00</td><td>40014012001</td><td>Norma_MOS012</td><td>250.01969</td><td>-46.453154
+</td></tr><tr><td>2013:171:00:06:01</td><td>2013:171:14:20:00</td><td>40014011002</td><td>Norma_MOS011</td><td>250.08524</td><td>-46.497005
+</td></tr><tr><td>2013:170:23:53:07</td><td>2013:171:00:05:00</td><td>40014011001</td><td>Norma_MOS011</td><td>250.08524</td><td>-46.497005
+</td></tr><tr><td>2013:170:09:33:08</td><td>2013:170:23:40:00</td><td>30002003003</td><td>IGRJ17544m2619</td><td>268.605292</td><td>-26.331306
+</td></tr><tr><td>2013:169:22:15:17</td><td>2013:170:09:30:00</td><td>30002003002</td><td>IGRJ17544m2619</td><td>268.605292</td><td>-26.331306
+</td></tr><tr><td>2013:169:22:02:54</td><td>2013:169:22:15:00</td><td>30002003001</td><td>IGRJ17544m2619</td><td>268.605292</td><td>-26.331306
+</td></tr><tr><td>2013:168:21:20:17</td><td>2013:169:21:15:00</td><td>60001050003</td><td>NGC4051</td><td>180.7900601</td><td>44.5313344
+</td></tr><tr><td>2013:168:16:40:13</td><td>2013:168:21:20:00</td><td>60001050002</td><td>NGC4051</td><td>180.7900601</td><td>44.5313344
+</td></tr><tr><td>2013:168:16:34:00</td><td>2013:168:16:40:00</td><td>60001050001</td><td>NGC4051</td><td>180.7900601</td><td>44.5313344
+</td></tr><tr><td>2013:167:08:25:19</td><td>2013:168:16:25:00</td><td>70001000002</td><td>Coma_center</td><td>194.94580</td><td>27.93070
+</td></tr><tr><td>2013:167:08:16:47</td><td>2013:167:08:25:00</td><td>70001000001</td><td>Coma_center</td><td>194.94580</td><td>27.93070
+</td></tr><tr><td>2013:166:04:55:11</td><td>2013:167:07:50:00</td><td>60002051004</td><td>NGC4945</td><td>196.36458333</td><td>-49.46833333
+</td></tr><tr><td>2013:166:04:46:16</td><td>2013:166:04:55:00</td><td>60002051003</td><td>NGC4945</td><td>196.36458333</td><td>-49.46833333
+</td></tr><tr><td>2013:165:09:55:42</td><td>2013:166:04:20:00</td><td>80002013012</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:165:09:46:52</td><td>2013:165:09:55:00</td><td>80002013011</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:164:21:15:13</td><td>2013:165:09:10:00</td><td>60001041003</td><td>Mkn335</td><td>1.5813389</td><td>20.2029144
+</td></tr><tr><td>2013:164:08:30:08</td><td>2013:164:21:15:00</td><td>60001041002</td><td>Mkn335</td><td>1.5813389</td><td>20.2029144
+</td></tr><tr><td>2013:164:08:20:58</td><td>2013:164:08:30:00</td><td>60001041001</td><td>Mkn335</td><td>1.5813389</td><td>20.2029144
+</td></tr><tr><td>2013:163:05:35:01</td><td>2013:164:07:30:00</td><td>30001027005</td><td>PSRJ1023p0038</td><td>155.94866667</td><td>0.64480556
+</td></tr><tr><td>2013:163:05:27:47</td><td>2013:163:05:35:00</td><td>30001027004</td><td>PSRJ1023p0038</td><td>155.94866667</td><td>0.64480556
+</td></tr><tr><td>2013:162:15:05:01</td><td>2013:163:05:20:00</td><td>60061208002</td><td>Mrk732</td><td>168.457458</td><td>9.58628
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:162:14:57:46</td><td>2013:162:15:05:00</td><td>60061208001</td><td>Mrk732</td><td>168.457458</td><td>9.58628
+</td></tr><tr><td>2013:161:21:15:19</td><td>2013:162:14:50:00</td><td>30001027003</td><td>PSRJ1023p0038</td><td>155.94866667</td><td>0.64480556
+</td></tr><tr><td>2013:161:13:15:09</td><td>2013:161:21:15:00</td><td>30001027002</td><td>PSRJ1023p0038</td><td>155.94866667</td><td>0.64480556
+</td></tr><tr><td>2013:161:13:07:28</td><td>2013:161:13:15:00</td><td>30001027001</td><td>PSRJ1023p0038</td><td>155.94866667</td><td>0.64480556
+</td></tr><tr><td>2013:160:14:45:42</td><td>2013:161:12:40:00</td><td>40024003001</td><td>MSH_15m52_thumb</td><td>228.35736</td><td>-59.101021
+</td></tr><tr><td>2013:159:17:45:35</td><td>2013:160:14:45:00</td><td>40024002001</td><td>MSH_15m52_jet</td><td>228.49257</td><td>-59.14426
+</td></tr><tr><td>2013:158:20:50:14</td><td>2013:159:17:45:00</td><td>40024004002</td><td>MSH_15m52_finger</td><td>228.39261</td><td>-59.050208
+</td></tr><tr><td>2013:158:20:40:24</td><td>2013:158:20:50:00</td><td>40024004001</td><td>MSH_15m52_finger</td><td>228.39261</td><td>-59.050208
+</td></tr><tr><td>2013:154:08:20:29</td><td>2013:158:20:20:00</td><td>60001046002</td><td>MCGm5m23m16</td><td>146.91731900</td><td>-30.94873400
+</td></tr><tr><td>2013:154:08:12:42</td><td>2013:154:08:20:00</td><td>60001046001</td><td>MCGm5m23m16</td><td>146.91731900</td><td>-30.94873400
+</td></tr><tr><td>2013:148:23:57:11</td><td>2013:154:07:25:00</td><td>40021003003</td><td>Cas_A_MOS3</td><td>350.862500</td><td>58.823194
+</td></tr><tr><td>2013:148:16:51:19</td><td>2013:148:23:57:00</td><td>40021003002</td><td>Cas_A_MOS3</td><td>350.862500</td><td>58.823194
+</td></tr><tr><td>2013:148:16:44:10</td><td>2013:148:16:50:00</td><td>40021003001</td><td>Cas_A_MOS3</td><td>350.862500</td><td>58.823194
+</td></tr><tr><td>2013:148:07:05:08</td><td>2013:148:15:55:00</td><td>60061257002</td><td>IGRJ14471m6414</td><td>221.61647</td><td>-64.273117
+</td></tr><tr><td>2013:148:06:55:11</td><td>2013:148:07:05:00</td><td>60061257001</td><td>IGRJ14471m6414</td><td>221.61647</td><td>-64.273117
+</td></tr><tr><td>2013:147:10:15:09</td><td>2013:148:06:30:00</td><td>80002013010</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:147:10:09:43</td><td>2013:147:10:15:00</td><td>80002013009</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:146:05:35:16</td><td>2013:147:09:50:00</td><td>60002029002</td><td>Super_antennae</td><td>292.83916667</td><td>-72.65500000
+</td></tr><tr><td>2013:146:05:28:36</td><td>2013:146:05:35:00</td><td>60002029001</td><td>Super_antennae</td><td>292.83916667</td><td>-72.65500000
+</td></tr><tr><td>2013:145:18:05:06</td><td>2013:146:05:00:00</td><td>60061293002</td><td>3C403</td><td>298.0659</td><td>2.5068
+</td></tr><tr><td>2013:145:17:55:12</td><td>2013:145:18:05:00</td><td>60061293001</td><td>3C403</td><td>298.0659</td><td>2.5068
+</td></tr><tr><td>2013:144:19:50:18</td><td>2013:145:17:30:00</td><td>60001082003</td><td>3C390d3</td><td>280.53745790</td><td>79.77142420
+</td></tr><tr><td>2013:144:09:15:18</td><td>2013:144:19:50:00</td><td>60001082002</td><td>3C390d3</td><td>280.53745790</td><td>79.77142420
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:144:09:05:48</td><td>2013:144:09:15:00</td><td>60001082001</td><td>3C390d3</td><td>280.53745790</td><td>79.77142420
+</td></tr><tr><td>2013:143:18:30:06</td><td>2013:144:08:45:00</td><td>60001088002</td><td>IRAS_08572p3915</td><td>135.10583333</td><td>39.06500000
+</td></tr><tr><td>2013:143:18:23:32</td><td>2013:143:18:30:00</td><td>60001088001</td><td>IRAS_08572p3915</td><td>135.10583333</td><td>39.06500000
+</td></tr><tr><td>2013:143:05:35:08</td><td>2013:143:18:10:00</td><td>60061217006</td><td>IC751</td><td>179.719803</td><td>42.57011
+</td></tr><tr><td>2013:143:05:29:43</td><td>2013:143:05:35:00</td><td>60061217005</td><td>IC751</td><td>179.719803</td><td>42.57011
+</td></tr><tr><td>2013:142:13:25:06</td><td>2013:143:05:20:00</td><td>60001090002</td><td>IRAS_10565p2448</td><td>164.82541667</td><td>24.54277778
+</td></tr><tr><td>2013:142:13:19:27</td><td>2013:142:13:25:00</td><td>60001090001</td><td>IRAS_10565p2448</td><td>164.82541667</td><td>24.54277778
+</td></tr><tr><td>2013:142:06:56:13</td><td>2013:142:13:05:00</td><td>60061091012</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:142:06:47:13</td><td>2013:142:06:55:00</td><td>60061091011</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:141:14:30:41</td><td>2013:142:06:40:00</td><td>60021064001</td><td>COSMOS_MOS064</td><td>149.70835833</td><td>1.84295000
+</td></tr><tr><td>2013:140:23:55:43</td><td>2013:141:14:30:00</td><td>60021063001</td><td>COSMOS_MOS063</td><td>149.81205833</td><td>1.83343056
+</td></tr><tr><td>2013:140:09:25:40</td><td>2013:140:23:55:00</td><td>60021062001</td><td>COSMOS_MOS062</td><td>149.92666250</td><td>1.82342778
+</td></tr><tr><td>2013:139:17:36:35</td><td>2013:140:09:25:00</td><td>60021061002</td><td>COSMOS_MOS061</td><td>150.02742917</td><td>1.81673056
+</td></tr><tr><td>2013:139:17:28:56</td><td>2013:139:17:35:00</td><td>60021061001</td><td>COSMOS_MOS061</td><td>150.02742917</td><td>1.81673056
+</td></tr><tr><td>2013:138:17:36:36</td><td>2013:139:16:40:00</td><td>80002013008</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:138:17:29:28</td><td>2013:138:17:35:00</td><td>80002013007</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:138:06:25:07</td><td>2013:138:17:05:00</td><td>60061300002</td><td>IGRJ20286p2544</td><td>307.14624</td><td>25.73361
+</td></tr><tr><td>2013:138:06:15:56</td><td>2013:138:06:25:00</td><td>60061300001</td><td>IGRJ20286p2544</td><td>307.14624</td><td>25.73361
+</td></tr><tr><td>2013:136:09:30:21</td><td>2013:138:06:00:00</td><td>30001026007</td><td>1E2259p586</td><td>345.28456250</td><td>58.87902778
+</td></tr><tr><td>2013:136:09:22:28</td><td>2013:136:09:30:00</td><td>30001026006</td><td>1E2259p586</td><td>345.28456250</td><td>58.87902778
+</td></tr><tr><td>2013:135:18:01:58</td><td>2013:136:08:45:00</td><td>60021060001</td><td>COSMOS_MOS060</td><td>150.14010833</td><td>1.80580278
+</td></tr><tr><td>2013:135:05:00:41</td><td>2013:135:18:00:00</td><td>60021059001</td><td>COSMOS_MOS059</td><td>149.77214167</td><td>2.59658056
+</td></tr><tr><td>2013:134:14:30:41</td><td>2013:135:05:00:00</td><td>60021058001</td><td>COSMOS_MOS058</td><td>149.87850833</td><td>2.58768056
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:134:01:30:42</td><td>2013:134:14:30:00</td><td>60021057001</td><td>COSMOS_MOS057</td><td>149.98622083</td><td>2.57764722
+</td></tr><tr><td>2013:133:11:00:42</td><td>2013:134:01:30:00</td><td>60021056001</td><td>COSMOS_MOS056</td><td>150.09499167</td><td>2.56820000
+</td></tr><tr><td>2013:132:20:46:19</td><td>2013:133:11:00:00</td><td>60021055002</td><td>COSMOS_MOS055</td><td>150.20552083</td><td>2.55945556
+</td></tr><tr><td>2013:132:20:37:17</td><td>2013:132:20:45:00</td><td>60021055001</td><td>COSMOS_MOS055</td><td>150.20552083</td><td>2.55945556
+</td></tr><tr><td>2013:132:12:30:14</td><td>2013:132:20:30:00</td><td>60061091010</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:132:12:20:53</td><td>2013:132:12:30:00</td><td>60061091009</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:131:14:25:57</td><td>2013:132:11:35:00</td><td>80002013006</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:131:14:17:30</td><td>2013:131:14:25:00</td><td>80002013005</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:131:01:15:09</td><td>2013:131:13:30:00</td><td>60061245002</td><td>NGC5252</td><td>204.566666</td><td>4.542361
+</td></tr><tr><td>2013:131:01:06:24</td><td>2013:131:01:15:00</td><td>60061245001</td><td>NGC5252</td><td>204.566666</td><td>4.542361
+</td></tr><tr><td>2013:130:13:45:03</td><td>2013:131:00:45:00</td><td>60001069002</td><td>Mrk1419</td><td>145.15166667</td><td>3.57694444
+</td></tr><tr><td>2013:130:13:37:00</td><td>2013:130:13:45:00</td><td>60001069001</td><td>Mrk1419</td><td>145.15166667</td><td>3.57694444
+</td></tr><tr><td>2013:130:02:30:06</td><td>2013:130:13:20:00</td><td>60061322002</td><td>NGC4395</td><td>186.4535921</td><td>33.5469278
+</td></tr><tr><td>2013:130:02:20:48</td><td>2013:130:02:30:00</td><td>60061322001</td><td>NGC4395</td><td>186.4535921</td><td>33.5469278
+</td></tr><tr><td>2013:129:12:00:09</td><td>2013:130:02:10:00</td><td>60002025004</td><td>Mrk231</td><td>194.05916667</td><td>56.87361111
+</td></tr><tr><td>2013:129:11:50:05</td><td>2013:129:12:00:00</td><td>60002025003</td><td>Mrk231</td><td>194.05916667</td><td>56.87361111
+</td></tr><tr><td>2013:128:20:00:10</td><td>2013:129:11:35:00</td><td>60002024004</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:128:19:53:32</td><td>2013:128:20:00:00</td><td>60002024003</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:128:06:31:47</td><td>2013:128:19:20:00</td><td>60021054001</td><td>COSMOS_MOS054</td><td>150.31059167</td><td>2.54960556
+</td></tr><tr><td>2013:127:15:55:42</td><td>2013:128:06:30:00</td><td>60021052001</td><td>COSMOS_MOS052</td><td>150.47119167</td><td>1.88193333
+</td></tr><tr><td>2013:127:03:00:41</td><td>2013:127:15:55:00</td><td>60021051001</td><td>COSMOS_MOS051</td><td>150.47995833</td><td>1.99344722
+</td></tr><tr><td>2013:126:14:06:26</td><td>2013:127:03:00:00</td><td>60021050001</td><td>COSMOS_MOS050</td><td>150.48874167</td><td>2.09840278
+</td></tr><tr><td>2013:126:01:26:02</td><td>2013:126:14:05:00</td><td>60021045002</td><td>COSMOS_MOS045</td><td>150.42002083</td><td>2.54083889
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:126:01:17:26</td><td>2013:126:01:25:00</td><td>60021045001</td><td>COSMOS_MOS045</td><td>150.42002083</td><td>2.54083889
+</td></tr><tr><td>2013:125:17:10:06</td><td>2013:126:01:10:00</td><td>60061091008</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:125:17:00:32</td><td>2013:125:17:10:00</td><td>60061091007</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:124:17:30:30</td><td>2013:125:16:15:00</td><td>80002013004</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:124:17:20:25</td><td>2013:124:17:30:00</td><td>80002013003</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:123:05:25:34</td><td>2013:124:16:45:00</td><td>70001060002</td><td>Abell2256_NW2</td><td>255.3420</td><td>78.7080
+</td></tr><tr><td>2013:123:05:17:48</td><td>2013:123:05:25:00</td><td>70001060001</td><td>Abell2256_NW2</td><td>255.3420</td><td>78.7080
+</td></tr><tr><td>2013:123:02:01:41</td><td>2013:123:04:50:00</td><td>10013039003</td><td>Crab_cal19</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:123:01:43:37</td><td>2013:123:01:55:00</td><td>10002102003</td><td>SADA_13_122_52</td><td>95.00</td><td>22.00
+</td></tr><tr><td>2013:122:18:05:38</td><td>2013:123:01:20:00</td><td>80002095006</td><td>GRB130427A</td><td>173.1368</td><td>27.6989
+</td></tr><tr><td>2013:122:17:56:19</td><td>2013:122:18:05:00</td><td>80002095005</td><td>GRB130427A</td><td>173.1368</td><td>27.6989
+</td></tr><tr><td>2013:122:14:36:41</td><td>2013:122:17:30:00</td><td>10013039002</td><td>Crab_cal19</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:122:14:23:37</td><td>2013:122:14:30:00</td><td>10002102002</td><td>SADA_13_122_52</td><td>95.00</td><td>22.00
+</td></tr><tr><td>2013:122:02:00:32</td><td>2013:122:14:00:00</td><td>80002095004</td><td>GRB130427A</td><td>173.1368</td><td>27.6989
+</td></tr><tr><td>2013:122:01:51:19</td><td>2013:122:02:00:00</td><td>80002095003</td><td>GRB130427A</td><td>173.1368</td><td>27.6989
+</td></tr><tr><td>2013:121:19:16:41</td><td>2013:122:01:25:00</td><td>10013039001</td><td>Crab_cal19</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:121:19:01:02</td><td>2013:121:19:10:00</td><td>10002102001</td><td>SADA_13_122_52</td><td>95.00</td><td>22.00
+</td></tr><tr><td>2013:119:04:40:18</td><td>2013:121:18:35:00</td><td>30002037004</td><td>NGC5204_X1</td><td>202.41083333</td><td>58.41825000
+</td></tr><tr><td>2013:119:04:29:56</td><td>2013:119:04:40:00</td><td>30002037003</td><td>NGC5204_X1</td><td>202.41083333</td><td>58.41825000
+</td></tr><tr><td>2013:118:12:30:07</td><td>2013:119:04:15:00</td><td>80002095002</td><td>GRB130427A</td><td>173.1368</td><td>27.6989
+</td></tr><tr><td>2013:118:12:22:43</td><td>2013:118:12:30:00</td><td>80002095001</td><td>GRB130427A</td><td>173.1368</td><td>27.6989
+</td></tr><tr><td>2013:117:06:15:05</td><td>2013:118:11:35:00</td><td>80002013002</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><td>2013:117:06:08:51</td><td>2013:117:06:15:00</td><td>80002013001</td><td>gcmagnetar</td><td>266.416840</td><td>-29.007810
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:116:22:10:22</td><td>2013:117:05:35:00</td><td>30001026005</td><td>1E2259p586</td><td>345.28456250</td><td>58.87902778
+</td></tr><tr><td>2013:116:22:03:51</td><td>2013:116:22:10:00</td><td>30001026004</td><td>1E2259p586</td><td>345.28456250</td><td>58.87902778
+</td></tr><tr><td>2013:116:01:00:06</td><td>2013:116:21:30:00</td><td>30001002006</td><td>SgrAstar</td><td>266.41684000</td><td>-29.00781000
+</td></tr><tr><td>2013:116:00:53:51</td><td>2013:116:01:00:00</td><td>30001002005</td><td>SgrAstar</td><td>266.41684000</td><td>-29.00781000
+</td></tr><tr><td>2013:115:17:15:19</td><td>2013:116:00:20:00</td><td>30001026003</td><td>1E2259p586</td><td>345.28456250</td><td>58.87902778
+</td></tr><tr><td>2013:114:21:50:37</td><td>2013:115:17:15:00</td><td>30001026002</td><td>1E2259p586</td><td>345.28456250</td><td>58.87902778
+</td></tr><tr><td>2013:114:21:41:24</td><td>2013:114:21:50:00</td><td>30001026001</td><td>1E2259p586</td><td>345.28456250</td><td>58.87902778
+</td></tr><tr><td>2013:113:19:45:08</td><td>2013:114:21:10:00</td><td>60002022002</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><td>2013:113:19:38:17</td><td>2013:113:19:45:00</td><td>60002022001</td><td>PKS2155m304</td><td>329.71708333</td><td>-30.22555556
+</td></tr><tr><td>2013:112:20:10:16</td><td>2013:113:19:05:00</td><td>30002007003</td><td>Vela_X1</td><td>135.52858000</td><td>-40.55470000
+</td></tr><tr><td>2013:112:12:15:15</td><td>2013:112:20:10:00</td><td>30002007002</td><td>Vela_X1</td><td>135.52858000</td><td>-40.55470000
+</td></tr><tr><td>2013:112:12:05:15</td><td>2013:112:12:15:00</td><td>30002007001</td><td>Vela_X1</td><td>135.52858000</td><td>-40.55470000
+</td></tr><tr><td>2013:112:04:20:06</td><td>2013:112:12:00:00</td><td>60061085002</td><td>SWIFTJ0845d0m3531</td><td>131.337921</td><td>-35.507942
+</td></tr><tr><td>2013:112:04:10:20</td><td>2013:112:04:20:00</td><td>60061085001</td><td>SWIFTJ0845d0m3531</td><td>131.337921</td><td>-35.507942
+</td></tr><tr><td>2013:111:20:30:06</td><td>2013:112:03:35:00</td><td>60061241002</td><td>Mrk248</td><td>198.821937</td><td>44.407105
+</td></tr><tr><td>2013:111:20:22:02</td><td>2013:111:20:30:00</td><td>60061241001</td><td>Mrk248</td><td>198.821937</td><td>44.407105
+</td></tr><tr><td>2013:109:08:40:24</td><td>2013:111:20:15:00</td><td>30002037002</td><td>NGC5204_X1</td><td>202.41083333</td><td>58.41825000
+</td></tr><tr><td>2013:109:08:27:56</td><td>2013:109:08:40:00</td><td>30002037001</td><td>NGC5204_X1</td><td>202.41083333</td><td>58.41825000
+</td></tr><tr><td>2013:109:00:31:04</td><td>2013:109:08:15:00</td><td>60002023039</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:109:00:25:09</td><td>2013:109:00:30:00</td><td>60002023038</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:108:16:11:37</td><td>2013:109:00:05:00</td><td>60061091006</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:108:16:02:39</td><td>2013:108:16:10:00</td><td>60061091005</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:108:13:01:42</td><td>2013:108:15:55:00</td><td>60021053006</td><td>COSMOS_MOS053</td><td>150.46144167</td><td>1.77746389
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:108:12:52:32</td><td>2013:108:13:00:00</td><td>60021053005</td><td>COSMOS_MOS053</td><td>150.46144167</td><td>1.77746389
+</td></tr><tr><td>2013:108:09:35:09</td><td>2013:108:12:30:00</td><td>10013037008</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:108:09:28:52</td><td>2013:108:09:35:00</td><td>10013037007</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:108:00:15:54</td><td>2013:108:09:05:00</td><td>60002023037</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:108:00:06:10</td><td>2013:108:00:15:00</td><td>60002023036</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:107:19:11:42</td><td>2013:107:23:50:00</td><td>60021053004</td><td>COSMOS_MOS053</td><td>150.46144167</td><td>1.77746389
+</td></tr><tr><td>2013:107:19:02:32</td><td>2013:107:19:10:00</td><td>60021053003</td><td>COSMOS_MOS053</td><td>150.46144167</td><td>1.77746389
+</td></tr><tr><td>2013:107:15:45:07</td><td>2013:107:18:40:00</td><td>10013038008</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:107:15:37:21</td><td>2013:107:15:45:00</td><td>10013038007</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:107:09:36:42</td><td>2013:107:15:15:00</td><td>60021053002</td><td>COSMOS_MOS053</td><td>150.46144167</td><td>1.77746389
+</td></tr><tr><td>2013:107:09:26:42</td><td>2013:107:09:35:00</td><td>60021053001</td><td>COSMOS_MOS053</td><td>150.46144167</td><td>1.77746389
+</td></tr><tr><td>2013:106:22:20:42</td><td>2013:107:09:10:00</td><td>60002023035</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:106:22:11:07</td><td>2013:106:22:20:00</td><td>60002023034</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:106:07:50:11</td><td>2013:106:21:55:00</td><td>60021049002</td><td>COSMOS_MOS049</td><td>150.49860833</td><td>2.20882500
+</td></tr><tr><td>2013:106:07:41:34</td><td>2013:106:07:50:00</td><td>60021049001</td><td>COSMOS_MOS049</td><td>150.49860833</td><td>2.20882500
+</td></tr><tr><td>2013:105:22:00:48</td><td>2013:106:07:25:00</td><td>60002023033</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:105:21:51:10</td><td>2013:105:22:00:00</td><td>60002023032</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:105:07:35:14</td><td>2013:105:21:35:00</td><td>60021048002</td><td>COSMOS_MOS048</td><td>150.50847917</td><td>2.31487222
+</td></tr><tr><td>2013:105:07:26:33</td><td>2013:105:07:35:00</td><td>60021048001</td><td>COSMOS_MOS048</td><td>150.50847917</td><td>2.31487222
+</td></tr><tr><td>2013:104:21:40:37</td><td>2013:105:07:10:00</td><td>60002023031</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:104:21:31:13</td><td>2013:104:21:40:00</td><td>60002023030</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:104:07:20:16</td><td>2013:104:21:15:00</td><td>60021047002</td><td>COSMOS_MOS047</td><td>150.51725833</td><td>2.42420000
+</td></tr><tr><td>2013:104:07:11:32</td><td>2013:104:07:20:00</td><td>60021047001</td><td>COSMOS_MOS047</td><td>150.51725833</td><td>2.42420000
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:103:21:35:26</td><td>2013:104:06:55:00</td><td>60002023029</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:103:21:26:17</td><td>2013:103:21:35:00</td><td>60002023028</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:103:13:25:18</td><td>2013:103:21:10:00</td><td>60021046004</td><td>COSMOS_MOS046</td><td>150.52702083</td><td>2.53109167
+</td></tr><tr><td>2013:103:13:16:59</td><td>2013:103:13:25:00</td><td>60021046003</td><td>COSMOS_MOS046</td><td>150.52702083</td><td>2.53109167
+</td></tr><tr><td>2013:103:02:30:08</td><td>2013:103:12:40:00</td><td>60002024002</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:103:02:24:04</td><td>2013:103:02:30:00</td><td>60002024001</td><td>Mkn501</td><td>253.46758334</td><td>39.76016667
+</td></tr><tr><td>2013:102:20:35:14</td><td>2013:103:02:00:00</td><td>60002023027</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:102:20:26:22</td><td>2013:102:20:35:00</td><td>60002023026</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:102:10:00:22</td><td>2013:102:20:10:00</td><td>60021046002</td><td>COSMOS_MOS046</td><td>150.52702083</td><td>2.53109167
+</td></tr><tr><td>2013:102:09:51:33</td><td>2013:102:10:00:00</td><td>60021046001</td><td>COSMOS_MOS046</td><td>150.52702083</td><td>2.53109167
+</td></tr><tr><td>2013:101:01:00:13</td><td>2013:102:09:35:00</td><td>60002023025</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:100:21:25:20</td><td>2013:101:01:00:00</td><td>60002023024</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:100:21:15:52</td><td>2013:100:21:25:00</td><td>60002023023</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:100:20:20:00</td><td>2013:100:20:52:00</td><td>10013038006</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:100:20:10:46</td><td>2013:100:20:20:00</td><td>10013038005</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:100:14:15:34</td><td>2013:100:19:50:00</td><td>60061091004</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:100:14:07:56</td><td>2013:100:14:15:00</td><td>60061091003</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:100:01:20:34</td><td>2013:100:14:00:00</td><td>60021044002</td><td>COSMOS_MOS044</td><td>150.41027083</td><td>2.43394444
+</td></tr><tr><td>2013:100:01:12:15</td><td>2013:100:01:20:00</td><td>60021044001</td><td>COSMOS_MOS044</td><td>150.41027083</td><td>2.43394444
+</td></tr><tr><td>2013:099:21:45:02</td><td>2013:100:00:50:00</td><td>10013038004</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:099:21:37:17</td><td>2013:099:21:45:00</td><td>10013038003</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:099:07:20:41</td><td>2013:099:21:15:00</td><td>60021043001</td><td>COSMOS_MOS043</td><td>150.40150000</td><td>2.32461667
+</td></tr><tr><td>2013:098:15:20:43</td><td>2013:099:07:20:00</td><td>60021042002</td><td>COSMOS_MOS042</td><td>150.39162917</td><td>2.21856667
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:098:15:12:15</td><td>2013:098:15:20:00</td><td>60021042001</td><td>COSMOS_MOS042</td><td>150.39162917</td><td>2.21856667
+</td></tr><tr><td>2013:098:11:50:04</td><td>2013:098:14:50:00</td><td>10013038002</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:098:11:42:18</td><td>2013:098:11:50:00</td><td>10013038001</td><td>Crab_cal18</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:097:19:50:41</td><td>2013:098:11:20:00</td><td>60021041001</td><td>COSMOS_MOS041</td><td>150.38177083</td><td>2.10814167
+</td></tr><tr><td>2013:097:06:50:42</td><td>2013:097:19:50:00</td><td>60021040001</td><td>COSMOS_MOS040</td><td>150.37300000</td><td>2.00318611
+</td></tr><tr><td>2013:096:14:40:41</td><td>2013:097:06:50:00</td><td>60021039001</td><td>COSMOS_MOS039</td><td>150.36422917</td><td>1.89166944
+</td></tr><tr><td>2013:096:00:10:42</td><td>2013:096:14:40:00</td><td>60021038001</td><td>COSMOS_MOS038</td><td>150.35449167</td><td>1.78720000
+</td></tr><tr><td>2013:095:09:46:06</td><td>2013:096:00:10:00</td><td>60021037002</td><td>COSMOS_MOS037</td><td>150.24510833</td><td>1.79681111
+</td></tr><tr><td>2013:095:09:37:14</td><td>2013:095:09:45:00</td><td>60021037001</td><td>COSMOS_MOS037</td><td>150.24510833</td><td>1.79681111
+</td></tr><tr><td>2013:095:06:20:03</td><td>2013:095:09:15:00</td><td>10013037006</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:095:06:12:17</td><td>2013:095:06:20:00</td><td>10013037005</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:094:14:16:09</td><td>2013:095:05:50:00</td><td>60021036002</td><td>COSMOS_MOS036</td><td>150.25484167</td><td>1.90128333
+</td></tr><tr><td>2013:094:14:07:13</td><td>2013:094:14:15:00</td><td>60021036001</td><td>COSMOS_MOS036</td><td>150.25484167</td><td>1.90128333
+</td></tr><tr><td>2013:094:10:50:04</td><td>2013:094:13:45:00</td><td>10013037004</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:094:10:42:17</td><td>2013:094:10:50:00</td><td>10013037003</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:093:18:56:11</td><td>2013:094:10:20:00</td><td>60021035002</td><td>COSMOS_MOS035</td><td>150.26360000</td><td>2.01280000
+</td></tr><tr><td>2013:093:18:47:49</td><td>2013:093:18:55:00</td><td>60021035001</td><td>COSMOS_MOS035</td><td>150.26360000</td><td>2.01280000
+</td></tr><tr><td>2013:093:12:30:41</td><td>2013:093:18:40:00</td><td>60061091002</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:093:12:20:50</td><td>2013:093:12:30:00</td><td>60061091001</td><td>MCG_01_24_012</td><td>140.192703</td><td>-8.056139
+</td></tr><tr><td>2013:093:09:00:05</td><td>2013:093:12:00:00</td><td>10013037002</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:093:08:53:56</td><td>2013:093:09:00:00</td><td>10013037001</td><td>Crab_cal17</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:092:17:15:09</td><td>2013:093:08:30:00</td><td>60002023022</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:092:17:07:28</td><td>2013:092:17:15:00</td><td>60002023021</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:092:11:51:08</td><td>2013:092:16:30:00</td><td>60061039006</td><td>1RXSJ034704d9m302409</td><td>56.772099</td><td>-30.3978
+</td></tr><tr><td>2013:092:11:43:58</td><td>2013:092:11:50:00</td><td>60061039005</td><td>1RXSJ034704d9m302409</td><td>56.772099</td><td>-30.3978
+</td></tr><tr><td>2013:091:11:20:42</td><td>2013:092:11:40:00</td><td>60022001003</td><td>ECDFS_MOS001</td><td>52.9325</td><td>-27.97
+</td></tr><tr><td>2013:090:11:10:42</td><td>2013:091:11:20:00</td><td>60022002002</td><td>ECDFS_MOS002</td><td>53.0571</td><td>-27.97
+</td></tr><tr><td>2013:089:10:55:42</td><td>2013:090:11:10:00</td><td>60022003002</td><td>ECDFS_MOS003</td><td>53.1816</td><td>-27.97
+</td></tr><tr><td>2013:088:10:36:14</td><td>2013:089:10:55:00</td><td>60022004002</td><td>ECDFS_MOS004</td><td>53.3062</td><td>-27.97
+</td></tr><tr><td>2013:087:10:15:42</td><td>2013:088:10:35:00</td><td>60022005002</td><td>ECDFS_MOS005</td><td>52.9325</td><td>-27.86
+</td></tr><tr><td>2013:086:10:01:31</td><td>2013:087:10:15:00</td><td>60022006002</td><td>ECDFS_MOS006</td><td>53.0569</td><td>-27.86
+</td></tr><tr><td>2013:085:09:50:42</td><td>2013:086:10:00:00</td><td>60022007003</td><td>ECDFS_MOS007</td><td>53.1814</td><td>-27.86
+</td></tr><tr><td>2013:084:09:31:13</td><td>2013:085:09:50:00</td><td>60022008002</td><td>ECDFS_MOS008</td><td>53.3058</td><td>-27.86
+</td></tr><tr><td>2013:083:09:35:12</td><td>2013:084:09:30:00</td><td>60022009003</td><td>ECDFS_MOS009</td><td>52.9325</td><td>-27.75
+</td></tr><tr><td>2013:083:09:23:51</td><td>2013:083:09:35:00</td><td>60022009002</td><td>ECDFS_MOS009</td><td>52.9325</td><td>-27.75
+</td></tr><tr><td>2013:083:03:10:20</td><td>2013:083:09:20:00</td><td>60061039004</td><td>1RXSJ034704d9m302409</td><td>56.772099</td><td>-30.3978
+</td></tr><tr><td>2013:083:03:03:41</td><td>2013:083:03:10:00</td><td>60061039003</td><td>1RXSJ034704d9m302409</td><td>56.772099</td><td>-30.3978
+</td></tr><tr><td>2013:082:19:01:25</td><td>2013:083:03:00:00</td><td>60022010004</td><td>ECDFS_MOS010</td><td>53.0568</td><td>-27.75
+</td></tr><tr><td>2013:082:18:53:12</td><td>2013:082:19:00:00</td><td>60022010003</td><td>ECDFS_MOS010</td><td>53.0568</td><td>-27.75
+</td></tr><tr><td>2013:082:08:30:06</td><td>2013:082:18:20:00</td><td>30001012002</td><td>NuSTARJ163433m473841</td><td>248.63925</td><td>-47.6449722
+</td></tr><tr><td>2013:082:08:23:22</td><td>2013:082:08:30:00</td><td>30001012001</td><td>NuSTARJ163433m473841</td><td>248.63925</td><td>-47.6449722
+</td></tr><tr><td>2013:081:15:20:42</td><td>2013:082:07:50:00</td><td>60022010002</td><td>ECDFS_MOS010</td><td>53.0568</td><td>-27.75
+</td></tr><tr><td>2013:080:15:10:42</td><td>2013:081:15:20:00</td><td>60022011002</td><td>ECDFS_MOS011</td><td>53.1811</td><td>-27.75
+</td></tr><tr><td>2013:079:14:51:12</td><td>2013:080:15:10:00</td><td>60022012002</td><td>ECDFS_MOS012</td><td>53.3054</td><td>-27.75
+</td></tr><tr><td>2013:078:14:35:42</td><td>2013:079:14:50:00</td><td>60022013002</td><td>ECDFS_MOS013</td><td>52.9325</td><td>-27.64
+</td></tr><tr><td>2013:077:12:50:42</td><td>2013:078:14:35:00</td><td>60022014002</td><td>ECDFS_MOS014</td><td>53.0567</td><td>-27.64
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:076:11:00:32</td><td>2013:077:12:50:00</td><td>60022015003</td><td>ECDFS_MOS015</td><td>53.1809</td><td>-27.64
+</td></tr><tr><td>2013:076:10:53:37</td><td>2013:076:11:00:00</td><td>60022015002</td><td>ECDFS_MOS015</td><td>53.1809</td><td>-27.64
+</td></tr><tr><td>2013:076:00:10:56</td><td>2013:076:10:15:00</td><td>60002023020</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:076:00:03:25</td><td>2013:076:00:10:00</td><td>60002023019</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:074:21:50:58</td><td>2013:075:23:25:00</td><td>60022016003</td><td>ECDFS_MOS016</td><td>53.3050</td><td>-27.64
+</td></tr><tr><td>2013:074:21:43:51</td><td>2013:074:21:50:00</td><td>60022016002</td><td>ECDFS_MOS016</td><td>53.3050</td><td>-27.64
+</td></tr><tr><td>2013:074:18:46:09</td><td>2013:074:21:40:00</td><td>60061039002</td><td>1RXSJ034704d9m302409</td><td>56.772099</td><td>-30.3978
+</td></tr><tr><td>2013:074:18:36:12</td><td>2013:074:18:45:00</td><td>60061039001</td><td>1RXSJ034704d9m302409</td><td>56.772099</td><td>-30.3978
+</td></tr><tr><td>2013:073:13:20:17</td><td>2013:074:17:55:00</td><td>70001054005</td><td>Abell2256_NW</td><td>255.84600</td><td>78.774667
+</td></tr><tr><td>2013:073:13:11:57</td><td>2013:073:13:20:00</td><td>70001054004</td><td>Abell2256_NW</td><td>255.84600</td><td>78.774667
+</td></tr><tr><td>2013:072:04:25:09</td><td>2013:073:13:00:00</td><td>50002041003</td><td>Arp299</td><td>172.126667</td><td>58.569444
+</td></tr><tr><td>2013:071:23:20:03</td><td>2013:072:04:25:00</td><td>50002041002</td><td>Arp299</td><td>172.126667</td><td>58.569444
+</td></tr><tr><td>2013:071:23:11:57</td><td>2013:071:23:20:00</td><td>50002041001</td><td>Arp299</td><td>172.126667</td><td>58.569444
+</td></tr><tr><td>2013:071:08:45:54</td><td>2013:071:23:00:00</td><td>70001054003</td><td>Abell2256_NW</td><td>255.84600</td><td>78.774667
+</td></tr><tr><td>2013:071:08:38:02</td><td>2013:071:08:45:00</td><td>70001054002</td><td>Abell2256_NW</td><td>255.84600</td><td>78.774667
+</td></tr><tr><td>2013:070:23:01:10</td><td>2013:071:08:20:00</td><td>60002023018</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:070:22:52:44</td><td>2013:070:23:00:00</td><td>60002023017</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:070:18:40:44</td><td>2013:070:22:35:00</td><td>70001054001</td><td>Abell2256_NW</td><td>255.84600</td><td>78.774667
+</td></tr><tr><td>2013:068:20:21:36</td><td>2013:070:18:40:00</td><td>70001053002</td><td>Abell2256</td><td>255.8850</td><td>78.6360
+</td></tr><tr><td>2013:068:20:13:41</td><td>2013:068:20:20:00</td><td>70001053001</td><td>Abell2256</td><td>255.8850</td><td>78.6360
+</td></tr><tr><td>2013:068:12:41:01</td><td>2013:068:20:00:00</td><td>40021002010</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:068:12:34:40</td><td>2013:068:12:40:00</td><td>40021002009</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:068:07:40:02</td><td>2013:068:12:10:00</td><td>80001022002</td><td>Crab</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:068:07:34:33</td><td>2013:068:07:40:00</td><td>80001022001</td><td>Crab</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:064:09:25:20</td><td>2013:068:07:10:00</td><td>40021002008</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:064:09:16:54</td><td>2013:064:09:25:00</td><td>40021002007</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:063:23:05:11</td><td>2013:064:08:50:00</td><td>60002023016</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:063:22:56:54</td><td>2013:063:23:05:00</td><td>60002023015</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:061:02:16:14</td><td>2013:063:22:30:00</td><td>40021002006</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:061:02:09:49</td><td>2013:061:02:15:00</td><td>40021002005</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:060:14:35:08</td><td>2013:061:01:55:00</td><td>60001083004</td><td>Cyg_A</td><td>299.86815250</td><td>40.73391560
+</td></tr><tr><td>2013:060:14:29:26</td><td>2013:060:14:35:00</td><td>60001083003</td><td>Cyg_A</td><td>299.86815250</td><td>40.73391560
+</td></tr><tr><td>2013:060:11:41:24</td><td>2013:060:14:15:00</td><td>40021002004</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:060:11:32:57</td><td>2013:060:11:40:00</td><td>40021002003</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2013:059:22:10:07</td><td>2013:060:10:50:00</td><td>60001092002</td><td>IRAS_14378m3651</td><td>220.24583333</td><td>-37.07555556
+</td></tr><tr><td>2013:059:22:00:18</td><td>2013:059:22:10:00</td><td>60001092001</td><td>IRAS_14378m3651</td><td>220.24583333</td><td>-37.07555556
+</td></tr><tr><td>2013:057:22:10:11</td><td>2013:059:21:40:00</td><td>40001016003</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2013:057:05:55:12</td><td>2013:057:22:10:00</td><td>40001016002</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2013:057:05:49:00</td><td>2013:057:05:55:00</td><td>40001016001</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2013:056:21:30:06</td><td>2013:057:05:30:00</td><td>60061277002</td><td>NGC6300</td><td>259.246674</td><td>-62.819721
+</td></tr><tr><td>2013:056:21:22:36</td><td>2013:056:21:30:00</td><td>60061277001</td><td>NGC6300</td><td>259.246674</td><td>-62.819721
+</td></tr><tr><td>2013:056:08:15:08</td><td>2013:056:21:10:00</td><td>60001091002</td><td>IRAS_13120m5453</td><td>198.77625000</td><td>-55.15638889
+</td></tr><tr><td>2013:056:08:09:26</td><td>2013:056:08:15:00</td><td>60001091001</td><td>IRAS_13120m5453</td><td>198.77625000</td><td>-55.15638889
+</td></tr><tr><td>2013:055:21:25:06</td><td>2013:056:07:55:00</td><td>60061288002</td><td>H1834m653</td><td>279.584595</td><td>-65.428055
+</td></tr><tr><td>2013:055:21:15:54</td><td>2013:055:21:25:00</td><td>60061288001</td><td>H1834m653</td><td>279.584595</td><td>-65.428055
+</td></tr><tr><td>2013:055:11:30:41</td><td>2013:055:21:05:00</td><td>40014002001</td><td>Norma_MOS002</td><td>248.347</td><td>-47.6318
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:055:01:45:57</td><td>2013:055:11:30:00</td><td>40014001001</td><td>Norma_MOS001</td><td>248.468</td><td>-47.7076
+</td></tr><tr><td>2013:054:14:30:58</td><td>2013:055:01:45:00</td><td>40014007001</td><td>Norma_MOS007</td><td>248.693</td><td>-47.5434
+</td></tr><tr><td>2013:054:04:45:41</td><td>2013:054:14:30:00</td><td>40014006001</td><td>Norma_MOS006</td><td>248.338</td><td>-47.474
+</td></tr><tr><td>2013:053:17:30:41</td><td>2013:054:04:45:00</td><td>40014005001</td><td>Norma_MOS005</td><td>248.459</td><td>-47.5498
+</td></tr><tr><td>2013:053:07:45:58</td><td>2013:053:17:30:00</td><td>40014004001</td><td>Norma_MOS004</td><td>248.581</td><td>-47.6256
+</td></tr><tr><td>2013:052:20:30:57</td><td>2013:053:07:45:00</td><td>40014003001</td><td>Norma_MOS003</td><td>248.225</td><td>-47.5558
+</td></tr><tr><td>2013:052:10:45:41</td><td>2013:052:20:30:00</td><td>40014009001</td><td>Norma_MOS009</td><td>248.45</td><td>-47.392
+</td></tr><tr><td>2013:051:23:30:33</td><td>2013:052:10:45:00</td><td>40014008002</td><td>Norma_MOS008</td><td>248.571</td><td>-47.4678
+</td></tr><tr><td>2013:051:23:23:05</td><td>2013:051:23:30:00</td><td>40014008001</td><td>Norma_MOS008</td><td>248.571</td><td>-47.4678
+</td></tr><tr><td>2013:051:09:55:09</td><td>2013:051:22:50:00</td><td>60002027002</td><td>IRAS05189m2524</td><td>80.25583333</td><td>-25.36250000
+</td></tr><tr><td>2013:051:09:45:27</td><td>2013:051:09:55:00</td><td>60002027001</td><td>IRAS05189m2524</td><td>80.25583333</td><td>-25.36250000
+</td></tr><tr><td>2013:049:10:45:11</td><td>2013:051:09:35:00</td><td>60001044002</td><td>Ark120</td><td>79.04750000</td><td>-0.14972222
+</td></tr><tr><td>2013:049:10:39:11</td><td>2013:049:10:45:00</td><td>60001044001</td><td>Ark120</td><td>79.04750000</td><td>-0.14972222
+</td></tr><tr><td>2013:048:11:45:14</td><td>2013:049:10:00:00</td><td>60001083002</td><td>Cyg_A</td><td>299.86815250</td><td>40.73391560
+</td></tr><tr><td>2013:048:11:38:54</td><td>2013:048:11:45:00</td><td>60001083001</td><td>Cyg_A</td><td>299.86815250</td><td>40.73391560
+</td></tr><tr><td>2013:047:23:35:12</td><td>2013:048:11:10:00</td><td>60002023014</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:047:23:26:35</td><td>2013:047:23:35:00</td><td>60002023013</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:047:15:00:06</td><td>2013:047:23:00:00</td><td>60061030002</td><td>2MFGC2280</td><td>42.677898</td><td>54.705002
+</td></tr><tr><td>2013:047:14:51:22</td><td>2013:047:15:00:00</td><td>60061030001</td><td>2MFGC2280</td><td>42.677898</td><td>54.705002
+</td></tr><tr><td>2013:047:07:00:04</td><td>2013:047:14:40:00</td><td>60061012002</td><td>NGC0513</td><td>21.11200</td><td>33.799
+</td></tr><tr><td>2013:047:06:52:41</td><td>2013:047:07:00:00</td><td>60061012001</td><td>NGC0513</td><td>21.11200</td><td>33.799
+</td></tr><tr><td>2013:047:03:55:07</td><td>2013:047:06:35:00</td><td>60061044006</td><td>3C105</td><td>61.818539</td><td>3.70719
+</td></tr><tr><td>2013:047:03:46:58</td><td>2013:047:03:55:00</td><td>60061044005</td><td>3C105</td><td>61.818539</td><td>3.70719
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:046:18:35:36</td><td>2013:047:03:35:00</td><td>10013034005</td><td>Crab_cal14</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:046:18:20:01</td><td>2013:046:18:35:00</td><td>10013036002</td><td>Crab_cal16</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:046:18:12:00</td><td>2013:046:18:20:00</td><td>10013036001</td><td>Crab_cal16</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:046:15:00:01</td><td>2013:046:18:00:00</td><td>60061044004</td><td>3C105</td><td>61.818539</td><td>3.70719
+</td></tr><tr><td>2013:046:14:51:58</td><td>2013:046:15:00:00</td><td>60061044003</td><td>3C105</td><td>61.818539</td><td>3.70719
+</td></tr><tr><td>2013:046:05:10:04</td><td>2013:046:14:40:00</td><td>10013035002</td><td>Crab_cal15</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:046:05:01:58</td><td>2013:046:05:10:00</td><td>10013035001</td><td>Crab_cal15</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:046:02:05:07</td><td>2013:046:04:50:00</td><td>60061044002</td><td>3C105</td><td>61.818539</td><td>3.70719
+</td></tr><tr><td>2013:046:01:56:59</td><td>2013:046:02:05:00</td><td>60061044001</td><td>3C105</td><td>61.818539</td><td>3.70719
+</td></tr><tr><td>2013:045:17:55:04</td><td>2013:046:01:45:00</td><td>10013034004</td><td>Crab_cal14</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:045:17:48:42</td><td>2013:045:17:55:00</td><td>10013034003</td><td>Crab_cal14</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:045:09:50:06</td><td>2013:045:17:30:00</td><td>60061027002</td><td>NGC1052</td><td>40.270000</td><td>-8.255778
+</td></tr><tr><td>2013:045:09:41:24</td><td>2013:045:09:50:00</td><td>60061027001</td><td>NGC1052</td><td>40.270000</td><td>-8.255778
+</td></tr><tr><td>2013:045:01:50:05</td><td>2013:045:09:25:00</td><td>60061061004</td><td>NGC2110</td><td>88.047417</td><td>-7.456222
+</td></tr><tr><td>2013:045:01:42:43</td><td>2013:045:01:50:00</td><td>60061061003</td><td>NGC2110</td><td>88.047417</td><td>-7.456222
+</td></tr><tr><td>2013:045:00:15:05</td><td>2013:045:01:30:00</td><td>10013034002</td><td>Crab_cal14</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:045:00:06:47</td><td>2013:045:00:15:00</td><td>10013034001</td><td>Crab_cal14</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2013:043:11:00:16</td><td>2013:044:23:45:00</td><td>60002046009</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2013:043:10:53:11</td><td>2013:043:11:00:00</td><td>60002046008</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2013:043:00:15:12</td><td>2013:043:10:05:00</td><td>60002023012</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:043:00:07:10</td><td>2013:043:00:15:00</td><td>60002023011</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:041:22:30:11</td><td>2013:042:23:30:00</td><td>60002051002</td><td>NGC4945</td><td>196.36458333</td><td>-49.46833333
+</td></tr><tr><td>2013:041:22:22:14</td><td>2013:041:22:30:00</td><td>60002051001</td><td>NGC4945</td><td>196.36458333</td><td>-49.46833333
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:041:07:15:04</td><td>2013:041:21:45:00</td><td>60061036004</td><td>NGC1320</td><td>51.202961</td><td>-3.04242
+</td></tr><tr><td>2013:041:07:09:22</td><td>2013:041:07:15:00</td><td>60061036003</td><td>NGC1320</td><td>51.202961</td><td>-3.04242
+</td></tr><tr><td>2013:037:23:50:09</td><td>2013:041:07:00:00</td><td>60001042003</td><td>3C120</td><td>68.29625000</td><td>5.35444444
+</td></tr><tr><td>2013:037:12:45:15</td><td>2013:037:23:50:00</td><td>60001042002</td><td>3C120</td><td>68.29625000</td><td>5.35444444
+</td></tr><tr><td>2013:037:12:38:45</td><td>2013:037:12:45:00</td><td>60001042001</td><td>3C120</td><td>68.29625000</td><td>5.35444444
+</td></tr><tr><td>2013:037:00:16:43</td><td>2013:037:12:00:00</td><td>60002023010</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:037:00:09:03</td><td>2013:037:00:15:00</td><td>60002023009</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:036:05:05:30</td><td>2013:036:23:30:00</td><td>30002038006</td><td>Circinus_XMM2</td><td>213.1633333</td><td>-65.3928611
+</td></tr><tr><td>2013:036:04:57:18</td><td>2013:036:05:05:00</td><td>30002038005</td><td>Circinus_XMM2</td><td>213.1633333</td><td>-65.3928611
+</td></tr><tr><td>2013:035:00:25:17</td><td>2013:036:04:20:00</td><td>60061217004</td><td>IC751</td><td>179.719803</td><td>42.57011
+</td></tr><tr><td>2013:035:00:17:22</td><td>2013:035:00:25:00</td><td>60061217003</td><td>IC751</td><td>179.719803</td><td>42.57011
+</td></tr><tr><td>2013:034:03:00:57</td><td>2013:034:23:40:00</td><td>30002038004</td><td>Circinus_XMM2</td><td>213.1633333</td><td>-65.3928611
+</td></tr><tr><td>2013:034:02:52:55</td><td>2013:034:03:00:00</td><td>30002038003</td><td>Circinus_XMM2</td><td>213.1633333</td><td>-65.3928611
+</td></tr><tr><td>2013:033:10:50:15</td><td>2013:034:02:40:00</td><td>60001047005</td><td>MCGm6m30m15</td><td>203.97416666</td><td>-34.29555556
+</td></tr><tr><td>2013:033:10:42:55</td><td>2013:033:10:50:00</td><td>60001047004</td><td>MCGm6m30m15</td><td>203.97416666</td><td>-34.29555556
+</td></tr><tr><td>2013:033:01:01:11</td><td>2013:033:10:30:00</td><td>30002038002</td><td>Circinus_XMM2</td><td>213.1633333</td><td>-65.3928611
+</td></tr><tr><td>2013:033:00:52:55</td><td>2013:033:01:00:00</td><td>30002038001</td><td>Circinus_XMM2</td><td>213.1633333</td><td>-65.3928611
+</td></tr><tr><td>2013:030:00:10:09</td><td>2013:033:00:40:00</td><td>60001047003</td><td>MCGm6m30m15</td><td>203.97416666</td><td>-34.29555556
+</td></tr><tr><td>2013:029:11:15:20</td><td>2013:030:00:10:00</td><td>60001047002</td><td>MCGm6m30m15</td><td>203.97416666</td><td>-34.29555556
+</td></tr><tr><td>2013:029:11:05:35</td><td>2013:029:11:15:00</td><td>60001047001</td><td>MCGm6m30m15</td><td>203.97416666</td><td>-34.29555556
+</td></tr><tr><td>2013:028:22:05:10</td><td>2013:029:10:50:00</td><td>50001039002</td><td>IC2560</td><td>154.08041666</td><td>-33.56472222
+</td></tr><tr><td>2013:028:21:57:09</td><td>2013:028:22:05:00</td><td>50001039001</td><td>IC2560</td><td>154.08041666</td><td>-33.56472222
+</td></tr><tr><td>2013:028:14:05:07</td><td>2013:028:21:50:00</td><td>60061205002</td><td>NGC3393</td><td>162.097748</td><td>-25.162056
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:028:13:59:38</td><td>2013:028:14:05:00</td><td>60061205001</td><td>NGC3393</td><td>162.097748</td><td>-25.162056
+</td></tr><tr><td>2013:028:05:20:05</td><td>2013:028:13:20:00</td><td>60061018002</td><td>NGC788</td><td>30.276875</td><td>-6.815528
+</td></tr><tr><td>2013:028:05:11:42</td><td>2013:028:05:20:00</td><td>60061018001</td><td>NGC788</td><td>30.276875</td><td>-6.815528
+</td></tr><tr><td>2013:027:19:30:04</td><td>2013:028:05:00:00</td><td>60001065002</td><td>SDSSJ001111d97p005626d3</td><td>123.78083333</td><td>43.07416667
+</td></tr><tr><td>2013:027:19:21:18</td><td>2013:027:19:30:00</td><td>60001065001</td><td>SDSSJ001111d97p005626d3</td><td>123.78083333</td><td>43.07416667
+</td></tr><tr><td>2013:027:06:50:04</td><td>2013:027:19:15:00</td><td>60001061002</td><td>SDSSJ005621d72p003235d8</td><td>14.09050</td><td>0.5432778
+</td></tr><tr><td>2013:027:06:44:35</td><td>2013:027:06:50:00</td><td>60001061001</td><td>SDSSJ005621d72p003235d8</td><td>14.09050</td><td>0.5432778
+</td></tr><tr><td>2013:026:22:50:03</td><td>2013:027:06:25:00</td><td>60061053002</td><td>2MASXJ04532576p0403416</td><td>73.357002</td><td>4.062
+</td></tr><tr><td>2013:026:22:41:50</td><td>2013:026:22:50:00</td><td>60061053001</td><td>2MASXJ04532576p0403416</td><td>73.357002</td><td>4.062
+</td></tr><tr><td>2013:026:15:50:09</td><td>2013:026:22:20:00</td><td>60061008003</td><td>IC1663</td><td>18.52858</td><td>-32.650829
+</td></tr><tr><td>2013:026:14:30:07</td><td>2013:026:15:50:00</td><td>60061008002</td><td>IC1663</td><td>18.52858</td><td>-32.650829
+</td></tr><tr><td>2013:026:14:24:34</td><td>2013:026:14:30:00</td><td>60061008001</td><td>IC1663</td><td>18.52858</td><td>-32.650829
+</td></tr><tr><td>2013:026:06:35:05</td><td>2013:026:14:20:00</td><td>60061007002</td><td>NGC424</td><td>17.864626</td><td>-38.083637
+</td></tr><tr><td>2013:026:06:26:34</td><td>2013:026:06:35:00</td><td>60061007001</td><td>NGC424</td><td>17.864626</td><td>-38.083637
+</td></tr><tr><td>2013:025:03:50:12</td><td>2013:026:06:00:00</td><td>60002039002</td><td>Circinus_galaxy</td><td>213.29166667</td><td>-65.33916667
+</td></tr><tr><td>2013:025:03:40:05</td><td>2013:025:03:50:00</td><td>60002039001</td><td>Circinus_galaxy</td><td>213.29166667</td><td>-65.33916667
+</td></tr><tr><td>2013:023:10:40:18</td><td>2013:025:03:15:00</td><td>60002046007</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2013:023:10:34:58</td><td>2013:023:10:40:00</td><td>60002046006</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2013:020:20:20:11</td><td>2013:023:10:00:00</td><td>30001004002</td><td>Cen_X4</td><td>224.59133000</td><td>-31.66872000
+</td></tr><tr><td>2013:020:20:10:26</td><td>2013:020:20:20:00</td><td>30001004001</td><td>Cen_X4</td><td>224.59133000</td><td>-31.66872000
+</td></tr><tr><td>2013:020:15:21:35</td><td>2013:020:19:45:00</td><td>60021034003</td><td>COSMOS_MOS034</td><td>150.27357</td><td>2.1180000
+</td></tr><tr><td>2013:020:15:14:46</td><td>2013:020:15:20:00</td><td>60021034002</td><td>COSMOS_MOS034</td><td>150.27357</td><td>2.1180000
+</td></tr><tr><td>2013:020:02:21:05</td><td>2013:020:14:55:00</td><td>60002023008</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:020:02:14:18</td><td>2013:020:02:20:00</td><td>60002023007</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:019:14:50:42</td><td>2013:020:01:55:00</td><td>60021034001</td><td>COSMOS_MOS034</td><td>150.27357</td><td>2.1180000
+</td></tr><tr><td>2013:019:01:50:42</td><td>2013:019:14:50:00</td><td>60021033001</td><td>COSMOS_MOS033</td><td>150.28332</td><td>2.2273278
+</td></tr><tr><td>2013:018:11:20:42</td><td>2013:019:01:50:00</td><td>60021032001</td><td>COSMOS_MOS032</td><td>150.29208</td><td>2.3333806
+</td></tr><tr><td>2013:017:20:51:35</td><td>2013:018:11:20:00</td><td>60021031001</td><td>COSMOS_MOS031</td><td>150.30085</td><td>2.4427083
+</td></tr><tr><td>2013:017:07:50:43</td><td>2013:017:20:50:00</td><td>60021030001</td><td>COSMOS_MOS030</td><td>150.14983</td><td>1.9102750
+</td></tr><tr><td>2013:016:17:20:41</td><td>2013:017:07:50:00</td><td>60021029001</td><td>COSMOS_MOS029</td><td>150.15858</td><td>2.0217944
+</td></tr><tr><td>2013:016:04:30:42</td><td>2013:016:17:20:00</td><td>60021028001</td><td>COSMOS_MOS028</td><td>150.16623</td><td>2.1267500
+</td></tr><tr><td>2013:015:14:05:50</td><td>2013:016:04:30:00</td><td>60021027002</td><td>COSMOS_MOS027</td><td>150.17608</td><td>2.2360806
+</td></tr><tr><td>2013:015:13:59:13</td><td>2013:015:14:05:00</td><td>60021027001</td><td>COSMOS_MOS027</td><td>150.17608</td><td>2.2360806
+</td></tr><tr><td>2013:015:00:55:32</td><td>2013:015:13:40:00</td><td>60002023006</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:015:00:48:24</td><td>2013:015:00:55:00</td><td>60002023005</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:014:08:30:42</td><td>2013:015:00:30:00</td><td>60021026001</td><td>COSMOS_MOS026</td><td>150.18703</td><td>2.3432278
+</td></tr><tr><td>2013:013:18:01:35</td><td>2013:014:08:30:00</td><td>60021025001</td><td>COSMOS_MOS025</td><td>150.19579</td><td>2.4525583
+</td></tr><tr><td>2013:013:03:20:42</td><td>2013:013:18:00:00</td><td>60021024001</td><td>COSMOS_MOS024</td><td>150.03715</td><td>1.9212028
+</td></tr><tr><td>2013:012:12:50:42</td><td>2013:013:03:20:00</td><td>60021023001</td><td>COSMOS_MOS023</td><td>150.04699</td><td>2.0305361
+</td></tr><tr><td>2013:011:22:20:42</td><td>2013:012:12:50:00</td><td>60021022001</td><td>COSMOS_MOS022</td><td>150.05792</td><td>2.1365917
+</td></tr><tr><td>2013:011:07:40:42</td><td>2013:011:22:20:00</td><td>60021021001</td><td>COSMOS_MOS021</td><td>150.06667</td><td>2.2459250
+</td></tr><tr><td>2013:010:14:05:15</td><td>2013:011:07:40:00</td><td>60021020002</td><td>COSMOS_MOS020</td><td>150.07650</td><td>2.3530722
+</td></tr><tr><td>2013:010:13:58:47</td><td>2013:010:14:05:00</td><td>60021020001</td><td>COSMOS_MOS020</td><td>150.07650</td><td>2.3530722
+</td></tr><tr><td>2013:010:01:16:48</td><td>2013:010:13:40:00</td><td>60002023004</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:010:01:07:42</td><td>2013:010:01:15:00</td><td>60002023003</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:009:08:51:35</td><td>2013:010:00:50:00</td><td>60021019001</td><td>COSMOS_MOS019</td><td>150.08526</td><td>2.4613028
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2013:008:16:40:42</td><td>2013:009:08:50:00</td><td>60021018001</td><td>COSMOS_MOS018</td><td>149.93212</td><td>1.9299417
+</td></tr><tr><td>2013:008:02:05:42</td><td>2013:008:16:40:00</td><td>60021017001</td><td>COSMOS_MOS017</td><td>149.94195</td><td>2.0392750
+</td></tr><tr><td>2013:007:11:30:43</td><td>2013:008:02:05:00</td><td>60021016001</td><td>COSMOS_MOS016</td><td>149.95179</td><td>2.1453278
+</td></tr><tr><td>2013:006:19:20:41</td><td>2013:007:11:30:00</td><td>60021015001</td><td>COSMOS_MOS015</td><td>149.96054</td><td>2.2557556
+</td></tr><tr><td>2013:006:06:25:43</td><td>2013:006:19:20:00</td><td>60021014001</td><td>COSMOS_MOS014</td><td>149.96927</td><td>2.3607111
+</td></tr><tr><td>2013:005:14:16:35</td><td>2013:006:06:25:00</td><td>60021013001</td><td>COSMOS_MOS013</td><td>149.97802</td><td>2.4711333
+</td></tr><tr><td>2013:004:22:05:43</td><td>2013:005:14:15:00</td><td>60021012001</td><td>COSMOS_MOS012</td><td>149.82176</td><td>1.9379028
+</td></tr><tr><td>2013:004:07:30:41</td><td>2013:004:22:05:00</td><td>60021011001</td><td>COSMOS_MOS011</td><td>149.83049</td><td>2.0494222
+</td></tr><tr><td>2013:003:15:20:43</td><td>2013:004:07:30:00</td><td>60021010001</td><td>COSMOS_MOS010</td><td>149.84020</td><td>2.1540583
+</td></tr><tr><td>2013:002:23:25:35</td><td>2013:003:15:20:00</td><td>60021009002</td><td>COSMOS_MOS009</td><td>149.85038</td><td>2.2659889
+</td></tr><tr><td>2013:002:23:16:40</td><td>2013:002:23:25:00</td><td>60021009001</td><td>COSMOS_MOS009</td><td>149.85038</td><td>2.2659889
+</td></tr><tr><td>2013:002:18:40:02</td><td>2013:002:23:00:00</td><td>60002023002</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:002:18:34:29</td><td>2013:002:18:40:00</td><td>60002023001</td><td>Mkn421</td><td>166.11375000</td><td>38.20888889
+</td></tr><tr><td>2013:002:04:20:05</td><td>2013:002:18:10:00</td><td>60061256002</td><td>NGC5728</td><td>220.599579</td><td>-17.253059
+</td></tr><tr><td>2013:002:04:14:06</td><td>2013:002:04:20:00</td><td>60061256001</td><td>NGC5728</td><td>220.599579</td><td>-17.253059
+</td></tr><tr><td>2012:366:18:10:10</td><td>2013:002:03:50:00</td><td>60001107002</td><td>B2_1023p25</td><td>156.59833</td><td>25.716667
+</td></tr><tr><td>2012:366:18:02:07</td><td>2012:366:18:10:00</td><td>60001107001</td><td>B2_1023p25</td><td>156.59833</td><td>25.716667
+</td></tr><tr><td>2012:366:01:40:43</td><td>2012:366:17:50:00</td><td>60021008001</td><td>COSMOS_MOS008</td><td>149.86006</td><td>2.3703611
+</td></tr><tr><td>2012:365:12:46:35</td><td>2012:366:01:40:00</td><td>60021007001</td><td>COSMOS_MOS007</td><td>149.86880</td><td>2.4807833
+</td></tr><tr><td>2012:364:20:35:43</td><td>2012:365:12:45:00</td><td>60021006001</td><td>COSMOS_MOS006</td><td>149.71806</td><td>1.9474222
+</td></tr><tr><td>2012:364:07:35:41</td><td>2012:364:20:35:00</td><td>60021005001</td><td>COSMOS_MOS005</td><td>149.72679</td><td>2.0578472
+</td></tr><tr><td>2012:363:17:05:43</td><td>2012:364:07:35:00</td><td>60021004001</td><td>COSMOS_MOS004</td><td>149.73492</td><td>2.1628639
+</td></tr><tr><td>2012:363:02:30:41</td><td>2012:363:17:05:00</td><td>60021003001</td><td>COSMOS_MOS003</td><td>149.74407</td><td>2.2753889
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:362:13:35:43</td><td>2012:363:02:30:00</td><td>60021002001</td><td>COSMOS_MOS002</td><td>149.75371</td><td>2.3792611
+</td></tr><tr><td>2012:361:23:21:08</td><td>2012:362:13:35:00</td><td>60021001002</td><td>COSMOS_MOS001</td><td>149.76244</td><td>2.4896833
+</td></tr><tr><td>2012:361:23:10:47</td><td>2012:361:23:20:00</td><td>60021001001</td><td>COSMOS_MOS001</td><td>149.76244</td><td>2.4896833
+</td></tr><tr><td>2012:361:13:45:02</td><td>2012:361:23:00:00</td><td>60061092002</td><td>RBS0770</td><td>140.929184</td><td>22.909065
+</td></tr><tr><td>2012:361:13:35:21</td><td>2012:361:13:45:00</td><td>60061092001</td><td>RBS0770</td><td>140.929184</td><td>22.909065
+</td></tr><tr><td>2012:361:03:55:07</td><td>2012:361:13:25:00</td><td>60001067002</td><td>IRAS09104p4109</td><td>138.43958333</td><td>40.94111111
+</td></tr><tr><td>2012:361:03:47:59</td><td>2012:361:03:55:00</td><td>60001067001</td><td>IRAS09104p4109</td><td>138.43958333</td><td>40.94111111
+</td></tr><tr><td>2012:359:14:30:16</td><td>2012:361:03:00:00</td><td>60002046005</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2012:359:14:22:42</td><td>2012:359:14:30:00</td><td>60002046004</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2012:356:20:05:27</td><td>2012:359:14:10:00</td><td>30002035004</td><td>NGC1313_X1X2</td><td>49.583888</td><td>-66.487035
+</td></tr><tr><td>2012:356:19:57:38</td><td>2012:356:20:05:00</td><td>30002035003</td><td>NGC1313_X1X2</td><td>49.583888</td><td>-66.487035
+</td></tr><tr><td>2012:356:08:55:13</td><td>2012:356:19:35:00</td><td>60002030006</td><td>NGC1068</td><td>40.66958334</td><td>-0.01333333
+</td></tr><tr><td>2012:356:08:47:09</td><td>2012:356:08:55:00</td><td>60002030005</td><td>NGC1068</td><td>40.66958334</td><td>-0.01333333
+</td></tr><tr><td>2012:356:02:15:26</td><td>2012:356:08:30:00</td><td>10013033004</td><td>Crab_cal13</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:356:02:07:11</td><td>2012:356:02:15:00</td><td>10013033003</td><td>Crab_cal13</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:355:00:35:07</td><td>2012:356:01:50:00</td><td>60002030004</td><td>NGC1068</td><td>40.66958334</td><td>-0.01333333
+</td></tr><tr><td>2012:355:00:27:09</td><td>2012:355:00:35:00</td><td>60002030003</td><td>NGC1068</td><td>40.66958334</td><td>-0.01333333
+</td></tr><tr><td>2012:354:22:45:28</td><td>2012:355:00:10:00</td><td>10013033002</td><td>Crab_cal13</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:354:22:37:06</td><td>2012:354:22:45:00</td><td>10013033001</td><td>Crab_cal13</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:353:16:00:17</td><td>2012:354:22:20:00</td><td>60002030002</td><td>NGC1068</td><td>40.66958334</td><td>-0.01333333
+</td></tr><tr><td>2012:353:15:52:41</td><td>2012:353:16:00:00</td><td>60002030001</td><td>NGC1068</td><td>40.66958334</td><td>-0.01333333
+</td></tr><tr><td>2012:351:13:56:09</td><td>2012:353:15:30:00</td><td>30002035002</td><td>NGC1313_X1X2</td><td>49.583888</td><td>-66.487035
+</td></tr><tr><td>2012:351:13:47:31</td><td>2012:351:13:55:00</td><td>30002035001</td><td>NGC1313_X1X2</td><td>49.583888</td><td>-66.487035
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:347:17:15:21</td><td>2012:351:13:40:00</td><td>40001014010</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:347:03:20:43</td><td>2012:347:17:15:00</td><td>40001014009</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:347:03:11:50</td><td>2012:347:03:20:00</td><td>40001014008</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:346:14:35:08</td><td>2012:347:02:30:00</td><td>60001001002</td><td>BL_Lac</td><td>330.6803804</td><td>42.2777719
+</td></tr><tr><td>2012:346:14:28:07</td><td>2012:346:14:35:00</td><td>60001001001</td><td>BL_Lac</td><td>330.6803804</td><td>42.2777719
+</td></tr><tr><td>2012:345:13:43:43</td><td>2012:346:13:53:00</td><td>60022016001</td><td>ECDFS_MOS016</td><td>53.3050</td><td>-27.64
+</td></tr><tr><td>2012:344:11:58:43</td><td>2012:345:13:40:00</td><td>60022015001</td><td>ECDFS_MOS015</td><td>53.1809</td><td>-27.64
+</td></tr><tr><td>2012:343:10:03:43</td><td>2012:344:11:55:00</td><td>60022014001</td><td>ECDFS_MOS014</td><td>53.0567</td><td>-27.64
+</td></tr><tr><td>2012:342:08:13:37</td><td>2012:343:10:00:00</td><td>60022013001</td><td>ECDFS_MOS013</td><td>52.9325</td><td>-27.64
+</td></tr><tr><td>2012:341:06:23:43</td><td>2012:342:08:10:00</td><td>60022012001</td><td>ECDFS_MOS012</td><td>53.3054</td><td>-27.75
+</td></tr><tr><td>2012:340:04:23:43</td><td>2012:341:06:20:00</td><td>60022011001</td><td>ECDFS_MOS011</td><td>53.1811</td><td>-27.75
+</td></tr><tr><td>2012:339:02:33:43</td><td>2012:340:04:20:00</td><td>60022010001</td><td>ECDFS_MOS010</td><td>53.0568</td><td>-27.75
+</td></tr><tr><td>2012:338:00:41:19</td><td>2012:339:02:30:00</td><td>60022009001</td><td>ECDFS_MOS009</td><td>52.9325</td><td>-27.75
+</td></tr><tr><td>2012:336:21:13:42</td><td>2012:338:00:40:00</td><td>60022008001</td><td>ECDFS_MOS008</td><td>53.3058</td><td>-27.86
+</td></tr><tr><td>2012:335:18:01:08</td><td>2012:336:21:10:00</td><td>60022007002</td><td>ECDFS_MOS007</td><td>53.1814</td><td>-27.86
+</td></tr><tr><td>2012:335:17:53:57</td><td>2012:335:18:00:00</td><td>60022007001</td><td>ECDFS_MOS007</td><td>53.1814</td><td>-27.86
+</td></tr><tr><td>2012:335:08:40:09</td><td>2012:335:17:30:00</td><td>80001001002</td><td>GRO_J1008m57</td><td>152.445417</td><td>-58.293194
+</td></tr><tr><td>2012:335:08:33:12</td><td>2012:335:08:40:00</td><td>80001001001</td><td>GRO_J1008m57</td><td>152.445417</td><td>-58.293194
+</td></tr><tr><td>2012:335:00:05:07</td><td>2012:335:08:00:00</td><td>60061016002</td><td>MCG_01_05_047</td><td>28.204166</td><td>-3.446833
+</td></tr><tr><td>2012:334:23:58:05</td><td>2012:335:00:05:00</td><td>60061016001</td><td>MCG_01_05_047</td><td>28.204166</td><td>-3.446833
+</td></tr><tr><td>2012:328:17:36:03</td><td>2012:334:23:30:00</td><td>40021002002</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2012:328:17:26:33</td><td>2012:328:17:35:00</td><td>40021002001</td><td>Cas_A_MOS2</td><td>350.862180</td><td>58.816011
+</td></tr><tr><td>2012:324:13:15:37</td><td>2012:328:16:50:00</td><td>30001030002</td><td>HLX_1</td><td>17.61750000</td><td>-46.07283333
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:324:13:09:40</td><td>2012:324:13:15:00</td><td>30001030001</td><td>HLX_1</td><td>17.61750000</td><td>-46.07283333
+</td></tr><tr><td>2012:321:14:05:31</td><td>2012:324:13:00:00</td><td>50002031006</td><td>NGC253</td><td>11.88800200</td><td>-25.28822000
+</td></tr><tr><td>2012:321:13:57:58</td><td>2012:321:14:05:00</td><td>50002031005</td><td>NGC253</td><td>11.88800200</td><td>-25.28822000
+</td></tr><tr><td>2012:320:17:50:36</td><td>2012:321:13:10:00</td><td>30002033010</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:320:17:42:53</td><td>2012:320:17:50:00</td><td>30002033009</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:319:08:15:08</td><td>2012:320:17:30:00</td><td>60001111005</td><td>NGC4151</td><td>182.63583333</td><td>39.40583333
+</td></tr><tr><td>2012:319:08:05:29</td><td>2012:319:08:15:00</td><td>60001111004</td><td>NGC4151</td><td>182.63583333</td><td>39.40583333
+</td></tr><tr><td>2012:319:01:30:12</td><td>2012:319:07:50:00</td><td>30002033008</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:319:01:20:28</td><td>2012:319:01:30:00</td><td>30002033007</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:317:18:55:59</td><td>2012:319:01:05:00</td><td>60001111003</td><td>NGC4151</td><td>182.63583333</td><td>39.40583333
+</td></tr><tr><td>2012:317:06:05:29</td><td>2012:317:18:55:00</td><td>60001111002</td><td>NGC4151</td><td>182.63583333</td><td>39.40583333
+</td></tr><tr><td>2012:317:05:55:28</td><td>2012:317:06:05:00</td><td>60001111001</td><td>NGC4151</td><td>182.63583333</td><td>39.40583333
+</td></tr><tr><td>2012:316:16:50:30</td><td>2012:317:05:40:00</td><td>30002033006</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:316:00:40:54</td><td>2012:316:16:50:00</td><td>30002033005</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:316:00:32:30</td><td>2012:316:00:40:00</td><td>30002033004</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:314:21:50:07</td><td>2012:315:23:45:00</td><td>30001025002</td><td>1E1841m045</td><td>280.33059584</td><td>-4.93643333
+</td></tr><tr><td>2012:314:21:44:34</td><td>2012:314:21:50:00</td><td>30001025001</td><td>1E1841m045</td><td>280.33059584</td><td>-4.93643333
+</td></tr><tr><td>2012:314:14:00:03</td><td>2012:314:21:15:00</td><td>60061313002</td><td>NGC7319_Stephan</td><td>339.0149158</td><td>33.9758580
+</td></tr><tr><td>2012:314:13:53:13</td><td>2012:314:14:00:00</td><td>60061313001</td><td>NGC7319_Stephan</td><td>339.0149158</td><td>33.9758580
+</td></tr><tr><td>2012:313:16:50:41</td><td>2012:314:13:40:00</td><td>60001110007</td><td>SwiftJ2127d4p5654</td><td>321.93708334</td><td>56.94444444
+</td></tr><tr><td>2012:313:16:41:14</td><td>2012:313:16:50:00</td><td>60001110006</td><td>SwiftJ2127d4p5654</td><td>321.93708334</td><td>56.94444444
+</td></tr><tr><td>2012:313:07:40:05</td><td>2012:313:16:15:00</td><td>60061067002</td><td>2MASXJ06302561p6340411</td><td>97.607903</td><td>63.676701
+</td></tr><tr><td>2012:313:07:31:02</td><td>2012:313:07:40:00</td><td>60061067001</td><td>2MASXJ06302561p6340411</td><td>97.607903</td><td>63.676701
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:311:17:55:11</td><td>2012:313:07:05:00</td><td>60001110005</td><td>SwiftJ2127d4p5654</td><td>321.93708334</td><td>56.94444444
+</td></tr><tr><td>2012:311:17:49:39</td><td>2012:311:17:55:00</td><td>60001110004</td><td>SwiftJ2127d4p5654</td><td>321.93708334</td><td>56.94444444
+</td></tr><tr><td>2012:311:08:15:04</td><td>2012:311:17:40:00</td><td>60061292002</td><td>CXOUJ194719d3p444942</td><td>296.83075</td><td>44.828468
+</td></tr><tr><td>2012:311:08:09:38</td><td>2012:311:08:15:00</td><td>60061292001</td><td>CXOUJ194719d3p444942</td><td>296.83075</td><td>44.828468
+</td></tr><tr><td>2012:310:18:05:57</td><td>2012:311:08:00:00</td><td>60001110003</td><td>SwiftJ2127d4p5654</td><td>321.93708334</td><td>56.94444444
+</td></tr><tr><td>2012:309:17:21:02</td><td>2012:310:18:05:00</td><td>60001110002</td><td>SwiftJ2127d4p5654</td><td>321.93708334</td><td>56.94444444
+</td></tr><tr><td>2012:309:17:12:24</td><td>2012:309:17:20:00</td><td>60001110001</td><td>SwiftJ2127d4p5654</td><td>321.93708334</td><td>56.94444444
+</td></tr><tr><td>2012:309:12:55:03</td><td>2012:309:16:25:00</td><td>10013032002</td><td>Crab_cal12</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:309:12:46:49</td><td>2012:309:12:55:00</td><td>10013032001</td><td>Crab_cal12</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:306:04:26:09</td><td>2012:309:12:10:00</td><td>70001056002</td><td>Bullet_shock</td><td>104.583333</td><td>-55.9416667
+</td></tr><tr><td>2012:306:04:16:45</td><td>2012:306:04:25:00</td><td>70001056001</td><td>Bullet_shock</td><td>104.583333</td><td>-55.9416667
+</td></tr><tr><td>2012:306:00:16:04</td><td>2012:306:03:10:00</td><td>10014001001</td><td>Cyg_X1_PSF01</td><td>299.59030000</td><td>35.20160550
+</td></tr><tr><td>2012:305:17:46:07</td><td>2012:306:00:15:00</td><td>30001011003</td><td>Cyg_X1</td><td>299.59030000</td><td>35.20160550
+</td></tr><tr><td>2012:305:08:10:09</td><td>2012:305:17:45:00</td><td>30001011002</td><td>Cyg_X1</td><td>299.59030000</td><td>35.20160550
+</td></tr><tr><td>2012:305:07:54:56</td><td>2012:305:08:10:00</td><td>30001011001</td><td>Cyg_X1</td><td>299.59030000</td><td>35.20160550
+</td></tr><tr><td>2012:304:20:55:05</td><td>2012:305:07:40:00</td><td>60001115002</td><td>W2207p1939</td><td>331.93262501</td><td>19.66086111
+</td></tr><tr><td>2012:304:20:43:26</td><td>2012:304:20:55:00</td><td>60001115001</td><td>W2207p1939</td><td>331.93262501</td><td>19.66086111
+</td></tr><tr><td>2012:304:07:55:06</td><td>2012:304:20:20:00</td><td>60001114002</td><td>W1814p3412</td><td>273.57212500</td><td>34.20688889
+</td></tr><tr><td>2012:304:07:45:24</td><td>2012:304:07:55:00</td><td>60001114001</td><td>W1814p3412</td><td>273.57212500</td><td>34.20688889
+</td></tr><tr><td>2012:303:23:25:05</td><td>2012:304:07:20:00</td><td>60002038002</td><td>M51</td><td>202.4697495</td><td>47.1951944
+</td></tr><tr><td>2012:303:23:16:21</td><td>2012:303:23:25:00</td><td>60002038001</td><td>M51</td><td>202.4697495</td><td>47.1951944
+</td></tr><tr><td>2012:303:05:25:02</td><td>2012:303:22:50:00</td><td>60001112002</td><td>PG1004p130</td><td>151.85875000</td><td>12.81555555
+</td></tr><tr><td>2012:303:05:18:44</td><td>2012:303:05:25:00</td><td>60001112001</td><td>PG1004p130</td><td>151.85875000</td><td>12.81555555
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:302:23:00:04</td><td>2012:303:05:00:00</td><td>60061217002</td><td>IC751</td><td>179.719803</td><td>42.57011
+</td></tr><tr><td>2012:302:22:53:37</td><td>2012:302:23:00:00</td><td>60061217001</td><td>IC751</td><td>179.719803</td><td>42.57011
+</td></tr><tr><td>2012:302:11:45:05</td><td>2012:302:22:45:00</td><td>60001071002</td><td>SDSS1157p6003</td><td>179.32666667</td><td>60.06277778
+</td></tr><tr><td>2012:302:11:37:47</td><td>2012:302:11:45:00</td><td>60001071001</td><td>SDSS1157p6003</td><td>179.32666667</td><td>60.06277778
+</td></tr><tr><td>2012:300:20:40:31</td><td>2012:302:11:30:00</td><td>30002033003</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:300:06:10:20</td><td>2012:300:20:40:00</td><td>30002033002</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:300:06:00:44</td><td>2012:300:06:10:00</td><td>30002033001</td><td>M81_X9</td><td>149.47166667</td><td>69.06341667
+</td></tr><tr><td>2012:299:21:50:04</td><td>2012:300:05:10:00</td><td>60061036002</td><td>NGC1320</td><td>51.202961</td><td>-3.04242
+</td></tr><tr><td>2012:299:21:45:42</td><td>2012:299:21:50:00</td><td>60061036001</td><td>NGC1320</td><td>51.202961</td><td>-3.04242
+</td></tr><tr><td>2012:299:18:31:10</td><td>2012:299:21:20:00</td><td>10013030001</td><td>Crab_cal10</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:299:15:16:11</td><td>2012:299:18:30:00</td><td>10013029001</td><td>Crab_cal09</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:299:12:15:02</td><td>2012:299:15:15:00</td><td>10013031002</td><td>Crab_cal11</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:299:12:01:47</td><td>2012:299:12:15:00</td><td>10013031001</td><td>Crab_cal11</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:295:19:05:28</td><td>2012:299:11:20:00</td><td>40001014007</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:294:18:51:24</td><td>2012:295:19:05:00</td><td>40001014006</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:294:18:54:16</td><td>2012:294:18:49:00</td><td>40001014005</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:292:02:19:04</td><td>2012:294:18:40:00</td><td>70001055002</td><td>Bullet</td><td>104.62600000</td><td>-55.94500000
+</td></tr><tr><td>2012:292:02:06:48</td><td>2012:292:02:15:00</td><td>70001055001</td><td>Bullet</td><td>104.62600000</td><td>-55.94500000
+</td></tr><tr><td>2012:290:18:31:11</td><td>2012:292:01:25:00</td><td>30001002004</td><td>SgrAstar</td><td>266.41684000</td><td>-29.00781000
+</td></tr><tr><td>2012:290:05:40:32</td><td>2012:290:18:30:00</td><td>40010006001</td><td>Gal_Cen_MOS006</td><td>266.5820</td><td>-28.8170
+</td></tr><tr><td>2012:289:13:30:48</td><td>2012:290:05:40:00</td><td>40010005001</td><td>Gal_Cen_MOS005</td><td>266.5030</td><td>-28.7760
+</td></tr><tr><td>2012:289:00:30:32</td><td>2012:289:13:30:00</td><td>40010004001</td><td>Gal_Cen_MOS004</td><td>266.5150</td><td>-28.9130
+</td></tr><tr><td>2012:288:09:55:47</td><td>2012:289:00:30:00</td><td>40010003001</td><td>Gal_Cen_MOS003</td><td>266.4370</td><td>-28.8710
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:287:19:20:32</td><td>2012:288:09:55:00</td><td>40010002001</td><td>Gal_Cen_MOS002</td><td>266.4480</td><td>-29.0080
+</td></tr><tr><td>2012:287:06:44:08</td><td>2012:287:19:20:00</td><td>40010001002</td><td>Gal_Cen_MOS001</td><td>266.3700</td><td>-28.9670
+</td></tr><tr><td>2012:287:06:27:58</td><td>2012:287:06:40:00</td><td>40010001001</td><td>Gal_Cen_MOS001</td><td>266.3700</td><td>-28.9670
+</td></tr><tr><td>2012:281:18:20:29</td><td>2012:287:05:40:00</td><td>40021001005</td><td>Cas_A_MOS1</td><td>350.8634800</td><td>58.813620
+</td></tr><tr><td>2012:281:02:13:46</td><td>2012:281:18:20:00</td><td>40021001004</td><td>Cas_A_MOS1</td><td>350.8634800</td><td>58.813620
+</td></tr><tr><td>2012:281:02:01:29</td><td>2012:281:02:10:00</td><td>40021001003</td><td>Cas_A_MOS1</td><td>350.8634800</td><td>58.813620
+</td></tr><tr><td>2012:279:23:27:51</td><td>2012:281:00:30:00</td><td>40002092001</td><td>SN2010jl</td><td>145.722208</td><td>9.494944
+</td></tr><tr><td>2012:279:23:20:15</td><td>2012:279:23:25:00</td><td>40002093001</td><td>SN2010jl_SADA_51</td><td>143.40</td><td>10.80
+</td></tr><tr><td>2012:279:15:20:06</td><td>2012:279:23:00:00</td><td>60061078002</td><td>Mrk1210</td><td>121.024208</td><td>5.11375
+</td></tr><tr><td>2012:279:15:15:03</td><td>2012:279:15:20:00</td><td>60061078001</td><td>Mrk1210</td><td>121.024208</td><td>5.11375
+</td></tr><tr><td>2012:279:05:30:05</td><td>2012:279:14:45:00</td><td>60061061002</td><td>NGC2110</td><td>88.047417</td><td>-7.456222
+</td></tr><tr><td>2012:279:05:24:24</td><td>2012:279:05:30:00</td><td>60061061001</td><td>NGC2110</td><td>88.047417</td><td>-7.456222
+</td></tr><tr><td>2012:278:01:30:44</td><td>2012:279:04:50:00</td><td>60022006001</td><td>ECDFS_MOS006</td><td>53.0569</td><td>-27.86
+</td></tr><tr><td>2012:276:22:00:56</td><td>2012:278:01:30:00</td><td>60022005001</td><td>ECDFS_MOS005</td><td>52.9325</td><td>-27.86
+</td></tr><tr><td>2012:275:18:30:43</td><td>2012:276:22:00:00</td><td>60022004001</td><td>ECDFS_MOS004</td><td>53.3062</td><td>-27.97
+</td></tr><tr><td>2012:274:15:05:43</td><td>2012:275:18:30:00</td><td>60022003001</td><td>ECDFS_MOS003</td><td>53.1816</td><td>-27.97
+</td></tr><tr><td>2012:273:11:30:43</td><td>2012:274:15:05:00</td><td>60022002001</td><td>ECDFS_MOS002</td><td>53.0571</td><td>-27.97
+</td></tr><tr><td>2012:272:08:08:32</td><td>2012:273:11:30:00</td><td>60022001002</td><td>ECDFS_MOS001</td><td>52.9325</td><td>-27.97
+</td></tr><tr><td>2012:272:07:23:02</td><td>2012:272:08:05:00</td><td>60022001001</td><td>ECDFS_MOS001</td><td>52.9325</td><td>-27.97
+</td></tr><tr><td>2012:272:05:10:04</td><td>2012:272:06:30:00</td><td>10013028004</td><td>Crab_cal08</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:272:05:02:45</td><td>2012:272:05:10:00</td><td>10013028003</td><td>Crab_cal08</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:272:02:00:01</td><td>2012:272:04:50:00</td><td>30001029030</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:272:01:52:45</td><td>2012:272:02:00:00</td><td>30001029029</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:272:00:20:04</td><td>2012:272:01:40:00</td><td>10013028002</td><td>Crab_cal08</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:272:00:12:45</td><td>2012:272:00:20:00</td><td>10013028001</td><td>Crab_cal08</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:271:11:25:04</td><td>2012:272:00:00:00</td><td>30001029028</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:271:11:17:44</td><td>2012:271:11:25:00</td><td>30001029027</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:271:09:50:05</td><td>2012:271:11:05:00</td><td>10013027004</td><td>Crab_cal07</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:271:09:42:44</td><td>2012:271:09:50:00</td><td>10013027003</td><td>Crab_cal07</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:271:06:35:05</td><td>2012:271:09:30:00</td><td>30001029026</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:271:06:27:44</td><td>2012:271:06:35:00</td><td>30001029025</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:271:04:55:05</td><td>2012:271:06:15:00</td><td>10013027002</td><td>Crab_cal07</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:271:04:47:44</td><td>2012:271:04:55:00</td><td>10013027001</td><td>Crab_cal07</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:271:01:45:06</td><td>2012:271:04:35:00</td><td>30001029024</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:271:01:37:40</td><td>2012:271:01:45:00</td><td>30001029023</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:271:00:05:04</td><td>2012:271:01:25:00</td><td>10013025006</td><td>Crab_cal05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:270:23:57:40</td><td>2012:271:00:05:00</td><td>10013025005</td><td>Crab_cal05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:270:12:45:08</td><td>2012:270:23:45:00</td><td>30001029022</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:270:12:37:36</td><td>2012:270:12:45:00</td><td>30001029021</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:270:11:10:02</td><td>2012:270:12:25:00</td><td>10013026004</td><td>Crab_cal06</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:270:11:02:36</td><td>2012:270:11:10:00</td><td>10013026003</td><td>Crab_cal06</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:270:06:20:10</td><td>2012:270:10:50:00</td><td>30001029020</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:270:06:12:36</td><td>2012:270:06:20:00</td><td>30001029019</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:270:03:05:03</td><td>2012:270:06:00:00</td><td>10013026002</td><td>Crab_cal06</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:270:02:57:36</td><td>2012:270:03:05:00</td><td>10013026001</td><td>Crab_cal06</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:269:12:30:13</td><td>2012:270:02:45:00</td><td>30001029018</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:269:12:22:39</td><td>2012:269:12:30:00</td><td>30001029017</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:269:10:55:06</td><td>2012:269:12:10:00</td><td>10013025004</td><td>Crab_cal05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:269:10:47:40</td><td>2012:269:10:55:00</td><td>10013025003</td><td>Crab_cal05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:269:07:40:14</td><td>2012:269:10:35:00</td><td>30001029016</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:269:07:32:39</td><td>2012:269:07:40:00</td><td>30001029015</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:269:06:05:06</td><td>2012:269:07:20:00</td><td>10013025002</td><td>Crab_cal05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:269:05:57:40</td><td>2012:269:06:05:00</td><td>10013025001</td><td>Crab_cal05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:269:04:25:15</td><td>2012:269:05:45:00</td><td>30001029014</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:269:04:20:08</td><td>2012:269:04:25:00</td><td>30001029013</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:268:09:40:13</td><td>2012:269:02:35:00</td><td>30002006007</td><td>Her_X1</td><td>254.45754000</td><td>35.34233000
+</td></tr><tr><td>2012:268:09:34:26</td><td>2012:268:09:40:00</td><td>30002006006</td><td>Her_X1</td><td>254.45754000</td><td>35.34233000
+</td></tr><tr><td>2012:266:18:55:39</td><td>2012:268:09:20:00</td><td>60001113002</td><td>PG1700p518</td><td>255.35333333</td><td>51.82222222
+</td></tr><tr><td>2012:266:18:49:34</td><td>2012:266:18:55:00</td><td>60001113001</td><td>PG1700p518</td><td>255.35333333</td><td>51.82222222
+</td></tr><tr><td>2012:266:04:25:10</td><td>2012:266:18:35:00</td><td>30002006005</td><td>Her_X1</td><td>254.45754000</td><td>35.34233000
+</td></tr><tr><td>2012:266:04:20:32</td><td>2012:266:04:25:00</td><td>30002006004</td><td>Her_X1</td><td>254.45754000</td><td>35.34233000
+</td></tr><tr><td>2012:265:19:40:16</td><td>2012:266:02:35:00</td><td>30001029012</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:265:19:32:41</td><td>2012:265:19:40:00</td><td>30001029011</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:265:16:20:16</td><td>2012:265:19:20:00</td><td>10013022006</td><td>Crab_cal02</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:265:16:12:41</td><td>2012:265:16:20:00</td><td>10013022005</td><td>Crab_cal02</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:265:13:10:14</td><td>2012:265:16:00:00</td><td>30001029010</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:265:13:02:41</td><td>2012:265:13:10:00</td><td>30001029009</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:265:09:50:15</td><td>2012:265:12:50:00</td><td>10013023002</td><td>Crab_cal03</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:265:09:42:41</td><td>2012:265:09:50:00</td><td>10013023001</td><td>Crab_cal03</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:265:06:40:13</td><td>2012:265:09:30:00</td><td>30001029008</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:265:06:32:40</td><td>2012:265:06:40:00</td><td>30001029007</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:265:03:25:15</td><td>2012:265:06:20:00</td><td>10013022004</td><td>Crab_cal02</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:265:03:17:41</td><td>2012:265:03:25:00</td><td>10013022003</td><td>Crab_cal02</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:264:22:35:11</td><td>2012:265:03:05:00</td><td>30001029006</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:264:22:27:40</td><td>2012:264:22:35:00</td><td>30001029005</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:264:19:20:14</td><td>2012:264:22:15:00</td><td>10013022002</td><td>Crab_cal02</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:264:19:12:41</td><td>2012:264:19:20:00</td><td>10013022001</td><td>Crab_cal02</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:264:14:30:09</td><td>2012:264:19:00:00</td><td>30001029004</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:264:14:22:44</td><td>2012:264:14:30:00</td><td>30001029003</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:264:11:15:13</td><td>2012:264:14:10:00</td><td>10013024002</td><td>Crab_cal04</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:264:11:07:44</td><td>2012:264:11:15:00</td><td>10013024001</td><td>Crab_cal04</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:264:06:25:08</td><td>2012:264:10:55:00</td><td>30001029002</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:264:06:17:38</td><td>2012:264:06:25:00</td><td>30001029001</td><td>Geminga</td><td>98.4756380</td><td>17.770253
+</td></tr><tr><td>2012:264:03:00:14</td><td>2012:264:06:05:00</td><td>10013021002</td><td>Crab_cal01</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:264:02:47:46</td><td>2012:264:03:00:00</td><td>10013021001</td><td>Crab_cal01</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:263:08:25:17</td><td>2012:264:01:05:00</td><td>30002006002</td><td>Her_X1</td><td>254.45754000</td><td>35.34233000
+</td></tr><tr><td>2012:263:08:21:17</td><td>2012:263:08:25:00</td><td>30002006001</td><td>Her_X1</td><td>254.45754000</td><td>35.34233000
+</td></tr><tr><td>2012:263:00:20:19</td><td>2012:263:08:15:00</td><td>60061271002</td><td>PBCJ1630d5p3924</td><td>247.636246</td><td>39.384109
+</td></tr><tr><td>2012:263:00:12:08</td><td>2012:263:00:20:00</td><td>60061271001</td><td>PBCJ1630d5p3924</td><td>247.636246</td><td>39.384109
+</td></tr><tr><td>2012:262:14:45:03</td><td>2012:262:23:50:00</td><td>60061286002</td><td>3C382</td><td>278.764130</td><td>32.696350
+</td></tr><tr><td>2012:262:14:33:33</td><td>2012:262:14:45:00</td><td>60061286001</td><td>3C382</td><td>278.764130</td><td>32.696350
+</td></tr><tr><td>2012:259:01:32:28</td><td>2012:262:12:20:00</td><td>50002031004</td><td>NGC253</td><td>11.88800200</td><td>-25.28822000
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:259:01:25:41</td><td>2012:259:01:30:00</td><td>50002031003</td><td>NGC253</td><td>11.88800200</td><td>-25.28822000
+</td></tr><tr><td>2012:258:17:05:08</td><td>2012:259:00:50:00</td><td>60061318004</td><td>NGC7582</td><td>349.597870</td><td>-42.370583
+</td></tr><tr><td>2012:258:16:59:16</td><td>2012:258:17:05:00</td><td>60061318003</td><td>NGC7582</td><td>349.597870</td><td>-42.370583
+</td></tr><tr><td>2012:258:07:40:09</td><td>2012:258:16:25:00</td><td>60061014002</td><td>NGC612</td><td>23.490379</td><td>-36.493031
+</td></tr><tr><td>2012:258:07:28:51</td><td>2012:258:07:40:00</td><td>60061014001</td><td>NGC612</td><td>23.490379</td><td>-36.493031
+</td></tr><tr><td>2012:255:02:15:23</td><td>2012:258:06:50:00</td><td>40001014004</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:252:22:33:20</td><td>2012:255:02:15:00</td><td>40001014003</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:251:20:43:05</td><td>2012:252:22:33:00</td><td>40001014002</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:251:20:34:03</td><td>2012:251:20:40:00</td><td>40001014001</td><td>SN1987A</td><td>83.86662500</td><td>-69.26975000
+</td></tr><tr><td>2012:251:13:45:01</td><td>2012:251:18:50:00</td><td>30001120005</td><td>AE_Aqr</td><td>310.03817500</td><td>-0.87085000
+</td></tr><tr><td>2012:249:21:00:30</td><td>2012:251:13:45:00</td><td>30001120004</td><td>AE_Aqr</td><td>310.03817500</td><td>-0.87085000
+</td></tr><tr><td>2012:249:00:05:36</td><td>2012:249:21:00:00</td><td>30001120003</td><td>AE_Aqr</td><td>310.03817500</td><td>-0.87085000
+</td></tr><tr><td>2012:248:19:20:55</td><td>2012:249:00:05:00</td><td>30001120002</td><td>AE_Aqr</td><td>310.03817500</td><td>-0.87085000
+</td></tr><tr><td>2012:248:19:12:32</td><td>2012:248:19:20:00</td><td>30001120001</td><td>AE_Aqr</td><td>310.03817500</td><td>-0.87085000
+</td></tr><tr><td>2012:245:04:07:51</td><td>2012:248:17:05:00</td><td>50002031002</td><td>NGC253</td><td>11.88800200</td><td>-25.28822000
+</td></tr><tr><td>2012:245:03:57:22</td><td>2012:245:04:05:00</td><td>50002031001</td><td>NGC253</td><td>11.88800200</td><td>-25.28822000
+</td></tr><tr><td>2012:244:16:45:19</td><td>2012:245:03:20:00</td><td>60061318002</td><td>NGC7582</td><td>349.597870</td><td>-42.370583
+</td></tr><tr><td>2012:244:16:41:11</td><td>2012:244:16:45:00</td><td>60061318001</td><td>NGC7582</td><td>349.597870</td><td>-42.370583
+</td></tr><tr><td>2012:240:01:18:44</td><td>2012:244:14:25:00</td><td>40021001002</td><td>Cas_A_MOS1</td><td>350.8634800</td><td>58.813620
+</td></tr><tr><td>2012:240:01:03:11</td><td>2012:240:01:15:00</td><td>40021001001</td><td>Cas_A_MOS1</td><td>350.8634800</td><td>58.813620
+</td></tr><tr><td>2012:239:03:26:26</td><td>2012:240:00:10:00</td><td>60002025002</td><td>Mrk231</td><td>194.05916667</td><td>56.87361111
+</td></tr><tr><td>2012:239:03:18:07</td><td>2012:239:03:25:00</td><td>60002025001</td><td>Mrk231</td><td>194.05916667</td><td>56.87361111
+</td></tr><tr><td>2012:231:19:47:38</td><td>2012:239:02:25:00</td><td>40001019002</td><td>Cas_A</td><td>350.8634800</td><td>58.813620
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:231:19:39:49</td><td>2012:231:19:45:00</td><td>40001019001</td><td>Cas_A</td><td>350.8634800</td><td>58.813620
+</td></tr><tr><td>2012:229:08:25:42</td><td>2012:231:19:15:00</td><td>30002032005</td><td>IC342_X1</td><td>56.48125000</td><td>68.08172222
+</td></tr><tr><td>2012:229:08:20:45</td><td>2012:229:08:25:00</td><td>30002032004</td><td>IC342_X1</td><td>56.48125000</td><td>68.08172222
+</td></tr><tr><td>2012:225:16:05:25</td><td>2012:229:06:15:00</td><td>60001045002</td><td>IC4329A</td><td>207.33000000</td><td>-30.30944444
+</td></tr><tr><td>2012:225:15:54:53</td><td>2012:225:16:05:00</td><td>60001045001</td><td>IC4329A</td><td>207.33000000</td><td>-30.30944444
+</td></tr><tr><td>2012:223:18:20:39</td><td>2012:225:13:50:00</td><td>30002032003</td><td>IC342_X1</td><td>56.48125000</td><td>68.08172222
+</td></tr><tr><td>2012:223:08:20:32</td><td>2012:223:18:20:00</td><td>30002032002</td><td>IC342_X1</td><td>56.48125000</td><td>68.08172222
+</td></tr><tr><td>2012:223:06:46:50</td><td>2012:223:08:20:00</td><td>30002032001</td><td>IC342_X1</td><td>56.48125000</td><td>68.08172222
+</td></tr><tr><td>2012:222:15:30:40</td><td>2012:223:05:25:00</td><td>10060001004</td><td>Deep_background_NEP</td><td>270.00</td><td>66.500
+</td></tr><tr><td>2012:222:00:00:01</td><td>2012:222:15:30:00</td><td>10060001003</td><td>Deep_background_NEP</td><td>270.00</td><td>66.500
+</td></tr><tr><td>2012:220:23:15:18</td><td>2012:222:00:00:00</td><td>10060001002</td><td>Deep_background_NEP</td><td>270.00</td><td>66.500
+</td></tr><tr><td>2012:220:01:00:00</td><td>2012:220:23:09:38</td><td>10060001001</td><td>Deep_background_NEP</td><td>270.00</td><td>66.500
+</td></tr><tr><td>2012:219:13:29:57</td><td>2012:220:00:59:59</td><td>02012219001</td><td>NEP_safehold_test</td><td>N/A</td><td>N/A
+</td></tr><tr><td>2012:219:02:25:03</td><td>2012:219:11:00:15</td><td>10002013003</td><td>SMC_X1</td><td>19.27291700</td><td>-73.44222200
+</td></tr><tr><td>2012:219:02:17:21</td><td>2012:219:02:25:00</td><td>10002013002</td><td>SMC_X1</td><td>19.27291700</td><td>-73.44222200
+</td></tr><tr><td>2012:217:07:55:38</td><td>2012:219:01:05:00</td><td>30001002003</td><td>SgrAstar</td><td>266.41684000</td><td>-29.00781000
+</td></tr><tr><td>2012:217:01:06:20</td><td>2012:217:07:55:00</td><td>30001002002</td><td>SgrAstar</td><td>266.41684000</td><td>-29.00781000
+</td></tr><tr><td>2012:216:22:15:06</td><td>2012:217:01:05:00</td><td>10002021003</td><td>1E1740d7m2942</td><td>265.97615000</td><td>-29.73953000
+</td></tr><tr><td>2012:216:21:57:12</td><td>2012:216:22:15:00</td><td>10002021002</td><td>1E1740d7m2942</td><td>265.97615000</td><td>-29.73953000
+</td></tr><tr><td>2012:216:20:50:57</td><td>2012:216:21:30:00</td><td>10002014006</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2012:213:19:37:27</td><td>2012:216:20:50:00</td><td>10002014005</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2012:212:01:32:31</td><td>2012:213:19:37:26</td><td>10002014004</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2012:211:01:20:42</td><td>2012:212:01:32:30</td><td>10002014003</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:210:01:00:36</td><td>2012:211:01:20:00</td><td>10002014002</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2012:209:16:47:00</td><td>2012:210:01:00:00</td><td>10002014001</td><td>G21d5m0d9</td><td>278.38750000</td><td>-10.58333333
+</td></tr><tr><td>2012:208:17:30:40</td><td>2012:209:14:35:00</td><td>60002046003</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2012:207:22:21:03</td><td>2012:208:17:30:00</td><td>60002046002</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2012:207:20:03:01</td><td>2012:207:22:20:00</td><td>60002046001</td><td>NGC1365</td><td>53.40166667</td><td>-36.14027778
+</td></tr><tr><td>2012:207:17:05:48</td><td>2012:207:19:05:00</td><td>10013012001</td><td>Crab_oa12</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:15:25:40</td><td>2012:207:17:05:00</td><td>10013010001</td><td>Crab_oa10</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:14:12:09</td><td>2012:207:15:25:00</td><td>10013009002</td><td>Crab_oa09</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:14:08:28</td><td>2012:207:14:12:00</td><td>10013009001</td><td>Crab_oa09</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:10:58:35</td><td>2012:207:13:45:00</td><td>60006005003</td><td>2MASXJ04234080p0408017</td><td>65.92000000</td><td>4.13400000
+</td></tr><tr><td>2012:207:09:00:32</td><td>2012:207:10:35:00</td><td>10013011001</td><td>Crab_oa11</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:07:20:46</td><td>2012:207:09:00:00</td><td>10013002001</td><td>Crab_oa02</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:05:45:45</td><td>2012:207:07:20:00</td><td>10013007001</td><td>Crab_oa07</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:04:25:05</td><td>2012:207:05:45:00</td><td>10013006002</td><td>Crab_oa06</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:04:23:34</td><td>2012:207:04:25:00</td><td>10013006001</td><td>Crab_oa06</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:207:01:18:40</td><td>2012:207:04:00:00</td><td>60006005002</td><td>2MASXJ04234080p0408017</td><td>65.92000000</td><td>4.13400000
+</td></tr><tr><td>2012:206:23:37:03</td><td>2012:207:00:55:00</td><td>10013005002</td><td>Crab_oa05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:206:23:33:39</td><td>2012:206:23:37:00</td><td>10013005001</td><td>Crab_oa05</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:206:20:23:37</td><td>2012:206:23:10:00</td><td>60006005001</td><td>2MASXJ04234080p0408017</td><td>65.92000000</td><td>4.13400000
+</td></tr><tr><td>2012:206:18:25:42</td><td>2012:206:20:00:00</td><td>10013008001</td><td>Crab_oa08</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:206:17:05:11</td><td>2012:206:18:25:00</td><td>10013004002</td><td>Crab_oa04</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:206:16:57:58</td><td>2012:206:17:05:00</td><td>10013004001</td><td>Crab_oa04</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:206:09:01:11</td><td>2012:206:16:45:00</td><td>60006007001</td><td>2MASXJ04440903p2813003</td><td>71.03750000</td><td>28.21667000
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:206:08:55:04</td><td>2012:206:08:58:00</td><td>10002101001</td><td>Crab_SADA_51</td><td>68.42000000</td><td>28.00000000
+</td></tr><tr><td>2012:206:07:05:46</td><td>2012:206:08:40:00</td><td>10013003001</td><td>Crab_oa03</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:206:05:33:05</td><td>2012:206:07:05:00</td><td>10013001001</td><td>Crab_oa01</td><td>83.63303000</td><td>22.01447000
+</td></tr><tr><td>2012:205:21:49:16</td><td>2012:206:05:25:00</td><td>60006011002</td><td>2MASXJ05081967p1721483</td><td>77.08210000</td><td>17.36330000
+</td></tr><tr><td>2012:205:21:31:04</td><td>2012:205:21:45:00</td><td>10002100001</td><td>Crab_SADA_39</td><td>82.39130000</td><td>17.00000000
+</td></tr><tr><td>2012:202:02:11:29</td><td>2012:205:19:10:00</td><td>30001002001</td><td>SgrAstar</td><td>266.41684000</td><td>-29.00781000
+</td></tr><tr><td>2012:202:00:43:57</td><td>2012:202:02:10:00</td><td>10002021001</td><td>1E1740d7m2942</td><td>265.97615000</td><td>-29.73953000
+</td></tr><tr><td>2012:196:00:05:47</td><td>2012:201:23:35:00</td><td>10002020001</td><td>3C273</td><td>187.27792000</td><td>2.05250000
+</td></tr><tr><td>2012:195:20:50:38</td><td>2012:196:00:05:00</td><td>10012007001</td><td>3C273_pcs27</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:195:17:40:43</td><td>2012:195:20:50:00</td><td>10012006001</td><td>3C273_pcs26</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:195:14:25:35</td><td>2012:195:17:40:00</td><td>10012005001</td><td>3C273_pcs25</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:195:11:10:43</td><td>2012:195:14:25:00</td><td>10012004001</td><td>3C273_pcs24</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:195:07:55:32</td><td>2012:195:11:10:00</td><td>10012003001</td><td>3C273_pcs23</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:195:04:40:43</td><td>2012:195:07:55:00</td><td>10012002001</td><td>3C273_pcs22</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:195:01:45:09</td><td>2012:195:04:40:00</td><td>10012001002</td><td>3C273_pcs21</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:195:01:07:23</td><td>2012:195:01:45:00</td><td>10012001001</td><td>3C273_pcs21</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:194:17:54:22</td><td>2012:195:00:00:00</td><td>02012194001</td><td>StartAtt_stellar</td><td>N/A</td><td>N/A
+</td></tr><tr><td>2012:193:23:57:50</td><td>2012:194:17:30:49</td><td>10002019001</td><td>MCGm5m23m16</td><td>146.91731900</td><td>-30.94873400
+</td></tr><tr><td>2012:193:04:52:00</td><td>2012:193:23:40:00</td><td>10002018001</td><td>GS0834m430</td><td>128.97916000</td><td>-43.18500000
+</td></tr><tr><td>2012:192:15:26:56</td><td>2012:193:02:40:00</td><td>02012191001</td><td>STA_Patch_Att</td><td>N/A</td><td>N/A
+</td></tr><tr><td>2012:191:23:10:41</td><td>2012:192:13:15:00</td><td>10002017001</td><td>GS0834m430</td><td>128.97916000</td><td>-43.18500000
+</td></tr><tr><td>2012:191:14:49:06</td><td>2012:191:23:05:00</td><td>10002007001</td><td>Vela_X1</td><td>135.52858000</td><td>-40.55470000
+</td></tr><tr><td>2012:190:16:59:16</td><td>2012:191:13:15:00</td><td>10002010001</td><td>PKS2155m304</td><td>329.71693790</td><td>-30.22558830
+</td></tr><tr><th>Start UTC</th><th>End UTC</th><th>sequenceID</th><th>Name</th><th>J2000_RA</th><th>J2000_Dec</th></tr><tr><td>2012:190:01:45:27</td><td>2012:190:14:35:00</td><td>10002016001</td><td>Mkn421_POS02</td><td>166.11380790</td><td>38.20883310
+</td></tr><tr><td>2012:189:03:14:46</td><td>2012:190:01:45:00</td><td>10002015001</td><td>Mkn421_POS01</td><td>166.11380790</td><td>38.20883310
+</td></tr><tr><td>2012:188:09:54:56</td><td>2012:189:01:55:00</td><td>10002003001</td><td>Cyg_X1</td><td>299.59030000</td><td>35.20160550
+</td></tr><tr><td>2012:187:06:38:46</td><td>2012:188:07:50:00</td><td>10002013001</td><td>SMC_X1</td><td>19.27291700</td><td>-73.44222200
+</td></tr><tr><td>2012:186:13:22:15</td><td>2012:187:06:20:00</td><td>10002008001</td><td>LMC_X4</td><td>83.20641600</td><td>-66.37036110
+</td></tr><tr><td>2012:185:19:46:54</td><td>2012:186:12:00:00</td><td>10002012001</td><td>1E1740d7m2942</td><td>265.97615000</td><td>-29.73953000
+</td></tr><tr><td>2012:185:01:12:33</td><td>2012:185:18:00:00</td><td>10002004001</td><td>GRS1915p105</td><td>288.79812000</td><td>10.94577770
+</td></tr><tr><td>2012:184:09:57:27</td><td>2012:185:00:50:00</td><td>00001011001</td><td>Cyg_X1_oa</td><td>299.59030000</td><td>35.20160550
+</td></tr><tr><td>2012:184:06:45:38</td><td>2012:184:08:25:00</td><td>00015017001</td><td>3C273_pcs17</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:184:05:05:43</td><td>2012:184:06:45:00</td><td>00015016001</td><td>3C273_pcs16</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:184:03:30:35</td><td>2012:184:05:05:00</td><td>00015015001</td><td>3C273_pcs15</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:184:01:55:43</td><td>2012:184:03:30:00</td><td>00015014001</td><td>3C273_pcs14</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:184:00:15:32</td><td>2012:184:01:55:00</td><td>00015013001</td><td>3C273_pcs13</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:183:22:39:34</td><td>2012:184:00:15:00</td><td>00015012001</td><td>3C273_pcs12</td><td>187.27791667</td><td>2.05250000
+</td></tr><tr><td>2012:183:21:00:35</td><td>2012:183:22:35:00</td><td>00015011001</td><td>3C273_pcs11</td><td>187.27791667</td><td>2.05250000
+</td></tr></table>
+</div>   
+	 <!img src="img/under-construction.gif" style="margin-top:0px;margin-bottom:0px;">
+</div><!-- /#content -->
+    
+      
+<div id="footerWrapper"><!-- #footerWrapper -->
+
+<div id="footer"><!-- #footer --> 
+<ul>
+	<li class="active"><a href="Home.php">Home</a></li>
+    <li><a href="./Operations/QA.php"><dfn>2: </dfn>Operations</a></li>
+    <li><a href="./Science/Science.php"><dfn>3: </dfn>Science</a></li>
+    <li><a href="TOO.php"><dfn>4:</dfn>ToO</a></li>
+    <li><a href="Links.php"><dfn>5: </dfn>Links</a></li>
+</ul>
+
+<div id="footer-logos"><!-- #footer-logos -->
+</div><!-- /#footer-logos -->
+</div><!-- /#footer -->
+
+</div><!-- /#footerWrapper -->
+    
+  </div><!-- /#contentWrapper -->
+  
+</div><!-- /#pageWrapper -->
+
+</body>
+</html><!-- 0.120871 / 41 / 10830928 / 11552448 -->
+
